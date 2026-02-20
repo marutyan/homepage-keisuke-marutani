@@ -12,13 +12,13 @@ import SocialIcon from "./widgets/SocialIcon.astro";
       class="onload-animation rounded-3xl bg-[var(--card-color)] p-4"
       style=`animation-delay: var(--onload-animation-delay);`
     >
-      <a href="/about" class="avatar-wrapper">
+      <div class="avatar-wrapper">
         <img
           src={KeisukeConfig.avatarUrl}
           alt="avatar"
           class="avatar lozad select-none"
         />
-      </a>
+      </div>
       <div class="username mt-4">
         <p>{KeisukeConfig.username}</p>
       </div>
@@ -69,16 +69,12 @@ import SocialIcon from "./widgets/SocialIcon.astro";
   </div>
 </div>
 <style>
-  .avatar-wrapper::after {
-    @apply absolute left-4 top-4 h-[272px] w-[272px] rounded-xl transition-all content-[''];
-  }
-
-  .avatar-wrapper::after:hover {
-    @apply bg-black/25 dark:bg-black/50;
+  .avatar-wrapper {
+    @apply relative mx-auto aspect-square w-full max-w-[272px] overflow-hidden rounded-xl;
   }
 
   .avatar {
-    @apply h-[272px] w-[272px] rounded-xl transition-all hover:cursor-pointer;
+    @apply h-full w-full rounded-xl object-cover transition-all;
   }
 
   .username > p {

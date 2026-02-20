@@ -22,12 +22,8 @@ const KeisukeConfig: Configuration = {
       href: "/archive",
     },
     {
-      nameKey: I18nKeys.nav_bar_about,
-      href: "/about",
-    },
-    {
       nameKey: I18nKeys.nav_bar_github,
-      href: "https://github.com/keisuke-marutani",
+      href: "https://github.com/marutyan/homepage-keisuke-marutani",
     },
   ],
 
@@ -37,7 +33,7 @@ const KeisukeConfig: Configuration = {
   socialLinks: [
     {
       icon: "line-md:github-loop",
-      link: "https://github.com/keisuke-marutani",
+      link: "https://github.com/marutyan/homepage-keisuke-marutani",
     },
     {
       icon: "mdi:linkedin",

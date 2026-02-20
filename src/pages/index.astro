@@ -5,10 +5,21 @@ import { Icon } from "astro-icon/components";
 
 <Main>
   <div class="space-y-6">
+    <!-- About Me heading -->
+    <div
+      class="onload-animation mx-3 flex flex-row items-center space-x-3 lg:mx-0"
+      style="animation-delay: calc(var(--onload-animation-delay) + 1 * var(--onload-animation-interval));"
+    >
+      <Icon name="heroicons:user-circle" size={32} class="text-[var(--primary-color)]" />
+      <h1 class="text-3xl font-bold text-[var(--text-color)]" style="font-family: var(--primary-font);">
+        About Me
+      </h1>
+    </div>
+
     <!-- Affiliation -->
     <div
       class="onload-animation section-card"
-      style="animation-delay: calc(var(--onload-animation-delay) + 1 * var(--onload-animation-interval));"
+      style="animation-delay: calc(var(--onload-animation-delay) + 2 * var(--onload-animation-interval));"
     >
       <div class="section-title">
         <Icon name="heroicons:academic-cap" size={24} class="text-[var(--primary-color)]" />
@@ -21,14 +32,14 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
 
-    <!-- Bio -->
+    <!-- BIO -->
     <div
       class="onload-animation section-card"
-      style="animation-delay: calc(var(--onload-animation-delay) + 2 * var(--onload-animation-interval));"
+      style="animation-delay: calc(var(--onload-animation-delay) + 3 * var(--onload-animation-interval));"
     >
       <div class="section-title">
-        <Icon name="heroicons:user" size={24} class="text-[var(--primary-color)]" />
-        <h2>Bio</h2>
+        <Icon name="heroicons:identification" size={24} class="text-[var(--primary-color)]" />
+        <h2>BIO</h2>
       </div>
       <div class="section-content space-y-3">
         <p class="text-[var(--text-color)]">
@@ -43,24 +54,37 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
 
-    <!-- Publications -->
+    <!-- Research Interests -->
     <div
       class="onload-animation section-card"
-      style="animation-delay: calc(var(--onload-animation-delay) + 3 * var(--onload-animation-interval));"
+      style="animation-delay: calc(var(--onload-animation-delay) + 4 * var(--onload-animation-interval));"
     >
       <div class="section-title">
-        <Icon name="heroicons:document-text" size={24} class="text-[var(--primary-color)]" />
-        <h2>Publications</h2>
+        <Icon name="heroicons:beaker" size={24} class="text-[var(--primary-color)]" />
+        <h2>Research Interests</h2>
       </div>
       <div class="section-content">
-        <p class="text-[var(--text-color-lighten)] italic">Coming soon...</p>
+        <ul class="ml-1 space-y-2 text-[var(--text-color)]">
+          <li class="flex items-start space-x-2">
+            <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[var(--primary-color)]"></span>
+            <span>Real-time object detection (RT-DETR, YOLO series)</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[var(--primary-color)]"></span>
+            <span>Deep learning architectures for visual recognition</span>
+          </li>
+          <li class="flex items-start space-x-2">
+            <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[var(--primary-color)]"></span>
+            <span>Computer Vision applications and image processing</span>
+          </li>
+        </ul>
       </div>
     </div>
 
     <!-- Skills -->
     <div
       class="onload-animation section-card"
-      style="animation-delay: calc(var(--onload-animation-delay) + 4 * var(--onload-animation-interval));"
+      style="animation-delay: calc(var(--onload-animation-delay) + 5 * var(--onload-animation-interval));"
     >
       <div class="section-title">
         <Icon name="heroicons:wrench-screwdriver" size={24} class="text-[var(--primary-color)]" />
