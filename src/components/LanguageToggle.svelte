@@ -7,14 +7,12 @@
       nav_bar_home: "Home",
       nav_bar_archive: "Timeline",
       nav_bar_github: "GitHub",
-      nav_bar_search_placeholder: "Search",
       side_bar_tags: "Interests",
     },
     ja: {
       nav_bar_home: "ホーム",
       nav_bar_archive: "経歴",
       nav_bar_github: "GitHub",
-      nav_bar_search_placeholder: "検索",
       side_bar_tags: "興味分野",
     },
   };

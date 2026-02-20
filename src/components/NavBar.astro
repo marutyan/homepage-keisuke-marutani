@@ -3,10 +3,7 @@ import KeisukeConfig from "../../keisuke.config";
 import { i18n } from "../locales/translation";
 
 import { Icon } from "astro-icon/components";
-import SearchBar from "./SearchBar.svelte";
-import MobileSearchBar from "./MobileSearchBar.svelte";
 import LanguageToggle from "./LanguageToggle.svelte";
-import "astro-pagefind";
 
 const navCount = KeisukeConfig.navigators.length;
 ---
@@ -54,12 +51,6 @@ const navCount = KeisukeConfig.navigators.length;
       }
     </div>
     <div class="toolbar">
-      <div class="lg:hidden">
-        <MobileSearchBar client:only="svelte" />
-      </div>
-      <div class="hidden lg:block">
-        <SearchBar client:only="svelte" />
-      </div>
       <div class="theme">
         <button type="button" id="theme-switcher">
           <Icon

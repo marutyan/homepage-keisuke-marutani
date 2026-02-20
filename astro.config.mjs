@@ -14,8 +14,6 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 import KeisukeConfig from "./keisuke.config";
 
-import pagefind from "astro-pagefind";
-
 // https://astro.build/config
 export default defineConfig({
   site: KeisukeConfig.site,
@@ -35,7 +33,6 @@ export default defineConfig({
       globalInstance: true,
     }),
     sitemap(),
-    pagefind(),
   ],
   markdown: {
     shikiConfig: {
