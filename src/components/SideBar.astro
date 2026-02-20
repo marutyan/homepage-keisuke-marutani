@@ -3,20 +3,13 @@ import { Icon } from "astro-icon/components";
 import KeisukeConfig from "../../keisuke.config";
 import I18nKeys from "../locales/keys";
 import { i18n } from "../locales/translation";
-import { GetCategories, GetTags } from "../utils/content";
 import SocialIcon from "./widgets/SocialIcon.astro";
-
-const tags = await GetTags();
-const categories = await GetCategories();
-
-const categoryKeys = [...categories.keys()];
-const tagKeys = [...tags.keys()];
 ---
 
 <div class="flex w-full flex-row justify-center">
-  <div class="flex flex-col space-y-3">
+  <div class="flex w-full flex-col space-y-3">
     <div
-      class="onload-animation rounded-3xl bg-[var(--card-color)] p-3"
+      class="onload-animation rounded-3xl bg-[var(--card-color)] p-4"
       style=`animation-delay: var(--onload-animation-delay);`
     >
       <a href="/about" class="avatar-wrapper">
@@ -34,8 +27,8 @@ const tagKeys = [...tags.keys()];
       </p>
       {
         KeisukeConfig.socialLinks.length > 0 && (
-          <div class="mt-1 flex flex-row justify-center">
-            <div class="flex w-[184px] flex-wrap justify-center gap-2">
+          <div class="mt-3 flex flex-row justify-center">
+            <div class="flex w-full flex-wrap justify-center gap-3">
               {KeisukeConfig.socialLinks.map((item) => (
                 <SocialIcon name={item.icon} link={item.link} />
               ))}
@@ -45,90 +38,30 @@ const tagKeys = [...tags.keys()];
       }
     </div>
 
-    <!-- categories -->
+    <!-- Interest Tags -->
     {
-      categories.size !== 0 && (
+      KeisukeConfig.interestTags.length > 0 && (
         <div
-          class="onload-animation space-y-2 rounded-3xl bg-[var(--card-color)] p-3"
+          class="onload-animation space-y-2 rounded-3xl bg-[var(--card-color)] p-4"
           style="animation-delay: calc(var(--onload-animation-delay) + 1 * var(--onload-animation-interval));"
         >
           <div class="title m-[0.375rem]">
-            <a
-              href="/categories/"
-              class="pl-4 text-xl font-bold text-[var(--text-color)] transition-colors hover:text-[var(--primary-color)]"
-            >
-              <span data-i18n-key="side_bar_categories">{i18n(I18nKeys.side_bar_categories)}</span>
-            </a>
-          </div>
-          <div class="relative flex flex-col">
-            {categoryKeys
-              .slice(0, KeisukeConfig.maxSidebarCategoryChip + 1)
-              .map((category) => (
-                <a
-                  href={`/categories/${category}`}
-                  class="category flex flex-row items-center justify-between rounded-lg px-3 py-2 transition-all hover:bg-[var(--primary-color-lighten)]"
-                >
-                  <p class="text-[var(--text-color)] transition-all">
-                    {categories.get(category)!.name}
-                  </p>
-                  <span class="rounded-md bg-[var(--primary-color-lighten)] px-2.5 py-0.5 text-[var(--primary-color)]">
-                    {categories.get(category)!.posts.length}
-                  </span>
-                </a>
-              ))}
-            {categoryKeys.length >= KeisukeConfig.maxSidebarCategoryChip + 1 && (
-              <div class="absolute bottom-0 flex h-11 w-full flex-row items-center justify-center bg-gradient-to-t from-[var(--card-color)] from-25% to-transparent backdrop-blur-sm">
-                <a
-                  href="/categories/"
-                  class="flex flex-row items-center space-x-1 text-[var(--primary-color)] transition-colors hover:brightness-75 dark:hover:brightness-125"
-                >
-                  <span data-i18n-key="side_bar_view_more">{i18n(I18nKeys.side_bar_view_more)}</span>
-                  <Icon name="mingcute:arrow-right-line" />
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
-      )
-    }
-
-    <!-- tags -->
-    {
-      tags.size !== 0 && (
-        <div
-          class="onload-animation space-y-2 rounded-3xl bg-[var(--card-color)] p-3"
-          style="animation-delay: calc(var(--onload-animation-delay) + 2 * var(--onload-animation-interval));"
-        >
-          <div class="title m-[0.375rem]">
-            <a
-              href="/tags/"
-              class="pl-4 text-xl font-bold text-[var(--text-color)] transition-colors hover:text-[var(--primary-color)]"
+            <span
+              class="pl-4 text-xl font-bold text-[var(--text-color)]"
             >
               <span data-i18n-key="side_bar_tags">{i18n(I18nKeys.side_bar_tags)}</span>
-            </a>
+            </span>
           </div>
-          <div class="relative flex max-w-[224px] flex-row flex-wrap">
-            {tagKeys.slice(0, KeisukeConfig.maxSidebarTagChip + 1).map((tag) => (
-              <a
-                href={`/tags/${tag}`}
-                class="tag m-1 grow rounded-md bg-[var(--primary-color-lighten)] px-2 py-1 transition-all hover:brightness-95"
+          <div class="flex max-w-[280px] flex-row flex-wrap">
+            {KeisukeConfig.interestTags.map((tag) => (
+              <span
+                class="tag m-1 grow rounded-md bg-[var(--primary-color-lighten)] px-2.5 py-1"
               >
                 <p class="text-center text-sm text-[var(--primary-color)]">
-                  {tags.get(tag)!.name}
+                  {tag}
                 </p>
-              </a>
+              </span>
             ))}
-            {tagKeys.length >= KeisukeConfig.maxSidebarTagChip + 1 && (
-              <div class="absolute bottom-0 flex h-10 w-full flex-row items-center justify-center bg-gradient-to-t from-[var(--card-color)] from-25% to-transparent backdrop-blur-sm">
-                <a
-                  href="/tags/"
-                  class="flex flex-row items-center space-x-1 text-[var(--primary-color)] transition-colors hover:brightness-75 dark:hover:brightness-125"
-                >
-                  <span data-i18n-key="side_bar_view_more">{i18n(I18nKeys.side_bar_view_more)}</span>
-                  <Icon name="mingcute:arrow-right-line" />
-                </a>
-              </div>
-            )}
           </div>
         </div>
       )
@@ -137,7 +70,7 @@ const tagKeys = [...tags.keys()];
 </div>
 <style>
   .avatar-wrapper::after {
-    @apply absolute left-3 top-3 h-56 w-56 rounded-xl transition-all content-[''];
+    @apply absolute left-4 top-4 h-[272px] w-[272px] rounded-xl transition-all content-[''];
   }
 
   .avatar-wrapper::after:hover {
@@ -145,11 +78,11 @@ const tagKeys = [...tags.keys()];
   }
 
   .avatar {
-    @apply h-56 w-56 rounded-xl transition-all hover:cursor-pointer;
+    @apply h-[272px] w-[272px] rounded-xl transition-all hover:cursor-pointer;
   }
 
   .username > p {
-    @apply text-center text-xl font-semibold text-[var(--text-color)];
+    @apply text-center text-2xl font-semibold text-[var(--text-color)];
     font-family: var(--title-font);
   }
 
@@ -177,18 +110,6 @@ const tagKeys = [...tags.keys()];
     bottom: 3px;
     width: 0.3rem;
     border-radius: 4px;
-  }
-
-  .title p {
-    font-family: var(--primary-font);
-  }
-
-  .category {
-    font-family: var(--primary-font);
-  }
-
-  .category:hover > p {
-    @apply pl-2 text-[var(--primary-color)];
   }
 
   .tag {

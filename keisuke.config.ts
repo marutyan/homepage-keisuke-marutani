@@ -39,11 +39,26 @@ const KeisukeConfig: Configuration = {
       icon: "line-md:github-loop",
       link: "https://github.com/keisuke-marutani",
     },
+    {
+      icon: "mdi:linkedin",
+      link: "https://linkedin.com/in/keisuke-marutani",
+    },
+    {
+      icon: "mdi:twitter",
+      link: "https://twitter.com/keisuke_m",
+    },
   ],
-  maxSidebarCategoryChip: 6, // It is recommended to set it to a common multiple of 2 and 3
-  maxSidebarTagChip: 12,
-  maxFooterCategoryChip: 6,
-  maxFooterTagChip: 24,
+
+  interestTags: [
+    "Computer Vision",
+    "Deep Learning",
+    "RT-DETR",
+    "YOLO",
+    "Object Detection",
+    "Python",
+    "PyTorch",
+    "OpenCV",
+  ],
 
   banners: [
     "https://s2.loli.net/2025/01/25/PBvHFjr5yDu6t4a.webp",

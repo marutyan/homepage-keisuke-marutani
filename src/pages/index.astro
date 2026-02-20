@@ -1,0 +1,130 @@
+---
+import Main from "../layouts/MainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Main>
+  <div class="space-y-6">
+    <!-- Affiliation -->
+    <div
+      class="onload-animation section-card"
+      style="animation-delay: calc(var(--onload-animation-delay) + 1 * var(--onload-animation-interval));"
+    >
+      <div class="section-title">
+        <Icon name="heroicons:academic-cap" size={24} class="text-[var(--primary-color)]" />
+        <h2>Affiliation</h2>
+      </div>
+      <div class="section-content">
+        <p class="text-lg font-medium text-[var(--text-color)]">Kindai University</p>
+        <p class="text-[var(--text-color-lighten)]">Faculty of Science and Engineering, Department of Information Science</p>
+        <p class="text-sm text-[var(--text-color-lighten)]">Undergraduate Student</p>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div
+      class="onload-animation section-card"
+      style="animation-delay: calc(var(--onload-animation-delay) + 2 * var(--onload-animation-interval));"
+    >
+      <div class="section-title">
+        <Icon name="heroicons:user" size={24} class="text-[var(--primary-color)]" />
+        <h2>Bio</h2>
+      </div>
+      <div class="section-content space-y-3">
+        <p class="text-[var(--text-color)]">
+          I am an undergraduate student at Kindai University, majoring in Information Science.
+          My research focuses on <strong>Computer Vision</strong> and <strong>Deep Learning</strong>,
+          with a particular interest in real-time object detection models such as RT-DETR and YOLO series.
+        </p>
+        <p class="text-[var(--text-color)]">
+          I work primarily with Python in an Ubuntu environment, using frameworks like PyTorch and OpenCV
+          for my research and development projects.
+        </p>
+      </div>
+    </div>
+
+    <!-- Publications -->
+    <div
+      class="onload-animation section-card"
+      style="animation-delay: calc(var(--onload-animation-delay) + 3 * var(--onload-animation-interval));"
+    >
+      <div class="section-title">
+        <Icon name="heroicons:document-text" size={24} class="text-[var(--primary-color)]" />
+        <h2>Publications</h2>
+      </div>
+      <div class="section-content">
+        <p class="text-[var(--text-color-lighten)] italic">Coming soon...</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div
+      class="onload-animation section-card"
+      style="animation-delay: calc(var(--onload-animation-delay) + 4 * var(--onload-animation-interval));"
+    >
+      <div class="section-title">
+        <Icon name="heroicons:wrench-screwdriver" size={24} class="text-[var(--primary-color)]" />
+        <h2>Skills</h2>
+      </div>
+      <div class="section-content">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-[var(--text-color)]">Languages</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">C/C++</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-[var(--text-color)]">Frameworks</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">OpenCV</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-[var(--text-color)]">Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Linux (Ubuntu)</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-[var(--text-color)]">Research</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-chip">RT-DETR</span>
+              <span class="skill-chip">YOLO</span>
+              <span class="skill-chip">Object Detection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Main>
+
+<style>
+  .section-card {
+    @apply mx-3 rounded-2xl bg-[var(--card-color)] p-6 lg:mx-0 lg:p-8;
+  }
+
+  .section-title {
+    @apply mb-4 flex flex-row items-center space-x-3;
+  }
+
+  .section-title h2 {
+    @apply text-2xl font-bold text-[var(--text-color)];
+    font-family: var(--primary-font);
+  }
+
+  .section-content {
+    font-family: var(--primary-font);
+    @apply leading-relaxed;
+  }
+
+  .skill-chip {
+    @apply rounded-lg bg-[var(--primary-color-lighten)] px-3 py-1.5 text-sm text-[var(--primary-color)];
+    font-family: var(--primary-font);
+  }
+</style>

@@ -1,6 +1,5 @@
 ---
 import KeisukeConfig from "../../keisuke.config";
-import { GetCoverURLForUnspecifiedEntry } from "../utils/cover";
 
 export interface Props {
   title?: string;
@@ -11,7 +10,7 @@ export interface Props {
 const { title, subTitle, bannerImage, slug } = Astro.props;
 
 const hasTitle = title !== undefined || subTitle !== undefined;
-const hasHeaderImg = bannerImage !== undefined || slug !== undefined;
+const hasHeaderImg = bannerImage !== undefined;
 
 let carouselImgsList = KeisukeConfig.banners;
 const carouselAnimationTime = `${carouselImgsList.length * 6}s`;
@@ -39,8 +38,8 @@ const carouselAnimationTime = `${carouselImgsList.length * 6}s`;
         <div class="cover">
           <img
             class="item lozad"
-            data-src={bannerImage ?? GetCoverURLForUnspecifiedEntry(slug ?? "")}
-            alt="PostCoverr"
+            data-src={bannerImage}
+            alt="Cover"
           />
         </div>
       )

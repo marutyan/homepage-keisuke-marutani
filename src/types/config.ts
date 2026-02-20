@@ -19,10 +19,7 @@ interface Configuration {
 
   socialLinks: { icon: string; link: string }[];
 
-  maxSidebarCategoryChip: number;
-  maxSidebarTagChip: number;
-  maxFooterCategoryChip: number;
-  maxFooterTagChip: number;
+  interestTags: string[];
 
   banners: string[];
 
