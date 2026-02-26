@@ -21,16 +21,12 @@ interface Configuration {
 
   interestTags: string[];
 
-  banners: string[];
-
   slugMode: "HASH" | "RAW";
 
   license: {
     name: string;
     url: string;
   };
-
-  bannerStyle: "LOOP";
 }
 
 export type { Configuration };

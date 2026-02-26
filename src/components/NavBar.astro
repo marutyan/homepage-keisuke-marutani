@@ -1,92 +1,67 @@
 ---
 import KeisukeConfig from "../../keisuke.config";
 import { i18n } from "../locales/translation";
-
 import { Icon } from "astro-icon/components";
 import LanguageToggle from "./LanguageToggle.svelte";
 
 const navCount = KeisukeConfig.navigators.length;
 ---
 
+<!-- Mobile-only navbar -->
 <nav class="nav" id="nav">
-  <div
-    class="relative flex h-[4rem] w-full items-center justify-between overflow-visible lg:h-[4.5rem]"
-  >
-    <div class="brand after:content-['']">
-      <button
-        id="menu-switcher"
-        type="button"
-        class="h-[40px] w-[44px] content-center"
-      >
+  <div class="relative flex h-[3.5rem] w-full items-center justify-between px-1">
+    <button
+      id="menu-switcher"
+      type="button"
+      class="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text-color)] transition-all hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)]"
+    >
+      <Icon
+        id="menu-icon-closed"
+        size={24}
+        name="line-md:close-to-menu-transition"
+        class="hidden"
+      />
+      <Icon
+        id="menu-icon-opened"
+        size={24}
+        name="line-md:menu-to-close-transition"
+        class="hidden"
+      />
+    </button>
+    <a class="text-xl font-medium text-[var(--primary-color)]" href="/" style="font-family: var(--brand-font);">
+      {KeisukeConfig.brandTitle}
+    </a>
+    <div class="flex items-center gap-1">
+      <button type="button" id="theme-switcher" class="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text-color)] transition-all hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)]">
         <Icon
-          id="menu-icon-closed"
-          size={24}
-          name="line-md:close-to-menu-transition"
-          class="mx-auto hidden"
+          id="theme-icon-light"
+          name="line-md:moon-alt-to-sunny-outline-loop-transition"
+          size={20}
+          class="hidden"
         />
         <Icon
-          id="menu-icon-opened"
-          size={24}
-          name="line-md:menu-to-close-transition"
-          class="mx-auto hidden"
+          id="theme-icon-dark"
+          name="line-md:sunny-outline-to-moon-alt-loop-transition"
+          size={20}
+          class="hidden"
         />
       </button>
-      <a class="title" href="/">
-        {KeisukeConfig.brandTitle}
-      </a>
-    </div>
-    <a class="brand-lg" href="/">
-      <div class="title space-x-2">
-        <Icon name="heroicons:home" size={32} />
-        <p>{KeisukeConfig.brandTitle}</p>
-      </div>
-    </a>
-    <div class="menu">
-      {
-        KeisukeConfig.navigators.map((nav) => (
-          <a href={nav.href}>
-            <p data-i18n-key={nav.nameKey}>{i18n(nav.nameKey)}</p>
-          </a>
-        ))
-      }
-    </div>
-    <div class="toolbar">
-      <div class="theme">
-        <button type="button" id="theme-switcher">
-          <Icon
-            id="theme-icon-light"
-            name="line-md:moon-alt-to-sunny-outline-loop-transition"
-            size={24}
-            class="hidden"
-          />
-          <Icon
-            id="theme-icon-dark"
-            name="line-md:sunny-outline-to-moon-alt-loop-transition"
-            size={24}
-            class="hidden"
-          />
-        </button>
-      </div>
       <LanguageToggle client:load />
     </div>
   </div>
-  <div id="mobile-menu" class="px-3 transition-all">
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="px-3">
     <ul
       id="mobile-menu-nav"
-      class="mobile-menu-nav mobile-menu-nav-closed flex flex-col space-y-6 overflow-hidden text-xl font-medium text-[var(--text-color)] transition-all duration-300"
+      class="mobile-menu-nav mobile-menu-nav-closed flex flex-col space-y-4 overflow-hidden text-lg font-medium text-[var(--text-color)] transition-all duration-300"
     >
       {
         KeisukeConfig.navigators.map((nav) => (
-          <li class="mt-1">
-            <a href={nav.href} class="mobile-nav-item">
-              <div class="flex flex-row items-center space-x-2">
-                <span class="text-[var(--primary-color)]">·</span>
-                <span data-i18n-key={nav.nameKey}>{i18n(nav.nameKey)}</span>
-              </div>
-              <Icon
-                name="cuida:caret-right-outline"
-                class="text-[var(--text-color-lighten)]"
-              />
+          <li>
+            <a href={nav.href} class="mobile-nav-item flex items-center justify-between py-1">
+              <span data-i18n-key={nav.nameKey}>{i18n(nav.nameKey)}</span>
+              <Icon name="cuida:caret-right-outline" class="text-[var(--text-color-lighten)]" />
             </a>
           </li>
         ))
@@ -97,77 +72,10 @@ const navCount = KeisukeConfig.navigators.length;
 
 <style define:vars={{ navCount }}>
   .nav {
-    @apply fixed left-1/2 z-10 flex w-full select-none flex-col justify-end rounded-b-xl bg-[var(--card-color-transparent)] px-2.5 opacity-0 backdrop-blur-md transition-all;
-    @apply lg:w-[var(--page-width-lg)] lg:rounded-b-2xl;
-    @apply xl:w-[var(--page-width-xl)];
-    transform: translateX(-50%) translateY(-5rem);
+    @apply fixed left-0 top-0 z-10 w-full select-none bg-[var(--card-color-transparent)] px-2 backdrop-blur-md transition-all;
     animation: 300ms nav-onload-animation;
     animation-fill-mode: forwards;
-  }
-
-  .brand {
-    @apply flex w-full flex-row items-center justify-between;
-    @apply lg:hidden;
-  }
-
-  .brand > .title {
-    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 truncate rounded-lg px-4 py-2 text-2xl font-medium text-[var(--primary-color)] transition-all;
-    @apply hover:bg-[var(--primary-color-hover)];
-    font-family: var(--brand-font);
-  }
-
-  .brand button {
-    @apply mr-2 flex h-[44px] w-[44px] flex-row items-center rounded-lg text-[var(--text-color)] transition-all;
-    @apply hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)];
-  }
-
-  .brand .icon {
-    @apply w-full text-center text-2xl;
-  }
-
-  .brand-lg {
-    @apply hidden h-[3.25rem] rounded-lg px-5 font-medium transition-all;
-    @apply lg:block;
-    @apply hover:bg-[var(--primary-color-hover)];
-    @apply active:scale-95;
-  }
-
-  .brand-lg > .title {
-    @apply flex h-full flex-row content-center items-center text-2xl text-[var(--primary-color)];
-    font-family: var(--brand-font);
-  }
-
-  .brand-lg .icon {
-    @apply mr-2 stroke-2 text-2xl;
-  }
-
-  .menu {
-    @apply absolute left-1/2 hidden -translate-x-1/2 items-center justify-between space-x-1 text-lg text-[var(--text-color)] opacity-85;
-    @apply lg:flex;
-  }
-
-  .menu a {
-    @apply flex h-[3.25rem] items-center rounded-lg px-6 transition-all;
-    @apply hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)];
-    @apply active:scale-95;
-  }
-
-  .menu p {
-    @apply font-medium leading-normal;
-    font-family: var(--primary-font);
-  }
-
-  .toolbar {
-    @apply flex flex-row items-center justify-end space-x-1 lg:mr-2;
-  }
-
-  .toolbar button {
-    @apply flex w-11 justify-center rounded-lg py-2 text-[var(--text-color)] transition-all;
-    @apply hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)];
-  }
-
-  .toolbar .icon {
-    @apply stroke-2 text-xl;
+    opacity: 0;
   }
 
   .mobile-menu-nav-closed {
@@ -175,163 +83,100 @@ const navCount = KeisukeConfig.navigators.length;
   }
 
   .mobile-menu-nav-opened {
-    @apply opacity-100;
-    height: calc(var(--navCount) * 52px);
+    @apply pb-4 opacity-100;
+    height: calc(var(--navCount) * 44px + 16px);
   }
 
   .mobile-menu-nav li a {
-    @apply flex flex-row items-center justify-between;
     font-family: var(--primary-font);
   }
 
   @keyframes nav-onload-animation {
-    0% {
-      transform: translateY(-5rem) translateX(-50%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0) translateX(-50%);
-      opacity: 1;
-    }
+    0% { opacity: 0; transform: translateY(-3rem); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 </style>
 
 <script>
-  /**
-   * Reinitializes an SVG icon by cloning it and replacing the original icon with the clone.
-   *
-   * @param icon - The SVG element to be reinitialized.
-   * @returns The cloned SVG element that replaced the original.
-   */
   const reinitializeIcon = (icon: SVGElement) => {
     const cloned = icon.cloneNode(true) as SVGElement;
     icon.parentNode?.replaceChild(cloned, icon);
     return cloned;
   };
 
-  // get elements
-  const menuSwitcher = document.getElementById(
-    "menu-switcher",
-  ) as HTMLButtonElement;
-  const mobileMenuNav = document.getElementById(
-    "mobile-menu-nav",
-  ) as HTMLUListElement;
+  // Mobile menu toggle
+  const menuSwitcher = document.getElementById("menu-switcher") as HTMLButtonElement;
+  const mobileMenuNav = document.getElementById("mobile-menu-nav") as HTMLUListElement;
   const mobileMenuNavItems = document.getElementsByClassName("mobile-nav-item");
-  let menuIconClosed = document.getElementById(
-    "menu-icon-closed",
-  ) as any as SVGElement;
-  let menuIconOpened = document.getElementById(
-    "menu-icon-opened",
-  ) as any as SVGElement;
+  let menuIconClosed = document.getElementById("menu-icon-closed") as any as SVGElement;
+  let menuIconOpened = document.getElementById("menu-icon-opened") as any as SVGElement;
 
-  // menu state
   let isMenuOpen = false;
 
-  // switch menu open / close
   const switchMenuState = () => {
     menuIconClosed.style.display = isMenuOpen ? "block" : "none";
     menuIconOpened.style.display = !isMenuOpen ? "block" : "none";
     if (isMenuOpen) menuIconClosed = reinitializeIcon(menuIconClosed);
     else menuIconOpened = reinitializeIcon(menuIconOpened);
     if (isMenuOpen) {
-      mobileMenuNav.classList.replace(
-        "mobile-menu-nav-opened",
-        "mobile-menu-nav-closed",
-      );
+      mobileMenuNav.classList.replace("mobile-menu-nav-opened", "mobile-menu-nav-closed");
     } else {
-      mobileMenuNav.classList.replace(
-        "mobile-menu-nav-closed",
-        "mobile-menu-nav-opened",
-      );
+      mobileMenuNav.classList.replace("mobile-menu-nav-closed", "mobile-menu-nav-opened");
     }
     isMenuOpen = !isMenuOpen;
   };
 
-  // click menu item then close menu
-  menuSwitcher.addEventListener("click", switchMenuState);
-  for (let i = 0; i < mobileMenuNavItems.length; ++i) {
-    mobileMenuNavItems.item(i)?.addEventListener("click", switchMenuState);
-  }
-  // click other elements then close menu
-  document.addEventListener("click", (event) => {
-    if (
-      !menuSwitcher.contains(event.target as any) &&
-      !mobileMenuNav.contains(event.target as any) &&
-      isMenuOpen
-    ) {
-      switchMenuState();
+  if (menuSwitcher) {
+    menuSwitcher.addEventListener("click", switchMenuState);
+    for (let i = 0; i < mobileMenuNavItems.length; ++i) {
+      mobileMenuNavItems.item(i)?.addEventListener("click", switchMenuState);
     }
-  });
+    document.addEventListener("click", (event) => {
+      if (!menuSwitcher.contains(event.target as any) && !mobileMenuNav.contains(event.target as any) && isMenuOpen) {
+        switchMenuState();
+      }
+    });
+  }
 
-  // Theme switcher
-  // Get elements
-  const themeSwitcher = document.getElementById(
-    "theme-switcher",
-  ) as HTMLButtonElement;
-  let themeIconLight = document.getElementById(
-    "theme-icon-light",
-  ) as any as SVGElement;
-  let themeIconDark = document.getElementById(
-    "theme-icon-dark",
-  ) as any as SVGElement;
-
-  // Record the current theme
+  // Theme switcher (mobile)
+  const themeSwitcher = document.getElementById("theme-switcher") as HTMLButtonElement;
+  let themeIconLight = document.getElementById("theme-icon-light") as any as SVGElement;
+  let themeIconDark = document.getElementById("theme-icon-dark") as any as SVGElement;
   let currentTheme = localStorage.getItem("theme") || "light";
 
-  // Set theme
   const setTheme = (theme: string) => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
     currentTheme = theme;
-
-    // Show/hide icons for different themes
-    themeIconDark.style.display = theme === "dark" ? "block" : "none";
-    themeIconLight.style.display = theme === "light" ? "block" : "none";
-
-    // If the theme is dark, update the dark icon; otherwise, update the light icon
-    if (theme === "dark") themeIconDark = reinitializeIcon(themeIconDark);
-    else themeIconLight = reinitializeIcon(themeIconLight);
-
-    // Toggle dark class
     document.documentElement.classList.toggle("dark", theme === "dark");
+
+    if (themeIconDark) themeIconDark.style.display = theme === "dark" ? "block" : "none";
+    if (themeIconLight) themeIconLight.style.display = theme === "light" ? "block" : "none";
+
+    if (theme === "dark" && themeIconDark) themeIconDark = reinitializeIcon(themeIconDark);
+    else if (themeIconLight) themeIconLight = reinitializeIcon(themeIconLight);
   };
 
-  // Click to switch theme
-  themeSwitcher.addEventListener("click", () => {
-    setTheme(currentTheme === "light" ? "dark" : "light");
-  });
+  if (themeSwitcher) {
+    themeSwitcher.addEventListener("click", () => {
+      setTheme(currentTheme === "light" ? "dark" : "light");
+    });
+  }
 
-  // Initialize
   document.addEventListener("DOMContentLoaded", () => {
     setTheme(currentTheme);
-    menuIconClosed.style.display = "block";
+    if (menuIconClosed) menuIconClosed.style.display = "block";
   });
 
-  // fold nav bar when scroll down
+  // Hide nav on scroll down, show on scroll up
   const navBarElement = document.getElementById("nav");
-  const bannerElement = document.getElementById("banner");
-  const bannerHeight = bannerElement!.offsetHeight - 50;
   let lastYPos = 0;
   window.addEventListener("scroll", () => {
-    if (bannerHeight < window.scrollY && window.scrollY > lastYPos) {
-      navBarElement!.style.top = "-72px";
+    if (window.scrollY > 60 && window.scrollY > lastYPos) {
+      if (navBarElement) navBarElement.style.transform = "translateY(-100%)";
     } else {
-      navBarElement!.style.top = "0";
+      if (navBarElement) navBarElement.style.transform = "translateY(0)";
     }
     lastYPos = window.scrollY;
   });
-</script>
-
-<script is:inline>
-  // load pagefind
-  async function loadPagefind() {
-    const pagefind = await import("/pagefind/pagefind.js");
-    await pagefind.options({
-      excerptLength: 20,
-    });
-    pagefind.init();
-    window.pagefind = pagefind;
-    pagefind.search("");
-  }
-  loadPagefind();
 </script>
