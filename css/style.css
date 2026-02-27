@@ -46,7 +46,7 @@
 ---- Common Part ----
 ------------------ */
 html {
-    font-size: 100%%;
+    font-size: 100%;
 }
 body {
     font-family: var(--font-primary);
@@ -59,16 +59,16 @@ a {
     color: var(--text);
 }
 img {
-    max-width: 100%%;
+    max-width: 100%;
 }
 .wrapper {
-    width: 90%%;
-    margin-bottom: 6%%;
+    width: 90%;
+    margin-bottom: 6%;
 }
 .subtitle-container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.5%%;
+    margin-bottom: 0.5%;
 }
 .subtitle-line {
     height: 40px;
@@ -86,12 +86,12 @@ img {
 ---- NAV ----
 ------------- */
 nav {
-    width: 40%%;
+    width: 40%;
     min-width: 220px;
     height: 100vh;
     font-family: var(--font-brand);
     background: var(--bg);
-    margin-right: 5%%;
+    margin-right: 5%;
     position: sticky;
     top: 0;
 }
@@ -113,7 +113,7 @@ nav {
 .logo_bg {
     width: 150px;
     height: 150px;
-    border-radius: 50%%;
+    border-radius: 50%;
     background: var(--bg);
     box-shadow: inset 5px 5px 8px var(--shadow-dark), inset -5px -5px 8px var(--shadow-light);
 }
@@ -124,9 +124,9 @@ nav {
     font-size: inherit;
 }
 .logo {
-    width: 85%%;
-    height: 85%%;
-    border-radius: 50%%;
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
     overflow: hidden;
     margin-top: 12px;
     margin-left: 12px;
@@ -148,7 +148,7 @@ nav {
 }
 /* related links logo for me */
 .list-inline{
-    width: 55%%;
+    width: 55%;
     min-width: 180px;
     height: 30px;
     margin: 20px auto;
@@ -189,7 +189,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75%%;
+    width: 75%;
     margin: 10px;
     list-style: none;
     padding: 0;
@@ -224,7 +224,7 @@ nav {
 }
 /* for line */
 .nav-item-list-line {
-    width: 75%%;
+    width: 75%;
     height: 6px;
     border-radius: 5px;
     background: var(--bg);
@@ -291,7 +291,7 @@ article {
 /* for Bio
 ------------------------------- */
 .timeline {
-    margin-top: 2%%;
+    margin-top: 2%;
 }
 .timeline li {
     display: flex;
@@ -309,7 +309,7 @@ article {
     margin-top: 25px;
 }
 .timeline-content-wrapper {
-    width: 75%%;
+    width: 75%;
     float: left;
     border-left: 3px var(--timeline-border) solid;
     padding: 0 0 0 40px;
@@ -343,7 +343,7 @@ article {
     position: absolute;
     left: 96px;
     top: 8px;
-    border-radius: 100%%;
+    border-radius: 100%;
 }
 
 
@@ -409,7 +409,7 @@ article {
 .sub-subtitle-container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.5%%;
+    margin-bottom: 0.5%;
 }
 .sub-subtitle-line {
     height: 30px;
@@ -461,7 +461,7 @@ article {
     padding: 0;
     transition: 0.3s ease-in-out;
     background: var(--button-bg);
-    border-radius: 4%%;
+    border-radius: 4%;
     z-index:0;
     overflow: hidden;
 }
@@ -477,7 +477,7 @@ article {
     transition: .3s;
 }
 .pdf-button a:hover:after {
-    width: 100%%;
+    width: 100%;
     z-index: -1;
 }
 
@@ -497,7 +497,7 @@ article {
     padding: 0;
     transition: 0.3s ease-in-out;
     background: var(--button-bg);
-    border-radius: 4%%;
+    border-radius: 4%;
     z-index:0;
     overflow: hidden;
 }
@@ -513,7 +513,7 @@ article {
     transition: .3s;
 }
 .slide-button a:hover:after {
-    width: 100%%;
+    width: 100%;
     z-index: -1;
 }
 
@@ -533,7 +533,7 @@ article {
     padding: 0;
     transition: 0.3s ease-in-out;
     background: var(--accent-bg);
-    border-radius: 4%%;
+    border-radius: 4%;
     z-index:0;
     overflow: hidden;
 }
@@ -632,7 +632,7 @@ html.is-animating .transition-fade {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%%;
+    width: 100%;
     height: 3px;
     background: var(--accent);
     z-index: 9999;
@@ -652,7 +652,7 @@ html.is-animating .transition-fade {
         align-items: center;
     }
     .wrapper {
-        width: 95%%;
+        width: 95%;
         margin-left: 0;
     }
 
@@ -665,7 +665,7 @@ html.is-animating .transition-fade {
         justify-content: space-around;
         align-items: center;
         height: 100vh;
-        width: 100%%;
+        width: 100%;
         background: var(--bg);
         margin-right: 0;
         position: relative;
@@ -674,15 +674,15 @@ html.is-animating .transition-fade {
 
     /* main logo */
     .logo_bg-container {
-        padding: 10%% 0 15px;
+        padding: 10% 0 15px;
     }
     .logo_bg {
         width: 200px;
         height: 200px;
     }
     .logo {
-        width: 85%%;
-        height: 85%%;
+        width: 85%;
+        height: 85%;
         margin-top: 15px;
         margin-left: 15px;
     }
@@ -715,10 +715,10 @@ html.is-animating .transition-fade {
         margin: 2px 0;
     }
     .nav-item-list-container {
-        width: 100%%;
+        width: 100%;
     }
     .nav-item-list-line {
-        width: 70%%;
+        width: 70%;
     }
 
     /* for scroll animation */
@@ -731,7 +731,7 @@ html.is-animating .transition-fade {
         width: 60px;
         height: 60px;
         border: none;
-        border-radius: 50%%;
+        border-radius: 50%;
         background: linear-gradient(145deg, var(--shadow-light), var(--shadow-dark));
         box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
         position: relative;
@@ -750,24 +750,24 @@ html.is-animating .transition-fade {
         transform: rotate(-45deg);
     }
     @keyframes down {
-        0%% {
+        0% {
             transform: translate(0);
         }
-        20%% {
+        20% {
             transform: translateY(15px);
         }
-        40%% {
+        40% {
             transform: translate(0);
         }
     }
     @-webkit-keyframes down {
-        0%% {
+        0% {
             transform: translate(0);
         }
-        20%% {
+        20% {
             transform: translateY(15px);
         }
-        40%% {
+        40% {
             transform: translate(0);
         }
     }
@@ -777,15 +777,15 @@ html.is-animating .transition-fade {
     ---- ARTICLE ----
     --------------- */
     article {
-        width: 100%%;
+        width: 100%;
         margin: 0;
-        padding: 8%% 0 8%% 20px;
+        padding: 8% 0 8% 20px;
     }
 
     /* for Bio
     ------------------------------- */
     .timeline {
-        margin-top: 4%%;
+        margin-top: 4%;
     }
     .timeline-date {
         position: relative;
@@ -818,7 +818,7 @@ html.is-animating .transition-fade {
         padding-left: 12px;
     }
     .sub-subtitle-container {
-        margin-bottom: 2%%;
+        margin-bottom: 2%;
     }
     .sub-subtitle {
         font-size: 18px;
@@ -828,7 +828,7 @@ html.is-animating .transition-fade {
         font-size: 14px;
     }
     .subtitle-container {
-        margin-bottom: 2%%;
+        margin-bottom: 2%;
     }
     .subtitle-container .subtitle-en {
         font-size: 18px;
