@@ -88,6 +88,8 @@ img {
 #home {
   display: flex;
   justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* ----------
@@ -102,6 +104,10 @@ nav {
   margin-right: 5%;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* main logo */
