@@ -28,7 +28,7 @@ import LanguageToggle from "./LanguageToggle.svelte";
       <div class="mt-5 flex flex-row items-center justify-center gap-4">
         {KeisukeConfig.socialLinks.map((item) => (
           <a href={item.link} target="_blank" rel="noopener noreferrer" class="social-link">
-            <Icon name={item.icon} size={28} />
+            <Icon name={item.icon} size={34} />
           </a>
         ))}
       </div>
@@ -43,7 +43,7 @@ import LanguageToggle from "./LanguageToggle.svelte";
     {
       KeisukeConfig.navigators.map((nav) => (
         <a href={nav.href} class="nav-item" target={nav.href.startsWith('http') ? '_blank' : undefined} rel={nav.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-          {nav.icon && <Icon name={nav.icon} size={22} class="nav-icon" />}
+          {nav.icon && <Icon name={nav.icon} size={26} class="nav-icon" />}
           <span data-i18n-key={nav.nameKey}>{i18n(nav.nameKey)}</span>
         </a>
       ))
@@ -59,13 +59,13 @@ import LanguageToggle from "./LanguageToggle.svelte";
       <Icon
         id="sidebar-theme-icon-light"
         name="line-md:moon-alt-to-sunny-outline-loop-transition"
-        size={22}
+        size={26}
         class="hidden"
       />
       <Icon
         id="sidebar-theme-icon-dark"
         name="line-md:sunny-outline-to-moon-alt-loop-transition"
-        size={22}
+        size={26}
         class="hidden"
       />
     </button>
@@ -90,7 +90,7 @@ import LanguageToggle from "./LanguageToggle.svelte";
   }
 
   .avatar-wrapper {
-    @apply aspect-square w-40 overflow-hidden rounded-full;
+    @apply aspect-square w-48 overflow-hidden rounded-full;
   }
 
   .avatar {
@@ -98,13 +98,13 @@ import LanguageToggle from "./LanguageToggle.svelte";
   }
 
   .username {
-    @apply text-center text-2xl font-bold text-[var(--text-color)];
+    @apply text-center text-3xl font-bold text-[var(--text-color)];
     font-family: var(--brand-font);
     letter-spacing: 0.02em;
   }
 
   .slogan {
-    @apply text-center text-sm text-[var(--text-color-lighten)];
+    @apply text-center text-base text-[var(--text-color-lighten)];
     font-family: var(--primary-font);
   }
 
@@ -126,7 +126,7 @@ import LanguageToggle from "./LanguageToggle.svelte";
     @apply hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)];
     font-family: var(--primary-font);
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .nav-icon {
@@ -134,7 +134,7 @@ import LanguageToggle from "./LanguageToggle.svelte";
   }
 
   .theme-btn {
-    @apply flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text-color)] transition-all;
+    @apply flex h-11 w-11 items-center justify-center rounded-lg text-[var(--text-color)] transition-all;
     @apply hover:bg-[var(--primary-color-hover)] hover:text-[var(--primary-color)];
   }
 </style>
