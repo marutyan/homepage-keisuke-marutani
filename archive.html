@@ -22,6 +22,9 @@
   <meta property="og:description" content="Keisuke Marutani — Education and career timeline" />
   <meta property="og:type" content="website" />
 
+  <!-- CSS Reset (ress) -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,188 +49,144 @@
   </script>
 </head>
 <body>
-  <div class="site-wrapper">
+  <div id="home">
 
-    <!-- ========== Desktop Sidebar ========== -->
+    <!-- ===== Navigation Column ===== -->
     <nav class="nav-column">
-      <div class="sidebar-inner">
-        <div class="avatar-container">
-          <img src="https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp" alt="Keisuke Marutani" />
-        </div>
-        <h2 class="profile-name">Keisuke Marutani</h2>
-        <p class="profile-sign">Computer Vision &amp; Deep Learning</p>
-
-        <div class="social-links">
-          <a href="https://github.com/marutyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <iconify-icon icon="line-md:github-loop"></iconify-icon>
-          </a>
-          <a href="https://www.linkedin.com/in/keisuke-marutani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <iconify-icon icon="mdi:linkedin"></iconify-icon>
-          </a>
-          <a href="https://x.com/marutyan_D_road" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
-            <iconify-icon icon="mdi:twitter"></iconify-icon>
-          </a>
+      <div class="affiliate-container">
+        <div class="logo_bg-container affiliate-container-item">
+          <div class="logo_bg">
+            <h1>
+              <a href="index.html">
+                <img class="logo" src="https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp" alt="Keisuke Marutani" />
+              </a>
+            </h1>
+          </div>
         </div>
 
-        <div class="neu-divider"></div>
+        <h2 class="bio-myname affiliate-container-item">Keisuke Marutani</h2>
+        <p class="bio-belongings affiliate-container-item">Computer Vision &amp; Deep Learning</p>
 
-        <ul class="nav-list">
-          <li>
-            <a href="index.html">
+        <ul class="list-inline affiliate-container-item">
+          <li class="list-inline-item">
+            <a href="https://github.com/marutyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <iconify-icon icon="line-md:github-loop"></iconify-icon>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/keisuke-marutani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <iconify-icon icon="mdi:linkedin"></iconify-icon>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://x.com/marutyan_D_road" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <iconify-icon icon="mdi:twitter"></iconify-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-item-list-container">
+        <div class="nav-item-list-line"></div>
+        <ul class="nav-item-list">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
               <iconify-icon icon="heroicons:home-solid"></iconify-icon>
               <span>Home</span>
             </a>
           </li>
-          <li>
-            <a href="archive.html">
+          <li class="nav-item">
+            <a class="nav-link" href="archive.html">
               <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
               <span>Timeline</span>
             </a>
           </li>
-          <li>
-            <a href="https://github.com/marutyan/homepage-keisuke-marutani" target="_blank" rel="noopener noreferrer">
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/marutyan/homepage-keisuke-marutani" target="_blank" rel="noopener noreferrer">
               <iconify-icon icon="line-md:github-loop"></iconify-icon>
               <span>GitHub</span>
             </a>
           </li>
         </ul>
+        <div class="nav-item-list-line"></div>
+      </div>
 
-        <div class="neu-divider"></div>
+      <div class="toggle-row">
+        <button type="button" data-theme-toggle class="toggle-btn" aria-label="Toggle theme">
+          <iconify-icon id="theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
+          <iconify-icon id="theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
+        </button>
+        <a href="archive.ja.html" class="lang-link">JA</a>
+      </div>
 
-        <div class="toggle-row">
-          <button type="button" data-theme-toggle class="toggle-btn" aria-label="Toggle theme">
-            <iconify-icon id="theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
-            <iconify-icon id="theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
-          </button>
-          <a href="archive.ja.html" class="lang-link">JA</a>
-        </div>
+      <div class="scroll-vector-container">
+        <div class="scroll-vector"></div>
       </div>
     </nav>
 
-    <!-- ========== Mobile Hero ========== -->
-    <div class="mobile-hero">
-      <div class="sidebar-inner">
-        <div class="avatar-container">
-          <img src="https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp" alt="Keisuke Marutani" />
+    <!-- ===== Article Column ===== -->
+    <article id="swup-content" class="transition-fade">
+
+      <div class="wrapper animate-in delay-1">
+        <div class="subtitle-container">
+          <div class="subtitle-line"></div>
+          <h2 class="subtitle">Timeline</h2>
         </div>
-        <h2 class="profile-name">Keisuke Marutani</h2>
-        <p class="profile-sign">Computer Vision &amp; Deep Learning</p>
-
-        <div class="social-links">
-          <a href="https://github.com/marutyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <iconify-icon icon="line-md:github-loop"></iconify-icon>
-          </a>
-          <a href="https://www.linkedin.com/in/keisuke-marutani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <iconify-icon icon="mdi:linkedin"></iconify-icon>
-          </a>
-          <a href="https://x.com/marutyan_D_road" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
-            <iconify-icon icon="mdi:twitter"></iconify-icon>
-          </a>
-        </div>
-
-        <div class="neu-divider"></div>
-
-        <ul class="nav-list">
-          <li>
-            <a href="index.html">
-              <iconify-icon icon="heroicons:home-solid"></iconify-icon>
-              <span>Home</span>
-            </a>
+        <ul class="short-cv timeline content-list">
+          <li class="scroll-reveal">
+            <p class="timeline-date">2025</p>
+            <div class="timeline-content-wrapper">
+              <div class="timeline-content end">
+                <h3>Kindai University — Current</h3>
+                <p>Faculty of Science and Engineering, Department of Information Science. Researching Computer Vision and Deep Learning (RT-DETR, YOLO).</p>
+              </div>
+            </div>
           </li>
-          <li>
-            <a href="archive.html">
-              <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
-              <span>Timeline</span>
-            </a>
+          <li class="scroll-reveal">
+            <p class="timeline-date">2024</p>
+            <div class="timeline-content-wrapper">
+              <div class="timeline-content end">
+                <h3>Kindai University — Enrolled</h3>
+                <p>Started undergraduate studies in Information Science.</p>
+              </div>
+            </div>
           </li>
-          <li>
-            <a href="https://github.com/marutyan/homepage-keisuke-marutani" target="_blank" rel="noopener noreferrer">
-              <iconify-icon icon="line-md:github-loop"></iconify-icon>
-              <span>GitHub</span>
-            </a>
+          <li class="scroll-reveal">
+            <p class="timeline-date">2021</p>
+            <div class="timeline-content-wrapper">
+              <div class="timeline-content end">
+                <h3>High School — Graduated</h3>
+                <p>Graduated from high school. Developed an early interest in programming and mathematics.</p>
+              </div>
+            </div>
+          </li>
+          <li class="scroll-reveal">
+            <p class="timeline-date">2018</p>
+            <div class="timeline-content-wrapper">
+              <div class="timeline-content end">
+                <h3>High School — Enrolled</h3>
+                <p>Began high school education.</p>
+              </div>
+            </div>
+          </li>
+          <li class="scroll-reveal">
+            <p class="timeline-date">2015</p>
+            <div class="timeline-content-wrapper">
+              <div class="timeline-content end">
+                <h3>Middle School — Graduated</h3>
+                <p>Completed middle school education.</p>
+              </div>
+            </div>
           </li>
         </ul>
-
-        <div class="neu-divider"></div>
-
-        <div class="toggle-row">
-          <button type="button" data-theme-toggle class="toggle-btn" aria-label="Toggle theme">
-            <iconify-icon id="m-theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
-            <iconify-icon id="m-theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
-          </button>
-          <a href="archive.ja.html" class="lang-link">JA</a>
-        </div>
       </div>
-
-      <div class="scroll-indicator">
-        <div class="scroll-arrow"></div>
-      </div>
-    </div>
-
-    <!-- ========== Content ========== -->
-    <article id="swup-content" class="content-area transition-fade">
-
-      <h1 class="page-title animate-in delay-1">Timeline</h1>
-
-      <div class="section-heading animate-in delay-2">
-        <iconify-icon icon="heroicons:clock"></iconify-icon>
-        <h2>Education &amp; Career</h2>
-      </div>
-
-      <div class="timeline">
-        <!-- 2025 -->
-        <div class="timeline-entry scroll-reveal">
-          <span class="timeline-year">2025</span>
-          <div class="timeline-card">
-            <h3>Kindai University — Current</h3>
-            <p>Faculty of Science and Engineering, Department of Information Science. Researching Computer Vision and Deep Learning (RT-DETR, YOLO).</p>
-          </div>
-        </div>
-
-        <!-- 2024 -->
-        <div class="timeline-entry scroll-reveal">
-          <span class="timeline-year">2024</span>
-          <div class="timeline-card">
-            <h3>Kindai University — Enrolled</h3>
-            <p>Started undergraduate studies in Information Science.</p>
-          </div>
-        </div>
-
-        <!-- 2021 -->
-        <div class="timeline-entry scroll-reveal">
-          <span class="timeline-year">2021</span>
-          <div class="timeline-card">
-            <h3>High School — Graduated</h3>
-            <p>Graduated from high school. Developed an early interest in programming and mathematics.</p>
-          </div>
-        </div>
-
-        <!-- 2018 -->
-        <div class="timeline-entry scroll-reveal">
-          <span class="timeline-year">2018</span>
-          <div class="timeline-card">
-            <h3>High School — Enrolled</h3>
-            <p>Began high school education.</p>
-          </div>
-        </div>
-
-        <!-- 2015 -->
-        <div class="timeline-entry scroll-reveal">
-          <span class="timeline-year">2015</span>
-          <div class="timeline-card">
-            <h3>Middle School — Graduated</h3>
-            <p>Completed middle school education.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer class="site-footer">
-        <p>&copy; 2026 Keisuke Marutani All Rights Reserved.</p>
-      </footer>
 
     </article>
   </div>
+
+  <footer>
+    <p><small>&copy; 2026 Keisuke Marutani. All Rights Reserved.</small></p>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>

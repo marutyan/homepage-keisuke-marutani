@@ -24,12 +24,6 @@
     var iconDark = document.getElementById("theme-icon-dark");
     if (iconLight) iconLight.style.display = theme === "light" ? "inline-block" : "none";
     if (iconDark) iconDark.style.display = theme === "dark" ? "inline-block" : "none";
-
-    // Duplicate for mobile
-    var mIconLight = document.getElementById("m-theme-icon-light");
-    var mIconDark = document.getElementById("m-theme-icon-dark");
-    if (mIconLight) mIconLight.style.display = theme === "light" ? "inline-block" : "none";
-    if (mIconDark) mIconDark.style.display = theme === "dark" ? "inline-block" : "none";
   }
 
   // Apply theme immediately (before DOM ready to prevent flash)
@@ -54,6 +48,23 @@
 
     elements.forEach(function (el) {
       observer.observe(el);
+    });
+  }
+
+  /* ----- Update lang-link href after Swup navigation ----- */
+  function updateLangLinks() {
+    var path = window.location.pathname;
+    var filename = path.split('/').pop() || 'index.html';
+    var isJa = filename.includes('.ja.');
+    var langLinks = document.querySelectorAll('.lang-link');
+    langLinks.forEach(function (link) {
+      if (isJa) {
+        link.href = filename.replace('.ja.html', '.html');
+        link.textContent = 'EN';
+      } else {
+        link.href = filename.replace('.html', '.ja.html');
+        link.textContent = 'JA';
+      }
     });
   }
 
@@ -99,6 +110,7 @@
         // Re-apply theme after new page content loads
         applyTheme(getPreferredTheme());
         initAnimations();
+        updateLangLinks();
 
         // Re-bind theme toggle buttons on new page
         var newButtons = document.querySelectorAll("[data-theme-toggle]");
