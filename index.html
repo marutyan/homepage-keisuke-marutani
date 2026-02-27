@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marutyan's Portfolio</title>
+  <meta name="description" content="Keisuke Marutani — Computer Vision & Deep Learning researcher. Portfolio and timeline." />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_images/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon_images/site.webmanifest" />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#eef0f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#2d2d30" media="(prefers-color-scheme: dark)" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="Marutyan's Portfolio" />
+  <meta property="og:description" content="Keisuke Marutani — Computer Vision & Deep Learning" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Iconify (same icons as before: line-md, heroicons, mdi) -->
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+  <!-- Swup (page transitions) -->
+  <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Theme: apply before render to prevent flash -->
+  <script>
+    (function(){
+      var t = localStorage.getItem("theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <!-- ========== Desktop Sidebar ========== -->
+    <nav class="nav-column">
+      <div class="sidebar-inner">
+        <!-- Avatar -->
+        <div class="avatar-container">
+          <img src="https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp" alt="Keisuke Marutani" />
+        </div>
+
+        <!-- Name -->
+        <h2 class="profile-name">Keisuke Marutani</h2>
+        <p class="profile-sign">Computer Vision &amp; Deep Learning</p>
+
+        <!-- Social Icons -->
+        <div class="social-links">
+          <a href="https://github.com/marutyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <iconify-icon icon="line-md:github-loop"></iconify-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/keisuke-marutani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <iconify-icon icon="mdi:linkedin"></iconify-icon>
+          </a>
+          <a href="https://x.com/marutyan_D_road" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
+            <iconify-icon icon="mdi:twitter"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="neu-divider"></div>
+
+        <!-- Navigation -->
+        <ul class="nav-list">
+          <li>
+            <a href="index.html">
+              <iconify-icon icon="heroicons:home-solid"></iconify-icon>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="archive.html">
+              <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
+              <span>Timeline</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/marutyan/homepage-keisuke-marutani" target="_blank" rel="noopener noreferrer">
+              <iconify-icon icon="line-md:github-loop"></iconify-icon>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="neu-divider"></div>
+
+        <!-- Theme & Language -->
+        <div class="toggle-row">
+          <button type="button" data-theme-toggle class="toggle-btn" aria-label="Toggle theme">
+            <iconify-icon id="theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
+            <iconify-icon id="theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
+          </button>
+          <a href="index.ja.html" class="lang-link">JA</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== Mobile Hero (full-screen profile) ========== -->
+    <div class="mobile-hero">
+      <div class="sidebar-inner">
+        <div class="avatar-container">
+          <img src="https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp" alt="Keisuke Marutani" />
+        </div>
+        <h2 class="profile-name">Keisuke Marutani</h2>
+        <p class="profile-sign">Computer Vision &amp; Deep Learning</p>
+
+        <div class="social-links">
+          <a href="https://github.com/marutyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <iconify-icon icon="line-md:github-loop"></iconify-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/keisuke-marutani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <iconify-icon icon="mdi:linkedin"></iconify-icon>
+          </a>
+          <a href="https://x.com/marutyan_D_road" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
+            <iconify-icon icon="mdi:twitter"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="neu-divider"></div>
+
+        <ul class="nav-list">
+          <li>
+            <a href="index.html">
+              <iconify-icon icon="heroicons:home-solid"></iconify-icon>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="archive.html">
+              <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
+              <span>Timeline</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/marutyan/homepage-keisuke-marutani" target="_blank" rel="noopener noreferrer">
+              <iconify-icon icon="line-md:github-loop"></iconify-icon>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="neu-divider"></div>
+
+        <div class="toggle-row">
+          <button type="button" data-theme-toggle class="toggle-btn" aria-label="Toggle theme">
+            <iconify-icon id="m-theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
+            <iconify-icon id="m-theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
+          </button>
+          <a href="index.ja.html" class="lang-link">JA</a>
+        </div>
+      </div>
+
+      <!-- Scroll down indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+
+    <!-- ========== Content ========== -->
+    <article id="swup-content" class="content-area transition-fade">
+
+      <h1 class="page-title animate-in delay-1">Marutyan's Portfolio</h1>
+
+      <!-- About Me heading -->
+      <div class="section-heading animate-in delay-2">
+        <iconify-icon icon="heroicons:user-circle"></iconify-icon>
+        <h2>About Me</h2>
+      </div>
+
+      <!-- Affiliation -->
+      <div class="neu-card animate-in delay-3">
+        <div class="section-heading">
+          <iconify-icon icon="heroicons:academic-cap"></iconify-icon>
+          <h2>Affiliation</h2>
+        </div>
+        <p style="font-size:1.1rem; font-weight:500;">Kindai University</p>
+        <p class="label">Faculty of Science and Engineering, Department of Information Science</p>
+        <p class="label">Undergraduate Student</p>
+      </div>
+
+      <!-- BIO -->
+      <div class="neu-card animate-in delay-4">
+        <div class="section-heading">
+          <iconify-icon icon="heroicons:identification"></iconify-icon>
+          <h2>BIO</h2>
+        </div>
+        <p style="margin-bottom:0.75rem;">
+          I am an undergraduate student at Kindai University, majoring in Information Science.
+          My research focuses on <strong>Computer Vision</strong> and <strong>Deep Learning</strong>,
+          with a particular interest in real-time object detection models such as RT-DETR and YOLO series.
+        </p>
+        <p>
+          I work primarily with Python in an Ubuntu environment, using frameworks like PyTorch and OpenCV
+          for my research and development projects.
+        </p>
+      </div>
+
+      <!-- Research Interests -->
+      <div class="neu-card animate-in delay-5">
+        <div class="section-heading">
+          <iconify-icon icon="heroicons:beaker"></iconify-icon>
+          <h2>Research Interests</h2>
+        </div>
+        <ul class="interest-list">
+          <li><span class="dot"></span><span>Real-time object detection (RT-DETR, YOLO series)</span></li>
+          <li><span class="dot"></span><span>Deep learning architectures for visual recognition</span></li>
+          <li><span class="dot"></span><span>Computer Vision applications and image processing</span></li>
+        </ul>
+      </div>
+
+      <!-- Skills -->
+      <div class="neu-card animate-in delay-6">
+        <div class="section-heading">
+          <iconify-icon icon="heroicons:wrench-screwdriver"></iconify-icon>
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div>
+            <h3>Languages</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">C/C++</span>
+            </div>
+          </div>
+          <div>
+            <h3>Frameworks</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">OpenCV</span>
+            </div>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Linux (Ubuntu)</span>
+            </div>
+          </div>
+          <div>
+            <h3>Research</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">RT-DETR</span>
+              <span class="skill-chip">YOLO</span>
+              <span class="skill-chip">Object Detection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>&copy; 2026 Keisuke Marutani All Rights Reserved.</p>
+      </footer>
+
+    </article><!-- /swup-content -->
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
