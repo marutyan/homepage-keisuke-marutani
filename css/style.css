@@ -92,6 +92,8 @@ button {
   display: flex;
   min-height: 100vh;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 /* --- Sidebar (nav-column) --- */
