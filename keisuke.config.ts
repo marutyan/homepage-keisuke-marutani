@@ -40,7 +40,7 @@ const KeisukeConfig: Configuration = {
     },
     {
       icon: "mdi:linkedin",
-      link: "https://www.linkedin.com/in/keisuke-marutani-b91368354/",
+      link: "https://www.linkedin.com/in/keisuke-marutani/",
     },
     {
       icon: "mdi:twitter",
