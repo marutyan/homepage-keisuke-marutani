@@ -3,6 +3,7 @@ import Base from "./BaseLayout.astro";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
+import KeisukeConfig from "../../keisuke.config";
 ---
 
 <Base>
@@ -19,6 +20,7 @@ import SideBar from "../components/SideBar.astro";
 
     <!-- Scrollable right content -->
     <div class="content-column">
+      <h1 class="page-title">{KeisukeConfig.title}</h1>
       <main class="content-area onload-animation">
         <slot />
       </main>
@@ -41,10 +43,16 @@ import SideBar from "../components/SideBar.astro";
 
   .content-column {
     @apply w-full min-w-0 pt-20;
-    @apply lg:w-3/4 lg:pt-16 lg:pb-8;
+    @apply lg:w-3/4 lg:pt-32 lg:pb-8;
   }
 
   .content-area {
     @apply space-y-6;
+  }
+
+  .page-title {
+    @apply mb-8 text-4xl font-bold text-[var(--text-color)];
+    font-family: var(--brand-font);
+    letter-spacing: 0.02em;
   }
 </style>
