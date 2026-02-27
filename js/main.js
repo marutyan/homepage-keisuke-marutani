@@ -86,12 +86,13 @@
     // Initialize animations & scroll reveal
     initAnimations();
 
-    // Swup initialization
+    // Swup initialization (skip lang-switch links via data-no-swup)
     if (typeof Swup !== "undefined") {
       var swup = new Swup({
         containers: ["#swup-content"],
         animationSelector: '[class*="transition-"]',
         cache: true,
+        linkSelector: 'a[href]:not([target="_blank"]):not([data-no-swup]):not(.lang-link)',
       });
 
       swup.hooks.on("content:replace", function () {
