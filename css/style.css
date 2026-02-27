@@ -6,7 +6,7 @@
 
 /* ----- CSS Variables (Light Theme) ----- */
 :root {
-  --bg: #eef0f3;
+  /* --bg: #eef0f3; */
   --shadow-dark: #bec0c2;
   --shadow-light: #ffffff;
   --text: #432;
@@ -102,8 +102,7 @@ nav {
 #home {
     display: flex;
     justify-content: space-between;
-    max-width: 1280px;
-    margin: 0 auto;
+    min-height: 100vh;
 }
 
 /* main logo */
