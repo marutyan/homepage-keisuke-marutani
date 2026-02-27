@@ -16,14 +16,17 @@ const KeisukeConfig: Configuration = {
     {
       nameKey: I18nKeys.nav_bar_home,
       href: "/",
+      icon: "heroicons:home-solid",
     },
     {
       nameKey: I18nKeys.nav_bar_archive,
       href: "/archive",
+      icon: "heroicons:clock-solid",
     },
     {
       nameKey: I18nKeys.nav_bar_github,
       href: "https://github.com/marutyan/homepage-keisuke-marutani",
+      icon: "line-md:github-loop",
     },
   ],
 

@@ -59,8 +59,11 @@ const navCount = KeisukeConfig.navigators.length;
       {
         KeisukeConfig.navigators.map((nav) => (
           <li>
-            <a href={nav.href} class="mobile-nav-item flex items-center justify-between py-1">
-              <span data-i18n-key={nav.nameKey}>{i18n(nav.nameKey)}</span>
+            <a href={nav.href} class="mobile-nav-item flex items-center justify-between py-1" target={nav.href.startsWith('http') ? '_blank' : undefined} rel={nav.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+              <span class="flex items-center gap-3">
+                {nav.icon && <Icon name={nav.icon} size={20} class="text-[var(--text-color-lighten)]" />}
+                <span data-i18n-key={nav.nameKey}>{i18n(nav.nameKey)}</span>
+              </span>
               <Icon name="cuida:caret-right-outline" class="text-[var(--text-color-lighten)]" />
             </a>
           </li>
