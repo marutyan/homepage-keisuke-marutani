@@ -4,7 +4,9 @@ import BaseHead from "../components/BaseHead.astro";
 ---
 
 <html lang={KeisukeConfig.locale}>
-  <BaseHead />
+  <head>
+    <BaseHead />
+  </head>
   <body class="overflow-y-hidden">
     <slot />
   </body>

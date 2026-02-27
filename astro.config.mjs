@@ -36,6 +36,7 @@ export default defineConfig({
     sitemap(),
     AstroPWA({
       registerType: "autoUpdate",
+      injectRegister: false,
       manifest: {
         name: KeisukeConfig.title,
         short_name: KeisukeConfig.brandTitle,
