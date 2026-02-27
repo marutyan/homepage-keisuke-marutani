@@ -29,22 +29,22 @@ import SideBar from "../components/SideBar.astro";
 
 <style>
   .site-wrapper {
-    @apply mx-auto flex w-full max-w-6xl flex-col px-0;
-    @apply lg:flex-row lg:gap-8 lg:px-8;
+    @apply flex w-full flex-col;
+    @apply lg:flex-row;
     min-height: 100vh;
   }
 
   .sidebar-column {
     @apply hidden;
-    @apply lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[280px] lg:shrink-0 lg:items-center lg:justify-center lg:overflow-y-auto lg:py-6;
+    @apply lg:fixed lg:left-0 lg:top-0 lg:flex lg:h-screen lg:w-[280px] lg:items-center lg:justify-center lg:overflow-y-auto lg:py-6;
   }
 
   .content-column {
     @apply w-full min-w-0 pt-20;
-    @apply lg:flex-1 lg:py-8;
+    @apply lg:ml-[280px] lg:flex-1 lg:py-8;
   }
 
   .content-area {
-    @apply space-y-6;
+    @apply mx-auto max-w-4xl space-y-6 lg:px-8;
   }
 </style>
