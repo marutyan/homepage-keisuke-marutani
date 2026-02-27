@@ -2,7 +2,7 @@ import I18nKeys from "./src/locales/keys";
 import type { Configuration } from "./src/types/config";
 
 const KeisukeConfig: Configuration = {
-  title: "Keisuke's Portfolio",
+  title: "Marutyan's Portfolio",
   subTitle: "Computer Vision & Deep Learning",
   brandTitle: "Keisuke",
 
@@ -36,15 +36,15 @@ const KeisukeConfig: Configuration = {
   socialLinks: [
     {
       icon: "line-md:github-loop",
-      link: "https://github.com/marutyan/homepage-keisuke-marutani",
+      link: "https://github.com/marutyan",
     },
     {
       icon: "mdi:linkedin",
-      link: "https://linkedin.com/in/keisuke-marutani",
+      link: "https://www.linkedin.com/in/keisuke-marutani-b91368354/",
     },
     {
       icon: "mdi:twitter",
-      link: "https://twitter.com/keisuke_m",
+      link: "https://x.com/marutyan_D_road",
     },
   ],
 
