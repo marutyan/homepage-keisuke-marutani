@@ -746,14 +746,6 @@ html.is-animating .transition-fade {
         margin-left: 0;
     }
 
-    /* Hide nav on timeline pages (mobile) */
-    body.is-timeline nav {
-        display: none;
-    }
-    body.is-timeline #home {
-        min-height: auto;
-    }
-
     /* ----------
     ---- NAV ----
     ------------- */
@@ -948,6 +940,14 @@ html.is-animating .transition-fade {
     --------------- */
     footer {
         padding: 12px 0;
+    }
+
+    /* Hide nav on timeline pages (mobile) — must be last to override */
+    body.is-timeline nav {
+        display: none !important;
+    }
+    body.is-timeline #home {
+        min-height: auto;
     }
 }
 
