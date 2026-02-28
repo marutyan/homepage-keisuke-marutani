@@ -328,7 +328,7 @@ nav {
 --------------- */
 article {
     flex: 1;
-    margin: 50px 0 30px;
+    margin: 50px 0 0px;
 }
 
 .interests {
@@ -356,6 +356,7 @@ article {
     font-size: 16px;
     color: var(--text-light);
     margin-top: 25px;
+    text-align: center;
 }
 .timeline-content-wrapper {
     width: 75%;
