@@ -334,6 +334,9 @@ article {
 .interests {
     list-style-position: inside;
 }
+.interests .other-list-item {
+    font-size: 1.1rem;
+}
 
 
 
@@ -741,6 +744,14 @@ html.is-animating .transition-fade {
     .wrapper {
         width: 95%;
         margin-left: 0;
+    }
+
+    /* Hide nav on timeline pages (mobile) */
+    body.is-timeline nav {
+        display: none;
+    }
+    body.is-timeline #home {
+        min-height: auto;
     }
 
     /* ----------
