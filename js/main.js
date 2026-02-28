@@ -70,9 +70,8 @@
 
   /* ----- Toggle nav visibility on mobile for timeline pages ----- */
   function updateTimelineClass() {
-    var path = window.location.pathname;
-    var filename = path.split('/').pop() || 'index.html';
-    var isTimeline = filename.startsWith('archive');
+    var href = window.location.href;
+    var isTimeline = href.indexOf('archive') !== -1;
     if (isTimeline) {
       document.body.classList.add('is-timeline');
     } else {
@@ -139,6 +138,7 @@
 
       // On mobile, scroll to article after page transition completes
       swup.hooks.on("page:view", function () {
+        updateTimelineClass();
         if (window.innerWidth <= 900) {
           var article = document.getElementById("swup-content");
           if (article) {
