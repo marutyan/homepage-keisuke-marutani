@@ -357,6 +357,7 @@ article {
     color: var(--text-light);
     margin-top: 25px;
     text-align: center;
+    line-height: 1.2;
 }
 .timeline-content-wrapper {
     width: 75%;
