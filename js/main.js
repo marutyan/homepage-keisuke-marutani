@@ -112,6 +112,16 @@
         initAnimations();
         updateLangLinks();
 
+        // On mobile, scroll to article content so user notices page change
+        if (window.innerWidth <= 600) {
+          var article = document.getElementById("swup-content");
+          if (article) {
+            setTimeout(function () {
+              article.scrollIntoView({ behavior: "smooth" });
+            }, 50);
+          }
+        }
+
         // Re-bind theme toggle buttons on new page
         var newButtons = document.querySelectorAll("[data-theme-toggle]");
         newButtons.forEach(function (btn) {
