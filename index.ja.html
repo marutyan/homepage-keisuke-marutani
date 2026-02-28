@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>まるちゃんのポートフォリオ</title>
-  <meta name="description" content="丸谷 圭佑 — コンピュータビジョン＆ディープラーニング研究者。ポートフォリオと経歴。" />
+  <title>Marutyan's Portfolio</title>
+  <meta name="description" content="丸谷 啓輔 — Computer Vision & Deep Learning研究者。ポートフォリオとTimeline。" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_images/favicon-32x32.png" />
@@ -18,8 +18,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- OGP -->
-  <meta property="og:title" content="まるちゃんのポートフォリオ" />
-  <meta property="og:description" content="丸谷 圭佑 — コンピュータビジョン＆ディープラーニング" />
+  <meta property="og:title" content="Marutyan's Portfolio" />
+  <meta property="og:description" content="丸谷 啓輔 — Computer Vision & Deep Learning研究者" />
   <meta property="og:type" content="website" />
 
   <!-- CSS Reset (ress) -->
@@ -58,16 +58,21 @@
           <div class="logo_bg">
             <h1>
               <a href="index.ja.html">
-                <img class="logo" src="https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp" alt="丸谷 圭佑" />
+                <img class="logo" src="images/mainicon.webp" alt="丸谷 啓輔" />
               </a>
             </h1>
           </div>
         </div>
 
-        <h2 class="bio-myname affiliate-container-item">丸谷 圭佑</h2>
-        <p class="bio-belongings affiliate-container-item">コンピュータビジョン＆ディープラーニング</p>
+        <h2 class="bio-myname affiliate-container-item">丸谷 啓輔</h2>
+        <p class="bio-belongings affiliate-container-item">Computer Vision & Deep Learning</p>
 
         <ul class="list-inline affiliate-container-item">
+          <li class="list-inline-item">
+            <a href="mailto:keisuke.marutani@kindai.ac.jp" aria-label="Email">
+              <iconify-icon icon="mdi:email"></iconify-icon>
+            </a>
+          </li>
           <li class="list-inline-item">
             <a href="https://github.com/marutyan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <iconify-icon icon="line-md:github-loop"></iconify-icon>
@@ -92,13 +97,19 @@
           <li class="nav-item">
             <a class="nav-link" href="index.ja.html">
               <iconify-icon icon="heroicons:home-solid"></iconify-icon>
-              <span>ホーム</span>
+              <span>Home</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="archive.ja.html">
               <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
-              <span>経歴</span>
+              <span>Timeline</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.kindai.ac.jp/informatics/education/laboratory/habe/" target="_blank" rel="noopener noreferrer">
+              <img class="nav-lab-icon" src="images/lab.svg" alt="CVLab." />
+              <span>CVLab.</span>
             </a>
           </li>
           <li class="nav-item">
@@ -127,52 +138,64 @@
     <!-- ===== Article Column ===== -->
     <article id="swup-content" class="transition-fade">
 
-      <!-- 自己紹介 -->
+      <!-- About me -->
       <div class="wrapper animate-in delay-1">
         <div class="subtitle-container">
           <div class="subtitle-line"></div>
-          <h2 class="subtitle">自己紹介</h2>
+          <h2 class="subtitle">About me</h2>
         </div>
         <p>
-          <strong>近畿大学</strong> 理工学部 情報学科に在籍する学部生です。
+          近畿大学情報学部情報学科B4 <strong>コンピュータビジョン研究室</strong> 
         </p>
         <p>
-          <strong>コンピュータビジョン</strong>と<strong>ディープラーニング</strong>を研究しており、
-          特にRT-DETRやYOLOシリーズなどのリアルタイム物体検出モデルに関心があります。
-          主にUbuntu環境でPythonを使い、PyTorchやOpenCVなどのフレームワークを活用しています。
+          <strong>コンピュータビジョン</strong>と<strong>深層学習</strong>に関心があり、物体検出タスクと追跡タスクについて研究。
         </p>
+        <p>
+          学生団体の代表や地域格差是正のためのNPO法人の事業部長も歴任。
+        </p>
+        <p>
+          <strong>研究分野に関する議論や、コラボレーションの機会を求めています。ぜひお気軽にご連絡ください！！！</strong>
+        </p>
+          
       </div>
 
-      <!-- 研究関心 -->
+      <!-- Research Interests -->
       <div class="wrapper animate-in delay-2">
         <div class="subtitle-container">
           <div class="subtitle-line"></div>
-          <h2 class="subtitle">研究関心</h2>
+          <h2 class="subtitle">Research Interests</h2>
         </div>
         <ul class="interests content-list">
-          <li class="other-list-item">リアルタイム物体検出（RT-DETR, YOLOシリーズ）</li>
-          <li class="other-list-item">視覚認識のためのディープラーニングアーキテクチャ</li>
-          <li class="other-list-item">コンピュータビジョンの応用と画像処理</li>
+          <li class="other-list-item"><strong>物体検出(DETR, YOLO)
+          </strong></li>
+          <li class="other-list-item"><strong>物体追跡(ByteTrack, SORT)</strong></li>
+          <li class="other-list-item"><strong>深度推定</strong></li>
         </ul>
       </div>
 
-      <!-- スキル -->
+      <!-- Publications -->
       <div class="wrapper animate-in delay-3">
         <div class="subtitle-container">
           <div class="subtitle-line"></div>
-          <h2 class="subtitle">スキル</h2>
+          <h2 class="subtitle">Publications</h2>
+        </div>
+        <p>Coming Soon</p>
+      </div>
+
+      <!-- Skills -->
+      <div class="wrapper animate-in delay-4">
+        <div class="subtitle-container">
+          <div class="subtitle-line"></div>
+          <h2 class="subtitle">Skills</h2>
         </div>
         <ul class="skill-list content-list">
           <li class="other-list-item">Python</li>
-          <li class="other-list-item">C/C++</li>
           <li class="other-list-item">PyTorch</li>
           <li class="other-list-item">OpenCV</li>
           <li class="other-list-item">Git</li>
-          <li class="other-list-item">Docker</li>
           <li class="other-list-item">Linux (Ubuntu)</li>
-          <li class="other-list-item">RT-DETR</li>
           <li class="other-list-item">YOLO</li>
-          <li class="other-list-item">物体検出</li>
+          <li class="other-list-item">DETR</li>
         </ul>
       </div>
 
@@ -180,7 +203,7 @@
   </div>
 
   <footer>
-    <p><small>&copy; 2026 丸谷 圭佑. All Rights Reserved.</small></p>
+    <p><small>&copy; 2026 丸谷 啓輔. All Rights Reserved.</small></p>
   </footer>
 
   <script src="js/main.js"></script>
