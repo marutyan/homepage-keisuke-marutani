@@ -112,16 +112,6 @@
         initAnimations();
         updateLangLinks();
 
-        // On mobile, scroll to article content so user notices page change
-        if (window.innerWidth <= 600) {
-          var article = document.getElementById("swup-content");
-          if (article) {
-            setTimeout(function () {
-              article.scrollIntoView({ behavior: "smooth" });
-            }, 50);
-          }
-        }
-
         // Re-bind theme toggle buttons on new page
         var newButtons = document.querySelectorAll("[data-theme-toggle]");
         newButtons.forEach(function (btn) {
@@ -131,6 +121,19 @@
             applyTheme(next);
           });
         });
+      });
+
+      // On mobile, scroll to article after page transition completes
+      swup.hooks.on("page:view", function () {
+        if (window.innerWidth <= 900) {
+          var article = document.getElementById("swup-content");
+          if (article) {
+            setTimeout(function () {
+              var top = article.getBoundingClientRect().top + window.scrollY;
+              window.scrollTo({ top: top, behavior: "smooth" });
+            }, 150);
+          }
+        }
       });
     }
   });
