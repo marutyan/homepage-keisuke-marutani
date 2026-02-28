@@ -112,7 +112,7 @@
     // Swup initialization (skip lang-switch links via data-no-swup)
     if (typeof Swup !== "undefined") {
       var swup = new Swup({
-        containers: ["#swup-content"],
+        containers: ["#home"],
         animationSelector: '[class*="transition-"]',
         cache: true,
         linkSelector: 'a[href]:not([target="_blank"]):not([data-no-swup]):not(.lang-link)',
