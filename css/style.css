@@ -648,6 +648,11 @@ article {
     background: var(--accent-bg);
 }
 
+/* Back to Home — hidden on desktop */
+.back-to-home {
+    display: none;
+}
+
 
 /* --------------
 ---- FOOTER ----
@@ -948,6 +953,40 @@ html.is-animating .transition-fade {
     }
     body.is-timeline #home {
         min-height: auto;
+    }
+
+    /* Back to Home button (mobile timeline) */
+    .back-to-home {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0 10px;
+    }
+    .back-to-home-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 14px;
+        background: #eef0f3;
+        box-shadow: 4px 4px 8px #bec0c2, -4px -4px 8px #ffffff;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--accent);
+        transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .back-to-home-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 12px #bec0c2, -6px -6px 12px #ffffff;
+    }
+    .back-to-home-link iconify-icon {
+        font-size: 20px;
+    }
+    [data-theme="dark"] .back-to-home-link {
+        background: var(--nav-bg);
+        box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+    }
+    [data-theme="dark"] .back-to-home-link:hover {
+        box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
     }
 }
 
