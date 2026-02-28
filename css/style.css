@@ -592,6 +592,39 @@ article {
 
 /* for Skills
 ------------------------------- */
+.skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+.skill-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    background: #eef0f3;
+    box-shadow: 4px 4px 8px #bec0c2, -4px -4px 8px #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+.skill-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px #bec0c2, -6px -6px 12px #ffffff;
+}
+.skill-chip iconify-icon {
+    font-size: 22px;
+}
+[data-theme="dark"] .skill-chip {
+    background: var(--nav-bg);
+    box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+[data-theme="dark"] .skill-chip:hover {
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+}
 .skill-logo {
     width: 22px;
     height: 22px;
