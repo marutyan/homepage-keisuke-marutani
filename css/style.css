@@ -11,13 +11,13 @@
   --shadow-light: #ffffff;
   --text: #432;
   --text-light: #686870;
-  --accent: rgb(145, 180, 200);
-  --accent-bg: rgb(215, 234, 244);
+  --accent: #5bb7db;
+  --accent-bg: #ddf1fa;
   --timeline-border: #eef0f3;
-  --footer-bg: #432;
+  --footer-bg: #3a8fb7;
   --footer-text: #fff;
-  --sub-subtitle-line: #caccce;
-  --sub-subtitle-text: #505052;
+  --sub-subtitle-line: #7ec8e3;
+  --sub-subtitle-text: #3a8fb7;
   --button-bg: #ccc;
   --button-hover: #999;
 
@@ -27,26 +27,57 @@
 
 /* ----- Dark Theme ----- */
 [data-theme="dark"] {
-  --bg: #2d2d30;
-  --shadow-dark: #232326;
-  --shadow-light: #37373a;
+  --bg: #121212;
+  --nav-bg: #1a1a2e;
+  --shadow-dark: #0d0d1e;
+  --shadow-light: #25253e;
   --text: #e0e0e0;
   --text-light: #a0a0a0;
-  --accent: rgb(120, 170, 200);
-  --accent-bg: rgba(120, 170, 200, 0.15);
-  --timeline-border: #37373a;
-  --footer-bg: #1e1e20;
-  --footer-text: #a0a0a0;
-  --sub-subtitle-line: #505052;
-  --sub-subtitle-text: #a0a0a0;
-  --button-bg: #444;
-  --button-hover: #666;
+  --accent: #6bc4e8;
+  --accent-bg: rgba(107, 196, 232, 0.18);
+  --timeline-border: #25253e;
+  --footer-bg: #1a3a5c;
+  --footer-text: #a0dff5;
+  --sub-subtitle-line: #4a90a8;
+  --sub-subtitle-text: #6bc4e8;
+  --button-bg: #2a2a40;
+  --button-hover: #3a3a55;
+}
+[data-theme="dark"] .subtitle-line {
+    border-left-color: #5bb7db;
+}
+[data-theme="dark"] .subtitle {
+    color: #7ecce8;
+}
+[data-theme="dark"] .affiliate-container .bio-belongings {
+    color: #6bc4e8;
+}
+[data-theme="dark"] .list-inline-item a,
+[data-theme="dark"] .list-inline-item button {
+    color: #6bc4e8;
+}
+[data-theme="dark"] .list-inline-item a:hover,
+[data-theme="dark"] .list-inline-item button:hover {
+    color: #a0dff5;
+}
+[data-theme="dark"] .nav-item-list .nav-item .nav-link {
+    color: #7ecce8;
+}
+[data-theme="dark"] .nav-item-list .nav-item .nav-link:hover {
+    color: #a0dff5;
+}
+[data-theme="dark"] .nav-item-list .nav-item span {
+    color: #7ecce8;
+}
+[data-theme="dark"] .nav-item-list .nav-item span:hover {
+    color: #a0dff5;
 }
 /* ------------------
 ---- Common Part ----
 ------------------ */
 html {
     font-size: 100%;
+    zoom: 1.5;
 }
 body {
     font-family: var(--font-primary);
@@ -73,20 +104,21 @@ img {
 .subtitle-line {
     height: 40px;
     width: 0;
-    border-left: thick solid var(--text);
+    border-left: thick solid #3a8fb7;
     align-self: center;
 }
 .subtitle {
     font-size: 32px;
     padding-left: 16px;
     align-self: center;
+    color: #2e7d9e;
 }
 
 /* ----------
 ---- NAV ----
 ------------- */
 nav {
-    width: 40%;
+    width: 30%;
     min-width: 220px;
     height: 100vh;
     font-family: var(--font-brand);
@@ -96,7 +128,7 @@ nav {
     top: 0;
 }
 [data-theme="dark"] nav {
-    background: var(--bg);
+    background: var(--nav-bg);
 }
 
 #home {
@@ -120,7 +152,7 @@ nav {
     box-shadow: inset 5px 5px 8px #bec0c2, inset -5px -5px 8px #ffffff;
 }
 [data-theme="dark"] .logo_bg {
-    background: var(--bg);
+    background: var(--nav-bg);
     box-shadow: inset 5px 5px 8px var(--shadow-dark), inset -5px -5px 8px var(--shadow-light);
 }
 .logo_bg h1 {
@@ -151,6 +183,7 @@ nav {
     text-align: center;
     font-weight: 500;
     font-size: 15px;
+    color: #3a8fb7;
 }
 /* related links logo for me */
 .list-inline{
@@ -168,7 +201,7 @@ nav {
 }
 .list-inline-item a,
 .list-inline-item button {
-    color: var(--text);
+    color: #3a8fb7;
     transition: color 0.2s;
     background: none;
     border: none;
@@ -176,10 +209,10 @@ nav {
 }
 .list-inline-item a:hover,
 .list-inline-item button:hover {
-    color: var(--accent);
+    color: #5bb7db;
 }
 .list-inline-item iconify-icon {
-    font-size: 26px;
+    font-size: 30px;
 }
 #email-text{
     display: none;
@@ -211,22 +244,28 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: var(--text);
+    color: #2e7d9e;
     transition: color 0.2s;
 }
 .nav-item-list .nav-item .nav-link:hover {
-    color: var(--accent);
+    color: #5bb7db;
 }
 .nav-item-list .nav-item iconify-icon {
     font-size: 22px;
     margin-right: 6px;
 }
+.nav-lab-icon {
+    height: 22px;
+    width: auto;
+    margin-right: 6px;
+    object-fit: contain;
+}
 .nav-item-list .nav-item span {
-    color: var(--text);
+    color: #2e7d9e;
     transition: color 0.2s;
 }
 .nav-item-list .nav-item span:hover {
-    color: var(--accent);
+    color: #5bb7db;
 }
 /* for line */
 .nav-item-list-line {
@@ -237,7 +276,7 @@ nav {
     box-shadow: inset 2px 2px 4.5px #bec0c2, inset -2px -2px 4.5px #ffffff;
 }
 [data-theme="dark"] .nav-item-list-line {
-    background: var(--bg);
+    background: var(--nav-bg);
     box-shadow: inset 2px 2px 4.5px var(--shadow-dark), inset -2px -2px 4.5px var(--shadow-light);
 }
 /* toggle row (theme + lang) */
@@ -289,6 +328,7 @@ nav {
 ---- ARTICLE ----
 --------------- */
 article {
+    flex: 1;
     margin: 50px 0 100px;
 }
 
@@ -656,6 +696,9 @@ html.is-animating .transition-fade {
 --------------- Mobile version ---------------
 ------------------------------------------- */
 @media (max-width: 600px) {
+    html {
+        zoom: 1;
+    }
     #home {
         display: flex;
         flex-direction: column;
@@ -682,7 +725,7 @@ html.is-animating .transition-fade {
         top: auto;
     }
     [data-theme="dark"] nav {
-        background: var(--bg);
+        background: var(--nav-bg);
     }
 
     /* main logo */
@@ -792,6 +835,7 @@ html.is-animating .transition-fade {
     article {
         width: 100%;
         margin: 0;
+        margin-left: 0;
         padding: 8% 0 8% 20px;
     }
 
