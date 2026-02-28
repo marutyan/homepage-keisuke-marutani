@@ -68,6 +68,18 @@
     });
   }
 
+  /* ----- Toggle nav visibility on mobile for timeline pages ----- */
+  function updateTimelineClass() {
+    var path = window.location.pathname;
+    var filename = path.split('/').pop() || 'index.html';
+    var isTimeline = filename.startsWith('archive');
+    if (isTimeline) {
+      document.body.classList.add('is-timeline');
+    } else {
+      document.body.classList.remove('is-timeline');
+    }
+  }
+
   /* ----- Re-run animations after Swup page transition ----- */
   function initAnimations() {
     // Re-trigger fade-in-up animations
@@ -96,6 +108,7 @@
 
     // Initialize animations & scroll reveal
     initAnimations();
+    updateTimelineClass();
 
     // Swup initialization (skip lang-switch links via data-no-swup)
     if (typeof Swup !== "undefined") {
@@ -111,6 +124,7 @@
         applyTheme(getPreferredTheme());
         initAnimations();
         updateLangLinks();
+        updateTimelineClass();
 
         // Re-bind theme toggle buttons on new page
         var newButtons = document.querySelectorAll("[data-theme-toggle]");
