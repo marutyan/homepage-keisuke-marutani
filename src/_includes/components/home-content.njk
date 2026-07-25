@@ -1,35 +1,36 @@
 {% set contentData = home.locales[locale] %}
 <!-- About Me -->
-<div class="wrapper animate-in delay-1">
+<section class="wrapper about-section animate-in delay-1" aria-labelledby="about-heading">
   <div class="subtitle-container">
-    <div class="subtitle-line"></div>
-    <h2 class="subtitle">{{ contentData.aboutHeading }}</h2>
+    <div class="subtitle-line" aria-hidden="true"></div>
+    <h2 id="about-heading" class="subtitle">{{ contentData.aboutHeading }}</h2>
   </div>
-  {% for paragraph in contentData.aboutParagraphs %}
-    <p>
-      {{ paragraph | safe }}
-    </p>
-  {% endfor %}
-</div>
+  <div class="about-copy">
+    {% for paragraph in contentData.aboutParagraphs %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+  <p class="about-comment">{{ contentData.aboutComment }}</p>
+</section>
 
 <!-- Research Interests -->
-<div class="wrapper animate-in delay-2">
+<section class="wrapper animate-in delay-2" aria-labelledby="interests-heading">
   <div class="subtitle-container">
-    <div class="subtitle-line"></div>
-    <h2 class="subtitle">Research Interests</h2>
+    <div class="subtitle-line" aria-hidden="true"></div>
+    <h2 id="interests-heading" class="subtitle">Research Interests</h2>
   </div>
   <ul class="interests content-list">
     {% for interest in contentData.interests %}
       <li class="other-list-item"><strong>{{ interest }}</strong></li>
     {% endfor %}
   </ul>
-</div>
+</section>
 
 <!-- Publications -->
-<div class="wrapper animate-in delay-3">
+<section class="wrapper animate-in delay-3" aria-labelledby="publications-heading">
   <div class="subtitle-container">
-    <div class="subtitle-line"></div>
-    <h2 class="subtitle">Publications</h2>
+    <div class="subtitle-line" aria-hidden="true"></div>
+    <h2 id="publications-heading" class="subtitle">Publications</h2>
   </div>
   <ul class="publication-list">
     {% for publication in publications | sortByYearDesc %}
@@ -50,20 +51,20 @@
       </li>
     {% endfor %}
   </ul>
-</div>
+</section>
 
 <!-- Skills -->
-<div class="wrapper animate-in delay-4">
+<section class="wrapper skills-section animate-in delay-4" aria-labelledby="skills-heading">
   <div class="subtitle-container">
-    <div class="subtitle-line"></div>
-    <h2 class="subtitle">Skills</h2>
+    <div class="subtitle-line" aria-hidden="true"></div>
+    <h2 id="skills-heading" class="subtitle">Skills</h2>
   </div>
   <div class="skill-chips">
     {% for skill in site.skills %}
       <div class="skill-chip scroll-reveal">
-        <iconify-icon icon="{{ skill.icon }}"{% if skill.accent %} style="color:var(--accent)"{% endif %}></iconify-icon>
+        <iconify-icon icon="{{ skill.icon }}"{% if skill.accent %} style="color:var(--accent)"{% endif %} aria-hidden="true"></iconify-icon>
         <span>{{ skill.name }}</span>
       </div>
     {% endfor %}
   </div>
-</div>
+</section>
