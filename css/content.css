@@ -1,4 +1,28 @@
+.about-copy {
+  max-width: var(--content-max-width);
+}
+
+.about-copy p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.about-copy p + p {
+  margin-top: 0.65rem;
+}
+
+.about-comment {
+  max-width: var(--content-max-width);
+  margin: 1.25rem 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--accent);
+  color: var(--accent-title);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .interests {
+  max-width: var(--content-max-width);
   list-style-position: inside;
 }
 
@@ -34,6 +58,7 @@
 }
 
 .publication-list {
+  max-width: var(--content-max-width);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -139,6 +164,21 @@
 }
 
 @media (max-width: 600px) {
+  .about-copy p {
+    line-height: 1.75;
+  }
+
+  .about-copy p + p {
+    margin-top: 0.55rem;
+  }
+
+  .about-comment {
+    margin-top: 1rem;
+    padding-left: 0.75rem;
+    border-left-width: 3px;
+    line-height: 1.65;
+  }
+
   .publication-item {
     grid-template-columns: 0.5rem minmax(0, 1fr);
     column-gap: 0.65rem;
