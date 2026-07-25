@@ -36,9 +36,23 @@ const JAPANESE_COMMENT =
 const ENGLISH_COMMENT =
   "I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!";
 
-const ADDED_INTERESTS = {
-  en: ['Segmentation', 'Autonomous Driving', 'World Models', 'Physical AI'],
-  ja: ['セグメンテーション', '自動運転', 'ワールドモデル', 'フィジカルAI'],
+const GITHUB_INTERESTS = {
+  en: [
+    'Object Detection (DETR, YOLO)',
+    'Multi-Object Tracking (ByteTrack, SORT)',
+    'Segmentation',
+    'Autonomous Driving',
+    'World Models',
+    'Physical AI',
+  ],
+  ja: [
+    '物体検出（DETR, YOLO）',
+    '複数物体追跡（ByteTrack, SORT）',
+    'セグメンテーション',
+    '自動運転',
+    'ワールドモデル',
+    'フィジカルAI',
+  ],
 };
 
 async function readFacts(page) {
@@ -87,15 +101,13 @@ test('personal comment reads as normal copy with sufficient separation', async (
   expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(30);
 });
 
-for (const [locale, interests] of Object.entries(ADDED_INTERESTS)) {
-  test(`${locale} Research Interests include profile README topics`, async ({ page }) => {
+for (const [locale, expectedInterests] of Object.entries(GITHUB_INTERESTS)) {
+  test(`${locale} Research Interests match the GitHub profile exactly`, async ({ page }) => {
     await page.goto(locale === 'ja' ? '/index.ja.html' : '/index.html', {
       waitUntil: 'domcontentloaded',
     });
 
     const renderedInterests = await page.locator('.interests li').allTextContents();
-    for (const interest of interests) {
-      expect(renderedInterests.map((item) => item.trim())).toContain(interest);
-    }
+    expect(renderedInterests.map((item) => item.trim())).toEqual(expectedInterests);
   });
 }
