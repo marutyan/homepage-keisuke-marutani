@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 145px;
+  width: 9.0625rem;
 }
 
 .button-container-3 {
@@ -11,12 +11,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 225px;
+  width: 14.0625rem;
 }
 
 .small-logo {
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
 }
 
 .pdf-button a span,
@@ -32,7 +32,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 0.25rem 0 0;
-  height: 28px;
+  height: 1.75rem;
   padding: 0;
   transition: 0.3s ease-in-out;
   background: var(--button-bg);
@@ -42,11 +42,11 @@
 }
 
 .pdf-button a {
-  width: 65px;
+  width: 4.0625rem;
 }
 
 .slide-button a {
-  width: 70px;
+  width: 4.375rem;
 }
 
 .pdf-button a::after,
@@ -79,8 +79,8 @@
   justify-content: space-around;
   align-items: center;
   margin: 0.25rem 0 0;
-  height: 28px;
-  width: 70px;
+  height: 1.75rem;
+  width: 4.375rem;
   padding: 0;
   transition: 0.3s ease-in-out;
   background: var(--accent-bg);

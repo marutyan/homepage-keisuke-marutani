@@ -1,6 +1,5 @@
 html {
-  font-size: 100%;
-  zoom: 1.5;
+  font-size: 150%;
 }
 
 body {
@@ -26,7 +25,7 @@ img {
 
 #swup-content {
   flex: 1;
-  margin: 50px 0 0;
+  margin: 3.125rem 0 0;
 }
 
 .bio-myname {
@@ -45,15 +44,15 @@ img {
 }
 
 .subtitle-line {
-  height: 40px;
+  height: 2.5rem;
   width: 0;
-  border-left: thick solid var(--accent-line);
+  border-left: 0.3125rem solid var(--accent-line);
   align-self: center;
 }
 
 .subtitle {
-  font-size: 32px;
-  padding-left: 16px;
+  font-size: 2rem;
+  padding-left: 1rem;
   align-self: center;
   color: var(--accent-title);
 }
@@ -74,15 +73,15 @@ img {
 }
 
 .sub-subtitle-line {
-  height: 30px;
+  height: 1.875rem;
   width: 0;
-  border-left: thick solid var(--sub-subtitle-line);
+  border-left: 0.3125rem solid var(--sub-subtitle-line);
   align-self: center;
 }
 
 .sub-subtitle {
   color: var(--sub-subtitle-text);
-  font-size: 22px;
-  padding-left: 16px;
+  font-size: 1.375rem;
+  padding-left: 1rem;
   align-self: center;
 }

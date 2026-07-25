@@ -16,9 +16,9 @@
 }
 
 :where(a, button, [tabindex]):focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: 0.1875rem solid var(--accent);
+  outline-offset: 0.1875rem;
+  border-radius: 0.25rem;
 }
 
 #swup-content:focus {
