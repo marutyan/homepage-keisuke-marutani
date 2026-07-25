@@ -1,8 +1,8 @@
 {% set contentData = timeline.locales[locale] %}
-<div class="wrapper animate-in delay-1">
+<section class="wrapper biography-section animate-in delay-1" aria-labelledby="biography-heading">
   <div class="subtitle-container">
-    <div class="subtitle-line"></div>
-    <h2 class="subtitle">Biography</h2>
+    <div class="subtitle-line" aria-hidden="true"></div>
+    <h2 id="biography-heading" class="subtitle">Biography</h2>
   </div>
   <ul class="short-cv timeline content-list">
     {% for item in contentData.biography %}
@@ -17,38 +17,41 @@
       </li>
     {% endfor %}
   </ul>
-</div>
+</section>
 
-<!-- Others -->
-<div class="wrapper animate-in delay-2">
-  <div class="sub-subtitle-container">
-    <div class="sub-subtitle-line"></div>
-    <h3 class="sub-subtitle">Others</h3>
+<section class="wrapper activities-section animate-in delay-2" aria-labelledby="activities-heading">
+  <div class="sub-subtitle-container activities-heading-container">
+    <div class="sub-subtitle-line" aria-hidden="true"></div>
+    <h2 id="activities-heading" class="sub-subtitle">{{ contentData.activitiesHeading }}</h2>
   </div>
-  <ul class="short-cv timeline content-list">
-    {% for item in contentData.others %}
-      <li class="scroll-reveal">
-        <p class="timeline-date">{{ item.date | safe }}</p>
-        <div class="timeline-content-wrapper">
-          <div class="timeline-content end">
-            <h3>{{ item.title }}</h3>
-            {% if item.description %}<p>{{ item.description }}</p>{% endif %}
-          </div>
+
+  <div class="activity-card-list">
+    {% for item in contentData.activities %}
+      <article class="activity-card scroll-reveal">
+        <p class="activity-card-date">{{ item.date | safe }}</p>
+        <div class="activity-card-content">
+          <h3>{{ item.title }}</h3>
+          {% if item.description %}<p>{{ item.description }}</p>{% endif %}
         </div>
-      </li>
+      </article>
     {% endfor %}
-  </ul>
-</div>
-
-<!-- Internship -->
-<div class="wrapper animate-in delay-3">
-  <div class="sub-subtitle-container">
-    <div class="sub-subtitle-line"></div>
-    <h3 class="sub-subtitle">Internship</h3>
   </div>
-  <ul class="content-list">
-    {% for internship in contentData.internships %}
-      <li class="other-list-item scroll-reveal">{{ internship | safe }}</li>
-    {% endfor %}
-  </ul>
-</div>
+
+  <section class="internship-group" aria-labelledby="internships-heading">
+    <div class="internship-heading-row">
+      <span class="internship-heading-line" aria-hidden="true"></span>
+      <h3 id="internships-heading" class="internship-heading">{{ contentData.internshipsHeading }}</h3>
+    </div>
+    <ul class="internship-list">
+      {% for internship in contentData.internships %}
+        <li class="internship-item scroll-reveal">
+          <time class="internship-date" datetime="{{ internship.date }}">{{ internship.date }}</time>
+          <div class="internship-content">
+            <strong class="internship-title">{{ internship.title }}</strong>
+            <span class="internship-organization">{{ internship.organization }}</span>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</section>
