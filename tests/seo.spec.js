@@ -38,7 +38,7 @@ for (const pageDefinition of pages) {
     await page.goto(pageDefinition.path, { waitUntil: 'domcontentloaded' });
 
     await expect(page.locator('html')).toHaveAttribute('lang', pageDefinition.language);
-    await expect(page.locator('head title')).not.toHaveText('');
+    expect((await page.title()).trim().length).toBeGreaterThan(0);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S{20,}/);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', pageDefinition.canonical);
     await expect(page.locator(`link[rel="alternate"][hreflang="${pageDefinition.language}"]`)).toHaveAttribute(
