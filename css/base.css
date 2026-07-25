@@ -1,0 +1,84 @@
+html {
+  font-size: 100%;
+  zoom: 1.5;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+}
+
+#home {
+  display: flex;
+  justify-content: space-between;
+}
+
+article {
+  flex: 1;
+  margin: 50px 0 0;
+}
+
+.wrapper {
+  width: 90%;
+  margin-bottom: 6%;
+}
+
+.subtitle-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5%;
+}
+
+.subtitle-line {
+  height: 40px;
+  width: 0;
+  border-left: thick solid var(--accent-line);
+  align-self: center;
+}
+
+.subtitle {
+  font-size: 32px;
+  padding-left: 16px;
+  align-self: center;
+  color: var(--accent-title);
+}
+
+.content-list {
+  list-style-position: inside;
+}
+
+.content-list .other-list-item {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+.sub-subtitle-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5%;
+}
+
+.sub-subtitle-line {
+  height: 30px;
+  width: 0;
+  border-left: thick solid var(--sub-subtitle-line);
+  align-self: center;
+}
+
+.sub-subtitle {
+  color: var(--sub-subtitle-text);
+  font-size: 22px;
+  padding-left: 16px;
+  align-self: center;
+}
