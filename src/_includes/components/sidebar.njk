@@ -1,74 +1,74 @@
 {% set profile = site.profiles[locale] %}
-<nav class="nav-column">
+<aside class="nav-column">
   <div class="affiliate-container">
     <div class="logo_bg-container affiliate-container-item">
       <div class="logo_bg">
-        <h1>
-          <a href="{{ profile.homeUrl }}">
-            <img class="logo" src="images/mainicon.webp" alt="Keisuke Marutani" />
-          </a>
-        </h1>
+        <a href="{{ profile.homeUrl }}">
+          <img class="logo" src="images/mainicon.webp" width="150" height="150" alt="Keisuke Marutani" />
+        </a>
       </div>
     </div>
 
-    <h2 class="bio-myname affiliate-container-item">{{ profile.name }}</h2>
+    <h1 class="bio-myname affiliate-container-item">{{ profile.name }}</h1>
     <p class="bio-belongings affiliate-container-item">{{ profile.field }}</p>
 
     <ul class="list-inline affiliate-container-item">
       {% for link in site.socialLinks %}
         <li class="list-inline-item">
           <a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %} aria-label="{{ link.label }}">
-            <iconify-icon icon="{{ link.icon }}"></iconify-icon>
+            <iconify-icon icon="{{ link.icon }}" aria-hidden="true"></iconify-icon>
           </a>
         </li>
       {% endfor %}
     </ul>
   </div>
 
-  <div class="nav-item-list-container">
-    <div class="nav-item-list-line"></div>
-    <ul class="nav-item-list">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ profile.homeUrl }}">
-          <iconify-icon icon="heroicons:home-solid"></iconify-icon>
-          <span>Home</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ profile.timelineUrl }}">
-          <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
-          <span>Timeline</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ site.repositoryUrl }}" target="_blank" rel="noopener noreferrer">
-          <iconify-icon icon="line-md:github-loop"></iconify-icon>
-          <span>GitHub</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ site.laboratoryUrl }}" target="_blank" rel="noopener noreferrer">
-          <img class="nav-lab-icon" src="images/lab.svg" alt="CVLab." />
-          <span>CVLab.</span>
-        </a>
-      </li>
-    </ul>
-    <div class="nav-item-list-line"></div>
-  </div>
+  <nav class="site-navigation" aria-label="{{ profile.navigationLabel }}">
+    <div class="nav-item-list-container">
+      <div class="nav-item-list-line" aria-hidden="true"></div>
+      <ul class="nav-item-list">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ profile.homeUrl }}"{% if pageType == "home" %} aria-current="page"{% endif %}>
+            <iconify-icon icon="heroicons:home-solid" aria-hidden="true"></iconify-icon>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ profile.timelineUrl }}"{% if pageType == "timeline" %} aria-current="page"{% endif %}>
+            <iconify-icon icon="heroicons:clock-solid" aria-hidden="true"></iconify-icon>
+            <span>Timeline</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.repositoryUrl }}" target="_blank" rel="noopener noreferrer">
+            <iconify-icon icon="line-md:github-loop" aria-hidden="true"></iconify-icon>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.laboratoryUrl }}" target="_blank" rel="noopener noreferrer">
+            <img class="nav-lab-icon" src="images/lab.svg" width="22" height="22" alt="" aria-hidden="true" />
+            <span>CVLab.</span>
+          </a>
+        </li>
+      </ul>
+      <div class="nav-item-list-line" aria-hidden="true"></div>
+    </div>
+  </nav>
 
   <div class="toggle-row">
-    <button type="button" data-theme-toggle class="toggle-btn" aria-label="{{ profile.themeLabel }}">
-      <iconify-icon id="theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
-      <iconify-icon id="theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
+    <button type="button" data-theme-toggle class="toggle-btn" aria-label="{{ profile.themeLabel }}" aria-pressed="false">
+      <iconify-icon id="theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;" aria-hidden="true"></iconify-icon>
+      <iconify-icon id="theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;" aria-hidden="true"></iconify-icon>
     </button>
     {% if pageType == "timeline" %}
-      <a href="{{ profile.alternateTimelineUrl }}" class="lang-link">{{ profile.alternateLabel }}</a>
+      <a href="{{ profile.alternateTimelineUrl }}" class="lang-link" lang="{{ 'ja' if locale == 'en' else 'en' }}">{{ profile.alternateLabel }}</a>
     {% else %}
-      <a href="{{ profile.alternateHomeUrl }}" class="lang-link">{{ profile.alternateLabel }}</a>
+      <a href="{{ profile.alternateHomeUrl }}" class="lang-link" lang="{{ 'ja' if locale == 'en' else 'en' }}">{{ profile.alternateLabel }}</a>
     {% endif %}
   </div>
 
-  <div class="scroll-vector-container">
+  <div class="scroll-vector-container" aria-hidden="true">
     <div class="scroll-vector"></div>
   </div>
-</nav>
+</aside>
