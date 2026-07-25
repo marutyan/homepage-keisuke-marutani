@@ -43,18 +43,18 @@ test('theme selection persists after reload', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
 
-test('primary navigation and language switch remain available', async ({ page }) => {
+test('language switch and primary navigation remain available', async ({ page }) => {
   await openWithTheme(page, '/index.html', 'light');
 
   await Promise.all([
-    page.waitForURL(/archive\.html$/),
-    page.locator('a[href="archive.html"]:visible').first().click(),
+    page.waitForURL(/index\.ja\.html$/),
+    page.locator('.lang-link:visible').first().click(),
   ]);
-  await expect(page.getByRole('heading', { name: 'Biography' }).first()).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'About me' }).first()).toBeVisible();
 
   await Promise.all([
     page.waitForURL(/archive\.ja\.html$/),
-    page.locator('.lang-link:visible').first().click(),
+    page.locator('a[href="archive.ja.html"]:visible').first().click(),
   ]);
   await expect(page.getByRole('heading', { name: 'Biography' }).first()).toBeVisible();
 
