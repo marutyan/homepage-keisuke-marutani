@@ -15,7 +15,7 @@
   max-width: var(--content-max-width);
   margin: 1.25rem 0 0;
   padding-left: 1rem;
-  border-left: 4px solid var(--accent);
+  border-left: 0.25rem solid var(--accent);
   color: var(--accent-title);
   font-weight: 700;
   line-height: 1.7;
@@ -43,7 +43,7 @@
 
 .content-list .bib-item .paper-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.4;
   margin-bottom: 0.4rem;
 }
@@ -53,7 +53,7 @@
 }
 
 .content-list .bib-item .paper-info {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-light);
 }
 
@@ -74,7 +74,7 @@
 .publication-item + .publication-item {
   margin-top: 1.35rem;
   padding-top: 1.35rem;
-  border-top: 1px solid var(--divider);
+  border-top: 0.0625rem solid var(--divider);
 }
 
 .publication-marker {
@@ -91,7 +91,7 @@
 
 .publication-title {
   margin: 0 0 0.4rem;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -99,7 +99,7 @@
 .publication-authors,
 .publication-venue {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
@@ -145,7 +145,7 @@
 
 .content-list .other-item .other-item-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.4;
   margin-bottom: 0.2rem;
 }
@@ -155,7 +155,7 @@
 }
 
 .content-list .other-item .other-item-info {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-light);
 }
 
