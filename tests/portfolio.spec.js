@@ -8,10 +8,11 @@ const pages = [
 ];
 
 async function openWithTheme(page, path, theme) {
-  await page.addInitScript((selectedTheme) => {
+  await page.goto(path, { waitUntil: 'domcontentloaded' });
+  await page.evaluate((selectedTheme) => {
     window.localStorage.setItem('theme', selectedTheme);
   }, theme);
-  await page.goto(path, { waitUntil: 'domcontentloaded' });
+  await page.reload({ waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
   await expect(page.locator('#swup-content')).toBeVisible();
 }
