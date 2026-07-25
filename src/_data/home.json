@@ -6,10 +6,11 @@
       "ogDescription": "Keisuke Marutani — Computer Vision & Deep Learning",
       "aboutHeading": "About Me",
       "aboutParagraphs": [
-        "Undergrad student at <strong>Kindai University</strong>, Computer Science - <strong>Computer Vision Lab</strong>.",
-        "Interested in <strong>Computer Vision</strong> and <strong>Deep Learning</strong>, researching object detection and tracking tasks.",
-        "<strong>I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!</strong>"
+        "I am a fourth-year undergraduate student in the Department of Informatics at Kindai University and a member of the Computer Vision Laboratory.",
+        "My research interests include computer vision and deep learning, particularly object detection and multi-object tracking.",
+        "I am currently working on improving person detection under occlusion in crowded environments."
       ],
+      "aboutComment": "I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!",
       "interests": [
         "Object Detection (DETR, YOLO)",
         "Object Tracking (ByteTrack, SORT)",
@@ -22,10 +23,11 @@
       "ogDescription": "Keisuke Marutani — Computer Vision & Deep Learning Researcher",
       "aboutHeading": "About me",
       "aboutParagraphs": [
-        "近畿大学情報学部情報学科B4 <strong>コンピュータビジョン研究室</strong>",
-        "<strong>コンピュータビジョン</strong>と<strong>深層学習</strong>に関心があり、物体検出タスクと追跡タスクについて研究。",
-        "<strong>研究分野に関する議論や、コラボレーションの機会を求めています。ぜひお気軽にご連絡ください！！！</strong>"
+        "近畿大学情報学部情報学科の学部4年生で、コンピュータビジョン研究室に所属。",
+        "コンピュータビジョンと深層学習に関心があり、物体検出と物体追跡について研究。",
+        "現在は、混雑環境における遮蔽人物の検出精度向上に取り組んでいます。"
       ],
+      "aboutComment": "研究分野に関する議論や、コラボレーションの機会待ってます！！！ぜひお気軽にご連絡ください！！！",
       "interests": [
         "物体検出(DETR, YOLO)",
         "物体追跡(ByteTrack, SORT)",
