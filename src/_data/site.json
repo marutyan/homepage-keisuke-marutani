@@ -13,7 +13,9 @@
       "alternateHomeUrl": "index.ja.html",
       "alternateTimelineUrl": "archive.ja.html",
       "alternateLabel": "JA",
-      "themeLabel": "Toggle theme"
+      "themeLabel": "Toggle theme",
+      "navigationLabel": "Primary navigation",
+      "skipLabel": "Skip to main content"
     },
     "ja": {
       "htmlLang": "ja",
@@ -24,7 +26,9 @@
       "alternateHomeUrl": "index.html",
       "alternateTimelineUrl": "archive.html",
       "alternateLabel": "EN",
-      "themeLabel": "テーマ切替"
+      "themeLabel": "テーマ切替",
+      "navigationLabel": "主要ナビゲーション",
+      "skipLabel": "メインコンテンツへ移動"
     }
   },
   "socialLinks": [
