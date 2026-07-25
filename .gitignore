@@ -8,6 +8,13 @@ Thumbs.db
 *.swp
 *.swo
 
+# Node.js
+node_modules/
+
+# Playwright
+playwright-report/
+test-results/
+
 # Misc
 *.log
 clone/
