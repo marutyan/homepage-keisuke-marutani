@@ -1,7 +1,9 @@
 .nav-column {
   width: 30%;
   min-width: 13.75rem;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
+  align-self: stretch;
   font-family: var(--font-brand);
   background: var(--surface);
   margin-right: 5%;
