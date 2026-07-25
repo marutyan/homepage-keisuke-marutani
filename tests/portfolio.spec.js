@@ -38,6 +38,10 @@ async function stabilizeVisuals(page) {
       element.classList.add('is-visible');
     });
 
+    document.querySelectorAll('iconify-icon').forEach((icon) => {
+      icon.setAttribute('noobserver', '');
+    });
+
     if (document.fonts && document.fonts.ready) {
       await document.fonts.ready;
     }
