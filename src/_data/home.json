@@ -1,0 +1,41 @@
+{
+  "publicationTitle": "混雑環境下の人物検出に向けた遮蔽を考慮したクエリ選択",
+  "locales": {
+    "en": {
+      "pageTitle": "Marutyan's Portfolio",
+      "description": "Keisuke Marutani — Computer Vision & Deep Learning researcher. Portfolio and timeline.",
+      "ogDescription": "Keisuke Marutani — Computer Vision & Deep Learning",
+      "aboutHeading": "About Me",
+      "aboutParagraphs": [
+        "Undergrad student at <strong>Kindai University</strong>, Computer Science - <strong>Computer Vision Lab</strong>.",
+        "Interested in <strong>Computer Vision</strong> and <strong>Deep Learning</strong>, researching object detection and tracking tasks.",
+        "<strong>I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!</strong>"
+      ],
+      "interests": [
+        "Object Detection (DETR, YOLO)",
+        "Object Tracking (ByteTrack, SORT)",
+        "Depth Estimation"
+      ],
+      "publicationAuthors": "Keisuke Marutani (Kindai Univ.), Shintaro Takenaga (Sansan), Hitoshi Habe (Kindai Univ.)",
+      "publicationVenue": "The 29th Meeting on Image Recognition and Understanding (MIRU2026), IS3-119"
+    },
+    "ja": {
+      "pageTitle": "Marutyan's Portfolio",
+      "description": "keisuke marutani portfolio",
+      "ogDescription": "Keisuke Marutani — Computer Vision & Deep Learning Researcher",
+      "aboutHeading": "About me",
+      "aboutParagraphs": [
+        "近畿大学情報学部情報学科B4 <strong>コンピュータビジョン研究室</strong>",
+        "<strong>コンピュータビジョン</strong>と<strong>深層学習</strong>に関心があり、物体検出タスクと追跡タスクについて研究。",
+        "<strong>研究分野に関する議論や、コラボレーションの機会を求めています。ぜひお気軽にご連絡ください！！！</strong>"
+      ],
+      "interests": [
+        "物体検出(DETR, YOLO)",
+        "物体追跡(ByteTrack, SORT)",
+        "深度推定"
+      ],
+      "publicationAuthors": "丸谷啓輔（近畿大）, 竹長慎太朗（Sansan）, 波部斉（近畿大）",
+      "publicationVenue": "第29回 画像の認識・理解シンポジウム（MIRU2026）, IS3-119"
+    }
+  }
+}
