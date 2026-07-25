@@ -31,16 +31,24 @@
     <div class="subtitle-line"></div>
     <h2 class="subtitle">Publications</h2>
   </div>
-  <ul class="content-list">
-    <li class="bib-item">
-      <div class="paper-container">
-        <div class="paper-title">{{ home.publicationTitle }}</div>
-        <div class="paper-info-container">
-          <div class="paper-info">{{ contentData.publicationAuthors }}</div>
-          <div class="paper-info">{{ contentData.publicationVenue }}</div>
-        </div>
-      </div>
-    </li>
+  <ul class="publication-list">
+    {% for publication in publications | sortByYearDesc %}
+      <li class="publication-item" data-publication-year="{{ publication.year }}">
+        <span class="publication-marker" aria-hidden="true"></span>
+        <article class="publication-entry">
+          <h3 class="publication-title">{{ publication.title }}</h3>
+          <p class="publication-authors">{{ publication.authors[locale] }}</p>
+          <p class="publication-venue">{{ publication.venue[locale] }}</p>
+          {% if publication.links.length %}
+            <div class="publication-links">
+              {% for link in publication.links %}
+                <a class="publication-link" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </article>
+      </li>
+    {% endfor %}
   </ul>
 </div>
 
