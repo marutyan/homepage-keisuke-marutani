@@ -6,19 +6,19 @@
 
 .about-profile-row {
   display: grid;
-  grid-template-columns: 6.5rem minmax(0, 1fr);
-  column-gap: 1rem;
-  padding: 0.7rem 0;
-  border-bottom: 0.0625rem solid var(--divider);
+  grid-template-columns: 6.5em minmax(0, 1fr);
+  column-gap: 1em;
+  padding: 0.7em 0;
+  border-bottom: 1px solid var(--divider);
 }
 
 .about-profile-row:first-child {
-  border-top: 0.0625rem solid var(--divider);
+  border-top: 1px solid var(--divider);
 }
 
 .about-profile-label {
   color: var(--accent-title);
-  font-size: 0.875rem;
+  font-size: 0.875em;
   font-weight: 700;
   line-height: 1.7;
 }
@@ -32,7 +32,7 @@
 .about-comment {
   width: 100%;
   max-width: var(--prose-max-width);
-  margin: 1.75rem 0 0;
+  margin: 1.75em 0 0;
   padding: 0;
   border: 0;
   color: var(--text);
@@ -47,11 +47,11 @@
 }
 
 .interests .other-list-item {
-  font-size: 1.1rem;
+  font-size: 1em;
 }
 
 .content-list .bib-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5em;
   list-style-type: none;
 }
 
@@ -63,9 +63,9 @@
 
 .content-list .bib-item .paper-title {
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1.05em;
   line-height: 1.4;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.4em;
 }
 
 .content-list .bib-item .paper-info-container {
@@ -73,7 +73,7 @@
 }
 
 .content-list .bib-item .paper-info {
-  font-size: 0.875rem;
+  font-size: 0.85em;
   color: var(--text-light);
 }
 
@@ -83,21 +83,21 @@
 }
 
 .publication-year-group + .publication-year-group {
-  margin-top: 2rem;
+  margin-top: 2em;
 }
 
 .publication-year-heading {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.35rem;
+  gap: 0.85em;
+  margin-bottom: 0.35em;
 }
 
 .publication-year {
   flex: 0 0 auto;
   margin: 0;
   color: var(--accent-title);
-  font-size: 0.85rem;
+  font-size: 0.85em;
   font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1.4;
@@ -105,7 +105,7 @@
 
 .publication-year-line {
   flex: 1 1 auto;
-  height: 0.0625rem;
+  height: 1px;
   background: var(--divider);
 }
 
@@ -116,12 +116,12 @@
 }
 
 .publication-item {
-  padding: 0.9rem 0;
+  padding: 0.9em 0;
 }
 
 .publication-item + .publication-item {
-  margin-top: 0.35rem;
-  padding-top: 1.25rem;
+  margin-top: 0.35em;
+  padding-top: 1.25em;
 }
 
 .publication-entry {
@@ -129,8 +129,8 @@
 }
 
 .publication-title {
-  margin: 0 0 0.45rem;
-  font-size: 1.125rem;
+  margin: 0 0 0.45em;
+  font-size: 1.05em;
   font-weight: 700;
   line-height: 1.45;
 }
@@ -139,7 +139,7 @@
 .publication-venue {
   margin: 0;
   color: var(--text-light);
-  font-size: 0.875rem;
+  font-size: 0.85em;
   line-height: 1.55;
 }
 
@@ -152,23 +152,23 @@
 }
 
 .publication-venue {
-  margin-top: 0.2rem;
+  margin-top: 0.2em;
 }
 
 .publication-venue-prefix {
-  margin-right: 0.15rem;
+  margin-right: 0.15em;
 }
 
 .publication-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.55rem;
+  gap: 0.5em;
+  margin-top: 0.55em;
 }
 
 .publication-link {
   color: var(--accent-title);
-  font-size: 0.875rem;
+  font-size: 0.85em;
   font-weight: 600;
 }
 
@@ -177,11 +177,11 @@
 }
 
 .activity-wrapper .content-list {
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
 }
 
 .content-list .other-item {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.2em;
   list-style-type: none;
 }
 
@@ -193,9 +193,9 @@
 
 .content-list .other-item .other-item-title {
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1.05em;
   line-height: 1.4;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.2em;
 }
 
 .content-list .other-item .other-item-info-container {
@@ -203,7 +203,7 @@
 }
 
 .content-list .other-item .other-item-info {
-  font-size: 0.875rem;
+  font-size: 0.85em;
   color: var(--text-light);
 }
 
