@@ -70,12 +70,16 @@ for (const pageDefinition of pages) {
 test('theme selection persists after reload', async ({ page }) => {
   await openWithTheme(page, '/index.html', 'light');
 
-  await page.locator('[data-theme-toggle]:visible').first().click();
+  const themeButton = page.locator('[data-theme-toggle]:visible').first();
+  await expect(themeButton).toHaveAttribute('aria-pressed', 'false');
+  await themeButton.click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(themeButton).toHaveAttribute('aria-pressed', 'true');
   await expect.poll(() => page.evaluate(() => window.localStorage.getItem('theme'))).toBe('dark');
 
   await page.reload({ waitUntil: 'domcontentloaded' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.locator('[data-theme-toggle]:visible').first()).toHaveAttribute('aria-pressed', 'true');
 });
 
 test('theme toggle remains single-bound after repeated Swup navigation', async ({ page }) => {
@@ -120,4 +124,41 @@ test('language switch and primary navigation remain available', async ({ page })
     page.locator('a[href="index.ja.html"]:visible').first().click(),
   ]);
   await expect(page.getByRole('heading', { name: 'About me' }).first()).toBeVisible();
+});
+
+test('generated pages expose semantic landmarks and current navigation', async ({ page }) => {
+  await openWithTheme(page, '/index.html', 'light');
+
+  await expect(page.getByRole('complementary')).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible();
+  await expect(page.getByRole('main')).toBeVisible();
+  await expect(page.locator('a[href="index.html"][aria-current="page"]')).toHaveCount(1);
+
+  await Promise.all([
+    page.waitForURL(/archive\.html$/),
+    page.locator('a[href="archive.html"]:visible').first().click(),
+  ]);
+  await expect(page.locator('a[href="archive.html"][aria-current="page"]')).toHaveCount(1);
+});
+
+test('skip link is the first keyboard target', async ({ page }) => {
+  await openWithTheme(page, '/index.html', 'light');
+
+  await page.keyboard.press('Tab');
+  const skipLink = page.locator('.skip-link');
+  await expect(skipLink).toBeFocused();
+  await expect(skipLink).toBeVisible();
+
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#swup-content')).toBeFocused();
+});
+
+test('reduced motion reveals content without animation', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await openWithTheme(page, '/index.html', 'light');
+
+  const revealItems = page.locator('.scroll-reveal');
+  await expect(revealItems.first()).toHaveClass(/is-visible/);
+  await expect(revealItems.first()).toHaveCSS('opacity', '1');
+  await expect(revealItems.first()).toHaveCSS('transform', 'none');
 });
