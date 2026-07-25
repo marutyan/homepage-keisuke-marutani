@@ -23,7 +23,6 @@
       "interests": [
         "Object Detection (DETR, YOLO)",
         "Multi-Object Tracking (ByteTrack, SORT)",
-        "Depth Estimation",
         "Segmentation",
         "Autonomous Driving",
         "World Models",
@@ -53,7 +52,6 @@
       "interests": [
         "物体検出（DETR, YOLO）",
         "複数物体追跡（ByteTrack, SORT）",
-        "深度推定",
         "セグメンテーション",
         "自動運転",
         "ワールドモデル",
