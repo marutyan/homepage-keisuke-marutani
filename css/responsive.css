@@ -14,7 +14,7 @@
     margin-left: 0;
   }
 
-  nav {
+  .nav-column {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,7 +27,7 @@
     top: auto;
   }
 
-  [data-theme="dark"] nav {
+  [data-theme="dark"] .nav-column {
     background: var(--nav-bg);
   }
 
@@ -128,7 +128,7 @@
     40% { transform: translate(0); }
   }
 
-  article {
+  #swup-content {
     width: 100%;
     margin: 0;
     margin-left: 0;
@@ -209,7 +209,7 @@
     padding: 12px 0;
   }
 
-  body.is-timeline nav {
+  body.is-timeline .nav-column {
     display: none !important;
   }
 
