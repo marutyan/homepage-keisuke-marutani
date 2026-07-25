@@ -1,0 +1,69 @@
+.interests {
+  list-style-position: inside;
+}
+
+.interests .other-list-item {
+  font-size: 1.1rem;
+}
+
+.content-list .bib-item {
+  margin-bottom: 1.5rem;
+  list-style-type: none;
+}
+
+.content-list .bib-item .paper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.content-list .bib-item .paper-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.content-list .bib-item .paper-info-container {
+  line-height: 1.5;
+}
+
+.content-list .bib-item .paper-info {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.activity-wrapper .content-list {
+  margin-bottom: 2rem;
+}
+
+.content-list .other-item {
+  margin-bottom: 1.2rem;
+  list-style-type: none;
+}
+
+.content-list .other-item .other-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.content-list .other-item .other-item-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+.content-list .other-item .other-item-info-container {
+  line-height: 1.5;
+}
+
+.content-list .other-item .other-item-info {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.content-list .other-item a {
+  color: var(--text);
+}
