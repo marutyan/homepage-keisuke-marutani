@@ -13,6 +13,11 @@
     "email": "keisuke.marutani@kindai.ac.jp",
     "affiliation": "Kindai University",
     "affiliationJa": "近畿大学",
+    "sameAs": [
+      "https://github.com/marutyan",
+      "https://www.linkedin.com/in/keisuke-marutani/",
+      "https://x.com/marutyan_D_road"
+    ],
     "knowsAbout": [
       "Computer Vision",
       "Deep Learning",
