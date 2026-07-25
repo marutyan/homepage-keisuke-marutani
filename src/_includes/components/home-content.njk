@@ -22,9 +22,12 @@
     <div class="subtitle-line" aria-hidden="true"></div>
     <h2 id="interests-heading" class="subtitle">Research Interests</h2>
   </div>
-  <ul class="interests content-list">
+  <ul class="research-focus-list">
     {% for interest in contentData.interests %}
-      <li class="other-list-item"><strong>{{ interest }}</strong></li>
+      <li class="research-focus-item">
+        <span class="research-focus-index" aria-hidden="true">0{{ loop.index }}</span>
+        <strong class="research-focus-name">{{ interest }}</strong>
+      </li>
     {% endfor %}
   </ul>
 </section>

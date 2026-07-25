@@ -3,11 +3,11 @@ const { test, expect } = require('@playwright/test');
 const JAPANESE_FACTS = [
   {
     label: '所属',
-    value: '近畿大学 情報学部 情報学科 / コンピュータビジョン研究室',
+    value: '近畿大学 情報学部 情報学科（学部4年生）',
   },
   {
-    label: '学年',
-    value: '学部4年生',
+    label: '研究室',
+    value: '波部研究室',
   },
   {
     label: '研究内容',
@@ -18,11 +18,11 @@ const JAPANESE_FACTS = [
 const ENGLISH_FACTS = [
   {
     label: 'Affiliation',
-    value: 'Department of Informatics, Faculty of Informatics, Kindai University / Computer Vision Laboratory',
+    value: 'Computer Science @ Kindai University — Fourth-year undergraduate student',
   },
   {
-    label: 'Year',
-    value: 'Fourth-year undergraduate student',
+    label: 'Lab',
+    value: 'Hitoshi Habe Lab',
   },
   {
     label: 'Research',
@@ -32,27 +32,12 @@ const ENGLISH_FACTS = [
 
 const JAPANESE_COMMENT =
   '研究分野に関する議論や、コラボレーションの機会待ってます！！！ぜひお気軽にご連絡ください！！！';
-
 const ENGLISH_COMMENT =
   "I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!";
 
-const GITHUB_INTERESTS = {
-  en: [
-    'Object Detection (DETR, YOLO)',
-    'Multi-Object Tracking (ByteTrack, SORT)',
-    'Segmentation',
-    'Autonomous Driving',
-    'World Models',
-    'Physical AI',
-  ],
-  ja: [
-    '物体検出（DETR, YOLO）',
-    '複数物体追跡（ByteTrack, SORT）',
-    'セグメンテーション',
-    '自動運転',
-    'ワールドモデル',
-    'フィジカルAI',
-  ],
+const RESEARCH_FOCUS = {
+  en: ['Autonomous Driving', 'World Models', 'Physical AI'],
+  ja: ['自動運転', 'ワールドモデル', 'フィジカルAI'],
 };
 
 async function readFacts(page) {
@@ -78,7 +63,7 @@ test('English About profile mirrors the structured facts', async ({ page }) => {
   await expect(page.locator('.about-comment')).toHaveText(ENGLISH_COMMENT);
 });
 
-test('personal comment reads as normal copy with sufficient separation', async ({ page }) => {
+test('personal comment reads as normal copy with increased separation', async ({ page }) => {
   await page.goto('/index.ja.html', { waitUntil: 'domcontentloaded' });
 
   const profile = page.locator('.about-profile');
@@ -98,16 +83,31 @@ test('personal comment reads as normal copy with sufficient separation', async (
   const commentBox = await comment.boundingBox();
   expect(profileBox).not.toBeNull();
   expect(commentBox).not.toBeNull();
-  expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(30);
+  expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(38.5);
 });
 
-for (const [locale, expectedInterests] of Object.entries(GITHUB_INTERESTS)) {
-  test(`${locale} Research Interests match the GitHub profile exactly`, async ({ page }) => {
+for (const [locale, expectedInterests] of Object.entries(RESEARCH_FOCUS)) {
+  test(`${locale} Research Interests contain only the approved focus`, async ({ page }) => {
     await page.goto(locale === 'ja' ? '/index.ja.html' : '/index.html', {
       waitUntil: 'domcontentloaded',
     });
 
-    const renderedInterests = await page.locator('.interests li').allTextContents();
+    const renderedInterests = await page.locator('.research-focus-name').allTextContents();
     expect(renderedInterests.map((item) => item.trim())).toEqual(expectedInterests);
+    await expect(page.locator('.research-focus-item')).toHaveCount(3);
   });
 }
+
+test('research focus is horizontal on desktop and stacked on mobile', async ({ page }, testInfo) => {
+  await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+
+  const columnCount = await page.locator('.research-focus-list').evaluate((element) =>
+    getComputedStyle(element).gridTemplateColumns.split(' ').filter(Boolean).length,
+  );
+
+  if (testInfo.project.name === 'mobile-chromium') {
+    expect(columnCount).toBe(1);
+  } else {
+    expect(columnCount).toBe(3);
+  }
+});

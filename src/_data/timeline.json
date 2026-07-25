@@ -15,7 +15,8 @@
           "title": "Kindai University Hiroshima High School, Fukuyama — Graduated"
         }
       ],
-      "others": [
+      "activitiesHeading": "Activities",
+      "activities": [
         {
           "date": "2023.4<br>~<br>2026.3",
           "title": "KINDAI Info-Tech HUB",
@@ -27,9 +28,18 @@
           "description": "Region Director"
         }
       ],
+      "internshipsHeading": "Internships",
       "internships": [
-        "<strong>CA Tech Dojo - Android</strong> — CyberAgent, Inc. (2025.2)",
-        "<strong>Android Internship</strong> — Fenrir Inc. (2024.9)"
+        {
+          "date": "2025.2",
+          "title": "CA Tech Dojo - Android",
+          "organization": "CyberAgent, Inc."
+        },
+        {
+          "date": "2024.9",
+          "title": "Android Internship",
+          "organization": "Fenrir Inc."
+        }
       ]
     },
     "ja": {
@@ -47,7 +57,8 @@
           "title": "近畿大学附属広島高等学校福山校 — 卒業"
         }
       ],
-      "others": [
+      "activitiesHeading": "Activities",
+      "activities": [
         {
           "date": "2023.4<br>~<br>2026.3",
           "title": "KINDAI Info-Tech HUB",
@@ -59,9 +70,18 @@
           "description": "イベント事業本部 中四国事業部長"
         }
       ],
+      "internshipsHeading": "Internships",
       "internships": [
-        "<strong>CA Tech Dojo - Android</strong> — 株式会社サイバーエージェント（2025.2）",
-        "<strong>Android Internship</strong> — Fenrir Inc.（2024.9）"
+        {
+          "date": "2025.2",
+          "title": "CA Tech Dojo - Android",
+          "organization": "株式会社サイバーエージェント"
+        },
+        {
+          "date": "2024.9",
+          "title": "Android Internship",
+          "organization": "Fenrir Inc."
+        }
       ]
     }
   }
