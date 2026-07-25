@@ -78,6 +78,28 @@ test('theme selection persists after reload', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
 
+test('theme toggle remains single-bound after repeated Swup navigation', async ({ page }) => {
+  await openWithTheme(page, '/index.html', 'light');
+
+  for (let index = 0; index < 2; index += 1) {
+    await Promise.all([
+      page.waitForURL(/archive\.html$/),
+      page.locator('a[href="archive.html"]:visible').first().click(),
+    ]);
+    await expect(page.getByRole('heading', { name: 'Biography' }).first()).toBeVisible();
+
+    await Promise.all([
+      page.waitForURL(/index\.html$/),
+      page.locator('a[href="index.html"]:visible').first().click(),
+    ]);
+    await expect(page.getByRole('heading', { name: 'About Me' }).first()).toBeVisible();
+  }
+
+  await page.locator('[data-theme-toggle]:visible').first().click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect.poll(() => page.evaluate(() => window.localStorage.getItem('theme'))).toBe('dark');
+});
+
 test('language switch and primary navigation remain available', async ({ page }) => {
   await openWithTheme(page, '/index.html', 'light');
 
