@@ -2,31 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   max-width: var(--content-max-width);
-  gap: 0.625rem;
-  margin-top: 0.625rem;
+  gap: 0.625em;
+  margin-top: 0.625em;
 }
 
 .skill-chip {
   display: flex;
   align-items: center;
-  gap: 0.4375rem;
-  padding: 0.5rem 0.875rem;
-  border-radius: 0.75rem;
+  gap: 0.4375em;
+  padding: 0.5em 0.875em;
+  border-radius: 0.75em;
   background: var(--surface);
-  box-shadow: 0.125rem 0.125rem 0.3125rem var(--shadow-dark), -0.125rem -0.125rem 0.3125rem var(--shadow-light);
-  font-size: 0.9rem;
+  box-shadow: 0.125em 0.125em 0.3125em var(--shadow-dark), -0.125em -0.125em 0.3125em var(--shadow-light);
+  font-size: 0.85em;
   font-weight: 500;
   color: var(--text);
   transition: box-shadow 0.25s, transform 0.25s;
 }
 
 .skill-chip:hover {
-  transform: translateY(-0.0625rem);
-  box-shadow: 0.25rem 0.25rem 0.5rem var(--shadow-dark), -0.25rem -0.25rem 0.5rem var(--shadow-light);
+  transform: translateY(-0.0625em);
+  box-shadow: 0.25em 0.25em 0.5em var(--shadow-dark), -0.25em -0.25em 0.5em var(--shadow-light);
 }
 
 .skill-chip iconify-icon {
-  font-size: 1.3125rem;
+  font-size: 1.2em;
 }
 
 [data-theme="dark"] .skill-chip {
@@ -34,12 +34,12 @@
 }
 
 .skill-logo {
-  width: 1.3125rem;
-  height: 1.3125rem;
+  width: 1.2em;
+  height: 1.2em;
 }
 
 .skill-item-wrapper span {
-  font-size: 1rem;
+  font-size: 1em;
   color: var(--text);
 }
 
@@ -48,9 +48,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.25rem 0 0;
-  height: 1.75rem;
-  width: 5.125rem;
+  margin: 0.25em 0 0;
+  height: 1.75em;
+  width: 5.125em;
   padding: 0;
   background: var(--accent-bg);
 }
