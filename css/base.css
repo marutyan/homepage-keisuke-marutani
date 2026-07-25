@@ -86,3 +86,9 @@ img {
   padding-left: 0.7em;
   align-self: center;
 }
+
+@media (max-width: 900px) {
+  #swup-content {
+    font-size: 1rem;
+  }
+}
