@@ -1,9 +1,33 @@
 const { test, expect } = require('@playwright/test');
 
-const JAPANESE_PARAGRAPHS = [
-  '近畿大学情報学部情報学科の学部4年生で、コンピュータビジョン研究室に所属。',
-  'コンピュータビジョンと深層学習に関心があり、物体検出と物体追跡について研究。',
-  '現在は、混雑環境における遮蔽人物の検出精度向上に取り組んでいます。',
+const JAPANESE_FACTS = [
+  {
+    label: '所属',
+    value: '近畿大学 情報学部 情報学科 / コンピュータビジョン研究室',
+  },
+  {
+    label: '学年',
+    value: '学部4年生',
+  },
+  {
+    label: '研究内容',
+    value: '混雑環境における遮蔽人物の検出精度向上',
+  },
+];
+
+const ENGLISH_FACTS = [
+  {
+    label: 'Affiliation',
+    value: 'Department of Informatics, Faculty of Informatics, Kindai University / Computer Vision Laboratory',
+  },
+  {
+    label: 'Year',
+    value: 'Fourth-year undergraduate student',
+  },
+  {
+    label: 'Research',
+    value: 'Improving occluded person detection in crowded environments',
+  },
 ];
 
 const JAPANESE_COMMENT =
@@ -12,37 +36,66 @@ const JAPANESE_COMMENT =
 const ENGLISH_COMMENT =
   "I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!";
 
-async function readParagraphs(page) {
-  return page.locator('.about-copy p').allTextContents();
+const ADDED_INTERESTS = {
+  en: ['Segmentation', 'Autonomous Driving', 'World Models', 'Physical AI'],
+  ja: ['セグメンテーション', '自動運転', 'ワールドモデル', 'フィジカルAI'],
+};
+
+async function readFacts(page) {
+  return page.locator('.about-profile-row').evaluateAll((rows) =>
+    rows.map((row) => ({
+      label: row.querySelector('.about-profile-label').textContent.trim(),
+      value: row.querySelector('.about-profile-value').textContent.trim(),
+    })),
+  );
 }
 
-test('Japanese About copy matches the approved wording exactly', async ({ page }) => {
+test('Japanese About profile matches the approved facts exactly', async ({ page }) => {
   await page.goto('/index.ja.html', { waitUntil: 'domcontentloaded' });
 
-  await expect.poll(() => readParagraphs(page)).toEqual(JAPANESE_PARAGRAPHS);
+  await expect.poll(() => readFacts(page)).toEqual(JAPANESE_FACTS);
   await expect(page.locator('.about-comment')).toHaveText(JAPANESE_COMMENT);
 });
 
-test('English personal comment remains unchanged', async ({ page }) => {
+test('English About profile mirrors the structured facts', async ({ page }) => {
   await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
 
+  await expect.poll(() => readFacts(page)).toEqual(ENGLISH_FACTS);
   await expect(page.locator('.about-comment')).toHaveText(ENGLISH_COMMENT);
 });
 
-test('About copy and personal comment remain visually distinct', async ({ page }) => {
+test('personal comment reads as normal copy with sufficient separation', async ({ page }) => {
   await page.goto('/index.ja.html', { waitUntil: 'domcontentloaded' });
 
-  const copy = page.locator('.about-copy');
+  const profile = page.locator('.about-profile');
+  const value = page.locator('.about-profile-value').first();
   const comment = page.locator('.about-comment');
 
-  await expect(copy).toBeVisible();
+  await expect(profile).toBeVisible();
   await expect(comment).toBeVisible();
-  await expect(comment).toHaveCSS('border-left-style', 'solid');
-  await expect(comment).toHaveCSS('font-weight', '700');
+  await expect(comment).toHaveCSS('border-left-style', 'none');
+  await expect(comment).toHaveCSS('font-weight', '400');
 
-  const copyBox = await copy.boundingBox();
+  const valueColor = await value.evaluate((element) => getComputedStyle(element).color);
+  const commentColor = await comment.evaluate((element) => getComputedStyle(element).color);
+  expect(commentColor).toBe(valueColor);
+
+  const profileBox = await profile.boundingBox();
   const commentBox = await comment.boundingBox();
-  expect(copyBox).not.toBeNull();
+  expect(profileBox).not.toBeNull();
   expect(commentBox).not.toBeNull();
-  expect(commentBox.y).toBeGreaterThan(copyBox.y + copyBox.height);
+  expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(30);
 });
+
+for (const [locale, interests] of Object.entries(ADDED_INTERESTS)) {
+  test(`${locale} Research Interests include profile README topics`, async ({ page }) => {
+    await page.goto(locale === 'ja' ? '/index.ja.html' : '/index.html', {
+      waitUntil: 'domcontentloaded',
+    });
+
+    const renderedInterests = await page.locator('.interests li').allTextContents();
+    for (const interest of interests) {
+      expect(renderedInterests.map((item) => item.trim())).toContain(interest);
+    }
+  });
+}
