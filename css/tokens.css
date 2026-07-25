@@ -18,7 +18,8 @@
   --sub-subtitle-text: #3a8fb7;
   --button-bg: #ccc;
   --button-hover: #999;
-  --content-max-width: 68ch;
+  --content-max-width: min(72vw, 80rem);
+  --prose-max-width: 72ch;
   --font-primary: "Noto Sans JP", "Noto Sans", sans-serif;
   --font-brand: "Raleway", "Noto Sans JP", sans-serif;
 }
