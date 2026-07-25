@@ -1,0 +1,61 @@
+{% set contentData = home.locales[locale] %}
+<!-- About Me -->
+<div class="wrapper animate-in delay-1">
+  <div class="subtitle-container">
+    <div class="subtitle-line"></div>
+    <h2 class="subtitle">{{ contentData.aboutHeading }}</h2>
+  </div>
+  {% for paragraph in contentData.aboutParagraphs %}
+    <p>
+      {{ paragraph | safe }}
+    </p>
+  {% endfor %}
+</div>
+
+<!-- Research Interests -->
+<div class="wrapper animate-in delay-2">
+  <div class="subtitle-container">
+    <div class="subtitle-line"></div>
+    <h2 class="subtitle">Research Interests</h2>
+  </div>
+  <ul class="interests content-list">
+    {% for interest in contentData.interests %}
+      <li class="other-list-item"><strong>{{ interest }}</strong></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Publications -->
+<div class="wrapper animate-in delay-3">
+  <div class="subtitle-container">
+    <div class="subtitle-line"></div>
+    <h2 class="subtitle">Publications</h2>
+  </div>
+  <ul class="content-list">
+    <li class="bib-item">
+      <div class="paper-container">
+        <div class="paper-title">{{ home.publicationTitle }}</div>
+        <div class="paper-info-container">
+          <div class="paper-info">{{ contentData.publicationAuthors }}</div>
+          <div class="paper-info">{{ contentData.publicationVenue }}</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Skills -->
+<div class="wrapper animate-in delay-4">
+  <div class="subtitle-container">
+    <div class="subtitle-line"></div>
+    <h2 class="subtitle">Skills</h2>
+  </div>
+  <div class="skill-chips">
+    {% for skill in site.skills %}
+      <div class="skill-chip scroll-reveal">
+        <iconify-icon icon="{{ skill.icon }}"{% if skill.accent %} style="color:var(--accent)"{% endif %}></iconify-icon>
+        <span>{{ skill.name }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</div>

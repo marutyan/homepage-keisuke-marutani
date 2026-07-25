@@ -1,0 +1,74 @@
+{% set profile = site.profiles[locale] %}
+<nav class="nav-column">
+  <div class="affiliate-container">
+    <div class="logo_bg-container affiliate-container-item">
+      <div class="logo_bg">
+        <h1>
+          <a href="{{ profile.homeUrl }}">
+            <img class="logo" src="images/mainicon.webp" alt="Keisuke Marutani" />
+          </a>
+        </h1>
+      </div>
+    </div>
+
+    <h2 class="bio-myname affiliate-container-item">{{ profile.name }}</h2>
+    <p class="bio-belongings affiliate-container-item">{{ profile.field }}</p>
+
+    <ul class="list-inline affiliate-container-item">
+      {% for link in site.socialLinks %}
+        <li class="list-inline-item">
+          <a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %} aria-label="{{ link.label }}">
+            <iconify-icon icon="{{ link.icon }}"></iconify-icon>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="nav-item-list-container">
+    <div class="nav-item-list-line"></div>
+    <ul class="nav-item-list">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ profile.homeUrl }}">
+          <iconify-icon icon="heroicons:home-solid"></iconify-icon>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ profile.timelineUrl }}">
+          <iconify-icon icon="heroicons:clock-solid"></iconify-icon>
+          <span>Timeline</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.repositoryUrl }}" target="_blank" rel="noopener noreferrer">
+          <iconify-icon icon="line-md:github-loop"></iconify-icon>
+          <span>GitHub</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ site.laboratoryUrl }}" target="_blank" rel="noopener noreferrer">
+          <img class="nav-lab-icon" src="images/lab.svg" alt="CVLab." />
+          <span>CVLab.</span>
+        </a>
+      </li>
+    </ul>
+    <div class="nav-item-list-line"></div>
+  </div>
+
+  <div class="toggle-row">
+    <button type="button" data-theme-toggle class="toggle-btn" aria-label="{{ profile.themeLabel }}">
+      <iconify-icon id="theme-icon-light" icon="line-md:moon-alt-to-sunny-outline-loop-transition" style="display:none;"></iconify-icon>
+      <iconify-icon id="theme-icon-dark" icon="line-md:sunny-outline-to-moon-alt-loop-transition" style="display:none;"></iconify-icon>
+    </button>
+    {% if pageType == "timeline" %}
+      <a href="{{ profile.alternateTimelineUrl }}" class="lang-link">{{ profile.alternateLabel }}</a>
+    {% else %}
+      <a href="{{ profile.alternateHomeUrl }}" class="lang-link">{{ profile.alternateLabel }}</a>
+    {% endif %}
+  </div>
+
+  <div class="scroll-vector-container">
+    <div class="scroll-vector"></div>
+  </div>
+</nav>

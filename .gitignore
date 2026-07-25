@@ -11,6 +11,9 @@ Thumbs.db
 # Node.js
 node_modules/
 
+# Eleventy
+_site/
+
 # Playwright
 playwright-report/
 test-results/

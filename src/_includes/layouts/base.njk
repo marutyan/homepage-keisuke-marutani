@@ -1,0 +1,84 @@
+{% set profile = site.profiles[locale] %}
+{% if pageType == "timeline" %}
+  {% set metadata = timeline.locales[locale] %}
+{% else %}
+  {% set metadata = home.locales[locale] %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ profile.htmlLang }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ metadata.pageTitle }}</title>
+  <meta name="description" content="{{ metadata.description }}" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_images/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon_images/site.webmanifest" />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#eef0f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#2d2d30" media="(prefers-color-scheme: dark)" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="{{ metadata.pageTitle }}" />
+  <meta property="og:description" content="{{ metadata.ogDescription }}" />
+  <meta property="og:type" content="website" />
+
+  <!-- CSS Reset (ress) -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+
+  <!-- Swup -->
+  <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Theme: apply before render to prevent flash -->
+  <script>
+    (function(){
+      var t = localStorage.getItem("theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body{% if pageType == "timeline" %} class="is-timeline"{% endif %}>
+  <div id="home">
+    <!-- ===== Navigation Column ===== -->
+    {% include "components/sidebar.njk" %}
+
+    <!-- ===== Article Column ===== -->
+    <article id="swup-content" class="transition-fade">
+      {{ content | safe }}
+    </article>
+
+    {% if pageType == "timeline" %}
+      <!-- Back to Home (mobile only) -->
+      <div class="back-to-home">
+        <a href="{{ profile.homeUrl }}" class="back-to-home-link">
+          <iconify-icon icon="heroicons:home-solid"></iconify-icon>
+          <span>Home</span>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <footer>
+    <p><small>{{ site.footer }}</small></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
