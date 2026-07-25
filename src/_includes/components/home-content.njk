@@ -35,30 +35,41 @@
     <div class="subtitle-line" aria-hidden="true"></div>
     <h2 id="publications-heading" class="subtitle">Publications</h2>
   </div>
-  <ul class="publication-list">
-    {% for publication in publications | sortByYearDesc %}
-      <li class="publication-item" data-publication-year="{{ publication.year }}">
-        <time class="publication-year" datetime="{{ publication.year }}">{{ publication.year }}</time>
-        <article class="publication-entry">
-          <h3 class="publication-title">{{ publication.title }}</h3>
-          <p class="publication-authors">
-            {% for author in publication.authors[locale] %}
-              <span class="publication-author{% if author.self %} publication-author--self{% endif %}">{{ author.name }}</span>
-              <span class="publication-affiliation">({{ author.affiliation }})</span>{% if not loop.last %}<span class="publication-author-separator">, </span>{% endif %}
-            {% endfor %}
-          </p>
-          <p class="publication-venue">{{ publication.venue[locale] }}</p>
-          {% if publication.links.length %}
-            <div class="publication-links">
-              {% for link in publication.links %}
-                <a class="publication-link" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </article>
-      </li>
+  <div class="publication-groups">
+    {% for group in publications | groupByYearDesc %}
+      <section class="publication-year-group" data-publication-year="{{ group.year }}" aria-labelledby="publication-year-{{ group.year }}">
+        <div class="publication-year-heading">
+          <h3 id="publication-year-{{ group.year }}" class="publication-year">
+            <time datetime="{{ group.year }}">{{ group.year }}</time>
+          </h3>
+          <span class="publication-year-line" aria-hidden="true"></span>
+        </div>
+        <ul class="publication-list">
+          {% for publication in group.publications %}
+            <li class="publication-item">
+              <article class="publication-entry">
+                <h4 class="publication-title">{{ publication.title }}</h4>
+                <p class="publication-authors">
+                  {% for author in publication.authors[locale] %}
+                    <span class="publication-author{% if author.self %} publication-author--self{% endif %}">{{ author.name }}</span>
+                    <span class="publication-affiliation">({{ author.affiliation }})</span>{% if not loop.last %}<span class="publication-author-separator">, </span>{% endif %}
+                  {% endfor %}
+                </p>
+                <p class="publication-venue"><span class="publication-venue-prefix" aria-hidden="true">-</span> {{ publication.venue[locale] }}</p>
+                {% if publication.links.length %}
+                  <div class="publication-links">
+                    {% for link in publication.links %}
+                      <a class="publication-link" href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </article>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
     {% endfor %}
-  </ul>
+  </div>
 </section>
 
 <!-- Skills -->
