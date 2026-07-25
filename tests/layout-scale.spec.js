@@ -53,7 +53,7 @@ test('desktop main content uses a smaller independent type scale', async ({ page
       sidebarName: readSize('.bio-myname'),
       heading: readSize('.subtitle'),
       profileValue: readSize('.about-profile-value'),
-      interest: readSize('.interests li'),
+      interest: readSize('.research-focus-name'),
       publicationTitle: readSize('.publication-title'),
       publicationAuthors: readSize('.publication-authors'),
       skillChip: readSize('.skill-chip'),
