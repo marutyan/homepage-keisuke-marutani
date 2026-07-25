@@ -4,7 +4,6 @@
 
 @import url("./tokens.css");
 @import url("./base.css");
-@import url("./accessibility.css");
 @import url("./sidebar.css");
 @import url("./timeline.css");
 @import url("./content.css");
@@ -14,3 +13,4 @@
 @import url("./motion.css");
 @import url("./responsive.css");
 @import url("./utilities.css");
+@import url("./accessibility.css");
