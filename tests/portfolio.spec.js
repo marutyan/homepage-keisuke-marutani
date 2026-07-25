@@ -17,11 +17,45 @@ async function openWithTheme(page, path, theme) {
   await expect(page.locator('#swup-content')).toBeVisible();
 }
 
+async function stabilizeVisuals(page) {
+  await page.addStyleTag({
+    content: `
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+      .animate-in,
+      .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      iconify-icon {
+        visibility: hidden !important;
+      }
+    `,
+  });
+
+  await page.evaluate(async () => {
+    document.querySelectorAll('.scroll-reveal').forEach((element) => {
+      element.classList.add('is-visible');
+    });
+
+    if (document.fonts && document.fonts.ready) {
+      await document.fonts.ready;
+    }
+
+    await customElements.whenDefined('iconify-icon');
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
+}
+
 for (const pageDefinition of pages) {
   for (const theme of ['light', 'dark']) {
     test(`${pageDefinition.id} renders in ${theme} theme`, async ({ page }, testInfo) => {
       await openWithTheme(page, pageDefinition.path, theme);
       await expect(page.getByRole('heading', { name: pageDefinition.heading }).first()).toBeVisible();
+      await stabilizeVisuals(page);
 
       const screenshotPath = testInfo.outputPath(`${pageDefinition.id}-${theme}.png`);
       await page.screenshot({ path: screenshotPath, fullPage: true });
