@@ -3,6 +3,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(directory);
   }
 
+  eleventyConfig.addFilter('sortByYearDesc', (items = []) => (
+    [...items].sort((left, right) => right.year - left.year)
+  ));
+
   return {
     dir: {
       input: 'src',
