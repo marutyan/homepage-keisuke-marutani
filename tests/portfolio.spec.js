@@ -30,6 +30,9 @@ async function stabilizeVisuals(page) {
         opacity: 1 !important;
         transform: none !important;
       }
+      iconify-icon {
+        visibility: hidden !important;
+      }
     `,
   });
 
@@ -38,24 +41,12 @@ async function stabilizeVisuals(page) {
       element.classList.add('is-visible');
     });
 
-    document.querySelectorAll('iconify-icon').forEach((icon) => {
-      icon.setAttribute('noobserver', '');
-    });
-
     if (document.fonts && document.fonts.ready) {
       await document.fonts.ready;
     }
 
     await customElements.whenDefined('iconify-icon');
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-  });
-
-  await page.waitForFunction(() => {
-    const icons = Array.from(document.querySelectorAll('iconify-icon'));
-    return icons.every((icon) => {
-      const root = icon.shadowRoot;
-      return Boolean((root && root.querySelector('svg')) || icon.querySelector('svg'));
-    });
   });
 }
 
