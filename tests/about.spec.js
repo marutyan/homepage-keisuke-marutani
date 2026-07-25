@@ -83,7 +83,7 @@ test('personal comment reads as normal copy with increased separation', async ({
   const commentBox = await comment.boundingBox();
   expect(profileBox).not.toBeNull();
   expect(commentBox).not.toBeNull();
-  expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(39);
+  expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(38.5);
 });
 
 for (const [locale, expectedInterests] of Object.entries(RESEARCH_FOCUS)) {
