@@ -55,20 +55,22 @@
   </script>
 </head>
 <body{% if pageType == "timeline" %} class="is-timeline"{% endif %}>
+  <a class="skip-link" href="#swup-content">{{ profile.skipLabel }}</a>
+
   <div id="home">
-    <!-- ===== Navigation Column ===== -->
+    <!-- ===== Sidebar ===== -->
     {% include "components/sidebar.njk" %}
 
-    <!-- ===== Article Column ===== -->
-    <article id="swup-content" class="transition-fade">
+    <!-- ===== Main Content ===== -->
+    <main id="swup-content" class="transition-fade" tabindex="-1">
       {{ content | safe }}
-    </article>
+    </main>
 
     {% if pageType == "timeline" %}
       <!-- Back to Home (mobile only) -->
       <div class="back-to-home">
         <a href="{{ profile.homeUrl }}" class="back-to-home-link">
-          <iconify-icon icon="heroicons:home-solid"></iconify-icon>
+          <iconify-icon icon="heroicons:home-solid" aria-hidden="true"></iconify-icon>
           <span>Home</span>
         </a>
       </div>
