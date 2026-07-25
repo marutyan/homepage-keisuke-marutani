@@ -39,7 +39,8 @@ for (const pageDefinition of pages) {
 
     await expect(page.locator('html')).toHaveAttribute('lang', pageDefinition.language);
     expect((await page.title()).trim().length).toBeGreaterThan(0);
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S{20,}/);
+    const description = await page.locator('meta[name="description"]').getAttribute('content');
+    expect(description.trim().length).toBeGreaterThanOrEqual(20);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', pageDefinition.canonical);
     await expect(page.locator(`link[rel="alternate"][hreflang="${pageDefinition.language}"]`)).toHaveAttribute(
       'href',
