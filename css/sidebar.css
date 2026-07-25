@@ -1,4 +1,4 @@
-nav {
+.nav-column {
   width: 30%;
   min-width: 220px;
   height: 100vh;
@@ -9,8 +9,12 @@ nav {
   top: 0;
 }
 
-[data-theme="dark"] nav {
+[data-theme="dark"] .nav-column {
   background: var(--nav-bg);
+}
+
+.site-navigation {
+  width: 100%;
 }
 
 .logo_bg-container {
@@ -32,11 +36,11 @@ nav {
   background: var(--nav-bg);
 }
 
-.logo_bg h1 {
-  margin: 0;
-  padding: 0;
+.logo_bg > a {
+  display: block;
+  width: 100%;
+  height: 100%;
   line-height: 1;
-  font-size: inherit;
 }
 
 .logo {
