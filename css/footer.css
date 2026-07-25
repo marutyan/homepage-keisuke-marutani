@@ -5,7 +5,7 @@
 footer {
   background: var(--footer-bg);
   text-align: center;
-  padding: 18px 0;
+  padding: 1.125rem 0;
 }
 
 footer p {
