@@ -5,11 +5,14 @@
     <div class="subtitle-line" aria-hidden="true"></div>
     <h2 id="about-heading" class="subtitle">{{ contentData.aboutHeading }}</h2>
   </div>
-  <div class="about-copy">
-    {% for paragraph in contentData.aboutParagraphs %}
-      <p>{{ paragraph }}</p>
+  <dl class="about-profile">
+    {% for fact in contentData.aboutFacts %}
+      <div class="about-profile-row">
+        <dt class="about-profile-label">{{ fact.label }}</dt>
+        <dd class="about-profile-value">{{ fact.value }}</dd>
+      </div>
     {% endfor %}
-  </div>
+  </dl>
   <p class="about-comment">{{ contentData.aboutComment }}</p>
 </section>
 
@@ -35,10 +38,15 @@
   <ul class="publication-list">
     {% for publication in publications | sortByYearDesc %}
       <li class="publication-item" data-publication-year="{{ publication.year }}">
-        <span class="publication-marker" aria-hidden="true"></span>
+        <time class="publication-year" datetime="{{ publication.year }}">{{ publication.year }}</time>
         <article class="publication-entry">
           <h3 class="publication-title">{{ publication.title }}</h3>
-          <p class="publication-authors">{{ publication.authors[locale] }}</p>
+          <p class="publication-authors">
+            {% for author in publication.authors[locale] %}
+              <span class="publication-author{% if author.self %} publication-author--self{% endif %}">{{ author.name }}</span>
+              <span class="publication-affiliation">({{ author.affiliation }})</span>{% if not loop.last %}<span class="publication-author-separator">, </span>{% endif %}
+            {% endfor %}
+          </p>
           <p class="publication-venue">{{ publication.venue[locale] }}</p>
           {% if publication.links.length %}
             <div class="publication-links">
