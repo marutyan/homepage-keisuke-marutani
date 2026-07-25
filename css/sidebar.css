@@ -1,6 +1,6 @@
 .nav-column {
   width: 30%;
-  min-width: 220px;
+  min-width: 13.75rem;
   height: 100vh;
   font-family: var(--font-brand);
   background: var(--surface);
@@ -18,18 +18,18 @@
 }
 
 .logo_bg-container {
-  padding: 40px 0 20px;
+  padding: 2.5rem 0 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .logo_bg {
-  width: 150px;
-  height: 150px;
+  width: 9.375rem;
+  height: 9.375rem;
   border-radius: 50%;
   background: var(--surface);
-  box-shadow: inset 5px 5px 8px var(--shadow-dark), inset -5px -5px 8px var(--shadow-light);
+  box-shadow: inset 0.3125rem 0.3125rem 0.5rem var(--shadow-dark), inset -0.3125rem -0.3125rem 0.5rem var(--shadow-light);
 }
 
 [data-theme="dark"] .logo_bg {
@@ -48,8 +48,8 @@
   height: 85%;
   border-radius: 50%;
   overflow: hidden;
-  margin-top: 12px;
-  margin-left: 12px;
+  margin-top: 0.75rem;
+  margin-left: 0.75rem;
   position: relative;
 }
 
@@ -66,15 +66,15 @@
 .affiliate-container .bio-belongings {
   text-align: center;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--accent-ui);
 }
 
 .list-inline {
   width: 55%;
-  min-width: 180px;
-  height: 30px;
-  margin: 20px auto;
+  min-width: 11.25rem;
+  height: 1.875rem;
+  margin: 1.25rem auto;
   display: flex;
   justify-content: space-around;
   list-style: none;
@@ -100,7 +100,7 @@
 }
 
 .list-inline-item iconify-icon {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 
 #email-text {
@@ -118,17 +118,17 @@
   flex-direction: column;
   align-items: center;
   width: 75%;
-  margin: 10px;
+  margin: 0.625rem;
   list-style: none;
   padding: 0;
 }
 
 .nav-item {
-  width: 160px;
+  width: 10rem;
   text-align: left;
   font-weight: 500;
-  font-size: 16px;
-  margin: 5px 0;
+  font-size: 1rem;
+  margin: 0.3125rem 0;
 }
 
 .nav-item-list .nav-item .nav-link {
@@ -144,14 +144,14 @@
 }
 
 .nav-item-list .nav-item iconify-icon {
-  font-size: 22px;
-  margin-right: 6px;
+  font-size: 1.375rem;
+  margin-right: 0.375rem;
 }
 
 .nav-lab-icon {
-  height: 22px;
+  height: 1.375rem;
   width: auto;
-  margin-right: 6px;
+  margin-right: 0.375rem;
   object-fit: contain;
 }
 
@@ -166,10 +166,10 @@
 
 .nav-item-list-line {
   width: 75%;
-  height: 6px;
-  border-radius: 5px;
+  height: 0.375rem;
+  border-radius: 0.3125rem;
   background: var(--surface);
-  box-shadow: inset 2px 2px 4.5px var(--shadow-dark), inset -2px -2px 4.5px var(--shadow-light);
+  box-shadow: inset 0.125rem 0.125rem 0.28125rem var(--shadow-dark), inset -0.125rem -0.125rem 0.28125rem var(--shadow-light);
 }
 
 [data-theme="dark"] .nav-item-list-line {
@@ -181,21 +181,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 15px 0;
+  margin: 0.9375rem 0;
 }
 
 .toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   border: none;
   background: none;
   cursor: pointer;
   color: var(--text);
   transition: color 0.2s;
-  font-size: 22px;
+  font-size: 1.375rem;
   padding: 0;
 }
 
