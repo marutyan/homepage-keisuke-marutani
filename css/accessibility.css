@@ -36,8 +36,9 @@
   }
 
   .animate-in,
-  .scroll-reveal {
-    opacity: 1;
-    transform: none;
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
