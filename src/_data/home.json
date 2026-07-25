@@ -5,16 +5,29 @@
       "description": "Portfolio of Keisuke Marutani, a Kindai University student researching computer vision, object detection, and multi-object tracking.",
       "ogDescription": "Computer vision portfolio of Keisuke Marutani, featuring research in object detection, tracking, and occluded person detection.",
       "aboutHeading": "About Me",
-      "aboutParagraphs": [
-        "I am a fourth-year undergraduate student in the Department of Informatics at Kindai University and a member of the Computer Vision Laboratory.",
-        "My research interests include computer vision and deep learning, particularly object detection and multi-object tracking.",
-        "I am currently working on improving person detection under occlusion in crowded environments."
+      "aboutFacts": [
+        {
+          "label": "Affiliation",
+          "value": "Department of Informatics, Faculty of Informatics, Kindai University / Computer Vision Laboratory"
+        },
+        {
+          "label": "Year",
+          "value": "Fourth-year undergraduate student"
+        },
+        {
+          "label": "Research",
+          "value": "Improving occluded person detection in crowded environments"
+        }
       ],
       "aboutComment": "I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!",
       "interests": [
         "Object Detection (DETR, YOLO)",
-        "Object Tracking (ByteTrack, SORT)",
-        "Depth Estimation"
+        "Multi-Object Tracking (ByteTrack, SORT)",
+        "Depth Estimation",
+        "Segmentation",
+        "Autonomous Driving",
+        "World Models",
+        "Physical AI"
       ]
     },
     "ja": {
@@ -22,16 +35,29 @@
       "description": "近畿大学でコンピュータビジョンを研究する丸谷啓輔のポートフォリオ。物体検出、物体追跡、遮蔽人物検出の研究内容を掲載しています。",
       "ogDescription": "物体検出・物体追跡・遮蔽人物検出に取り組む丸谷啓輔のコンピュータビジョン研究ポートフォリオ。",
       "aboutHeading": "About me",
-      "aboutParagraphs": [
-        "近畿大学情報学部情報学科の学部4年生で、コンピュータビジョン研究室に所属。",
-        "コンピュータビジョンと深層学習に関心があり、物体検出と物体追跡について研究。",
-        "現在は、混雑環境における遮蔽人物の検出精度向上に取り組んでいます。"
+      "aboutFacts": [
+        {
+          "label": "所属",
+          "value": "近畿大学 情報学部 情報学科 / コンピュータビジョン研究室"
+        },
+        {
+          "label": "学年",
+          "value": "学部4年生"
+        },
+        {
+          "label": "研究内容",
+          "value": "混雑環境における遮蔽人物の検出精度向上"
+        }
       ],
       "aboutComment": "研究分野に関する議論や、コラボレーションの機会待ってます！！！ぜひお気軽にご連絡ください！！！",
       "interests": [
-        "物体検出(DETR, YOLO)",
-        "物体追跡(ByteTrack, SORT)",
-        "深度推定"
+        "物体検出（DETR, YOLO）",
+        "複数物体追跡（ByteTrack, SORT）",
+        "深度推定",
+        "セグメンテーション",
+        "自動運転",
+        "ワールドモデル",
+        "フィジカルAI"
       ]
     }
   }
