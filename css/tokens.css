@@ -1,0 +1,44 @@
+:root {
+  --surface: #eef0f3;
+  --shadow-dark: #bec0c2;
+  --shadow-light: #ffffff;
+  --text: #432;
+  --text-light: #686870;
+  --accent: #5bb7db;
+  --accent-bg: #ddf1fa;
+  --accent-line: #3a8fb7;
+  --accent-ui: #3a8fb7;
+  --accent-title: #2e7d9e;
+  --accent-hover: #5bb7db;
+  --timeline-border: #eef0f3;
+  --footer-bg: #3a8fb7;
+  --footer-text: #fff;
+  --sub-subtitle-line: #7ec8e3;
+  --sub-subtitle-text: #3a8fb7;
+  --button-bg: #ccc;
+  --button-hover: #999;
+  --font-primary: "Noto Sans JP", "Noto Sans", sans-serif;
+  --font-brand: "Raleway", "Noto Sans JP", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --nav-bg: #1a1a2e;
+  --shadow-dark: #0d0d1e;
+  --shadow-light: #25253e;
+  --text: #e0e0e0;
+  --text-light: #a0a0a0;
+  --accent: #6bc4e8;
+  --accent-bg: rgba(107, 196, 232, 0.18);
+  --accent-line: #5bb7db;
+  --accent-ui: #6bc4e8;
+  --accent-title: #7ecce8;
+  --accent-hover: #a0dff5;
+  --timeline-border: #25253e;
+  --footer-bg: #1a3a5c;
+  --footer-text: #a0dff5;
+  --sub-subtitle-line: #4a90a8;
+  --sub-subtitle-text: #6bc4e8;
+  --button-bg: #2a2a40;
+  --button-hover: #3a3a55;
+}

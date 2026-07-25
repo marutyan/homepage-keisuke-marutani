@@ -1,0 +1,14 @@
+.back-to-home {
+  display: none;
+}
+
+footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: 18px 0;
+}
+
+footer p {
+  color: var(--footer-text);
+  font-size: 0.875rem;
+}

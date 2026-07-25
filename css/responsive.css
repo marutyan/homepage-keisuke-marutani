@@ -1,0 +1,252 @@
+@media (max-width: 600px) {
+  html {
+    zoom: 1;
+  }
+
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper {
+    width: 95%;
+    margin-left: 0;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: var(--surface);
+    margin-right: 0;
+    position: relative;
+    top: auto;
+  }
+
+  [data-theme="dark"] nav {
+    background: var(--nav-bg);
+  }
+
+  .logo_bg-container {
+    padding: 10% 0 15px;
+  }
+
+  .logo_bg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .logo {
+    width: 85%;
+    height: 85%;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .affiliate-container .bio-myname {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .affiliate-container .bio-belongings {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .list-inline {
+    width: 260px;
+    height: 35px;
+    margin: 10px auto;
+  }
+
+  .list-inline-item {
+    list-style: none;
+  }
+
+  .list-inline-item iconify-icon {
+    font-size: 30px;
+  }
+
+  .nav-item {
+    width: 180px;
+    text-align: left;
+    font-size: 18px;
+    margin: 2px 0;
+  }
+
+  .nav-item-list-container {
+    width: 100%;
+  }
+
+  .nav-item-list-line {
+    width: 70%;
+  }
+
+  .scroll-vector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-vector {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--shadow-light), var(--shadow-dark));
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+    position: relative;
+    animation: down 1.5s infinite;
+    -webkit-animation: down 1.5s infinite;
+  }
+
+  .scroll-vector::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 21px;
+    width: 18px;
+    height: 18px;
+    border-left: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    transform: rotate(-45deg);
+  }
+
+  @keyframes down {
+    0% { transform: translate(0); }
+    20% { transform: translateY(15px); }
+    40% { transform: translate(0); }
+  }
+
+  @-webkit-keyframes down {
+    0% { transform: translate(0); }
+    20% { transform: translateY(15px); }
+    40% { transform: translate(0); }
+  }
+
+  article {
+    width: 100%;
+    margin: 0;
+    margin-left: 0;
+    padding: 8% 0 8% 20px;
+  }
+
+  .timeline {
+    margin-top: 4%;
+  }
+
+  .timeline-date {
+    position: relative;
+    width: 90px;
+  }
+
+  .timeline-date::before {
+    left: 85px;
+  }
+
+  .timeline-content-wrapper {
+    padding: 0 0 0 30px;
+  }
+
+  .timeline-content h3 {
+    font-size: 18px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .content-list .bib-item .paper-title {
+    font-size: 16px;
+    margin-bottom: 0.2rem;
+  }
+
+  .content-list .bib-item .paper-info {
+    font-size: 12px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    padding-left: 12px;
+  }
+
+  .sub-subtitle-container {
+    margin-bottom: 2%;
+  }
+
+  .sub-subtitle {
+    font-size: 18px;
+    padding-left: 12px;
+  }
+
+  .content-list li {
+    font-size: 14px;
+  }
+
+  .subtitle-container {
+    margin-bottom: 2%;
+  }
+
+  .subtitle-container .subtitle-en {
+    font-size: 18px;
+  }
+
+  .content-list .other-item .other-item-title {
+    font-size: 16px;
+    margin-bottom: 0.1rem;
+  }
+
+  .content-list .other-item .other-item-info {
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 12px 0;
+  }
+
+  body.is-timeline nav {
+    display: none !important;
+  }
+
+  body.is-timeline #home {
+    min-height: auto;
+  }
+
+  .back-to-home {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 10px;
+  }
+
+  .back-to-home-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+
+  .back-to-home-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  }
+
+  .back-to-home-link iconify-icon {
+    font-size: 20px;
+  }
+
+  [data-theme="dark"] .back-to-home-link {
+    background: var(--nav-bg);
+  }
+}
