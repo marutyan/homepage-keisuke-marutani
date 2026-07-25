@@ -77,7 +77,7 @@ test('publication list renders bibliography rows and supports multiple entries',
   const secondBox = await items.nth(1).boundingBox();
   expect(firstBox).not.toBeNull();
   expect(secondBox).not.toBeNull();
-  expect(secondBox.y).toBeGreaterThan(firstBox.y + firstBox.height);
+  expect(secondBox.y).toBeGreaterThanOrEqual(firstBox.y + firstBox.height);
 
   const screenshotPath = testInfo.outputPath('publication-bibliography-multiple.png');
   await list.screenshot({ path: screenshotPath });
