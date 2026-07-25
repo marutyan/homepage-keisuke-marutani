@@ -1,0 +1,66 @@
+{
+  "brand": "Marutyan's Portfolio",
+  "footer": "© 2026 Keisuke Marutani. All Rights Reserved.",
+  "repositoryUrl": "https://github.com/marutyan/homepage-keisuke-marutani",
+  "laboratoryUrl": "https://www.kindai.ac.jp/informatics/education/laboratory/habe/",
+  "profiles": {
+    "en": {
+      "htmlLang": "en",
+      "name": "Keisuke Marutani",
+      "field": "Computer Vision & Deep Learning",
+      "homeUrl": "index.html",
+      "timelineUrl": "archive.html",
+      "alternateHomeUrl": "index.ja.html",
+      "alternateTimelineUrl": "archive.ja.html",
+      "alternateLabel": "JA",
+      "themeLabel": "Toggle theme"
+    },
+    "ja": {
+      "htmlLang": "ja",
+      "name": "丸谷 啓輔",
+      "field": "Computer Vision & Deep Learning",
+      "homeUrl": "index.ja.html",
+      "timelineUrl": "archive.ja.html",
+      "alternateHomeUrl": "index.html",
+      "alternateTimelineUrl": "archive.html",
+      "alternateLabel": "EN",
+      "themeLabel": "テーマ切替"
+    }
+  },
+  "socialLinks": [
+    {
+      "label": "Email",
+      "url": "mailto:keisuke.marutani@kindai.ac.jp",
+      "icon": "mdi:email",
+      "external": false
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/marutyan",
+      "icon": "line-md:github-loop",
+      "external": true
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/keisuke-marutani/",
+      "icon": "mdi:linkedin",
+      "external": true
+    },
+    {
+      "label": "X",
+      "url": "https://x.com/marutyan_D_road",
+      "icon": "mdi:twitter",
+      "external": true
+    }
+  ],
+  "skills": [
+    { "name": "Python", "icon": "logos:python" },
+    { "name": "PyTorch", "icon": "logos:pytorch-icon" },
+    { "name": "OpenCV", "icon": "logos:opencv" },
+    { "name": "Git", "icon": "logos:git-icon" },
+    { "name": "Linux", "icon": "logos:linux-tux" },
+    { "name": "Android", "icon": "logos:android-icon" },
+    { "name": "YOLO", "icon": "simple-icons:yolo", "accent": true },
+    { "name": "DETR", "icon": "carbon:machine-learning-model", "accent": true }
+  ]
+}
