@@ -26,6 +26,15 @@ test('publication sort filter orders newest entries first', () => {
 
 test('publication list renders structured data and supports multiple entries', async ({ page }, testInfo) => {
   await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+  await page.addStyleTag({
+    content: `
+      .animate-in {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    `,
+  });
 
   const list = page.locator('.publication-list');
   const items = page.locator('.publication-item');
