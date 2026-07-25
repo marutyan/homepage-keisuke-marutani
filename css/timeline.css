@@ -12,53 +12,213 @@
 
 .timeline-date {
   position: relative;
-  width: 6.25rem;
-  font-weight: bold;
-  font-size: 1rem;
+  width: 6.25em;
+  margin-top: 1.5625em;
   color: var(--text-light);
-  margin-top: 1.5625rem;
-  text-align: center;
+  font-size: 1em;
+  font-weight: 700;
   line-height: 1.2;
+  text-align: center;
 }
 
 .timeline-content-wrapper {
   width: 75%;
-  float: left;
-  border-left: 0.1875rem var(--timeline-border) solid;
-  padding: 0 0 0 2.5rem;
+  padding: 0 0 0 2.5em;
+  border-left: 0.1875em solid var(--timeline-border);
 }
 
 .timeline-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 1.5625rem;
+  margin-top: 1.5625em;
 }
 
 .timeline-content-wrapper .end {
-  margin-bottom: 2.1875rem;
+  margin-bottom: 2.1875em;
 }
 
 .timeline-content h3 {
-  font-weight: bold;
-  font-size: 1.25rem;
+  margin-bottom: 0.1em;
+  font-size: 1.25em;
+  font-weight: 700;
   line-height: 1.4;
-  margin-bottom: 0.1rem;
 }
 
 .timeline-content p {
-  font-size: 0.875rem;
-  line-height: 1.5;
   color: var(--text-light);
+  font-size: 0.875em;
+  line-height: 1.5;
 }
 
 .timeline-date::before {
   content: '';
-  width: 0.75rem;
-  height: 0.75rem;
-  background: var(--accent);
   position: absolute;
-  left: 6rem;
-  top: 0.5rem;
-  border-radius: 100%;
+  top: 0.5em;
+  left: 6em;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.activities-section {
+  margin-top: 3.25em;
+}
+
+.activities-heading-container {
+  margin-bottom: 1em;
+}
+
+.activity-card-list {
+  display: grid;
+  gap: 0.85em;
+  width: 100%;
+  max-width: var(--content-max-width);
+}
+
+.activity-card {
+  display: grid;
+  grid-template-columns: 7.5em minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  border-left: 0.22em solid var(--accent-line);
+  border-radius: 0.65em;
+  background: linear-gradient(100deg, var(--accent-bg) 0%, transparent 38%);
+}
+
+.activity-card-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1em 0.8em;
+  border-right: 1px solid var(--divider);
+  color: var(--accent-title);
+  font-size: 0.8em;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.activity-card-content {
+  min-width: 0;
+  padding: 1em 1.1em;
+}
+
+.activity-card-content h3 {
+  margin: 0 0 0.2em;
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.activity-card-content p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+
+.internship-group {
+  width: calc(100% - 2em);
+  max-width: calc(var(--content-max-width) - 2em);
+  margin: 1.4em 0 0 2em;
+  padding: 0.25em 0 0 1.2em;
+  border-left: 1px solid var(--divider);
+}
+
+.internship-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+  margin-bottom: 0.25em;
+}
+
+.internship-heading-line {
+  width: 1.5em;
+  height: 1px;
+  background: var(--accent-line);
+}
+
+.internship-heading {
+  margin: 0;
+  color: var(--accent-title);
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.internship-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.internship-item {
+  display: grid;
+  grid-template-columns: 4.5em minmax(0, 1fr);
+  column-gap: 0.9em;
+  align-items: baseline;
+  padding: 0.65em 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.internship-item:last-child {
+  border-bottom: 0;
+}
+
+.internship-date {
+  color: var(--text-light);
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.internship-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em 0.55em;
+  min-width: 0;
+}
+
+.internship-title {
+  color: var(--text);
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.internship-organization {
+  color: var(--text-light);
+  font-size: 0.78em;
+}
+
+@media (max-width: 600px) {
+  .activity-card {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card-date {
+    justify-content: flex-start;
+    padding: 0.7rem 0.9rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--divider);
+    text-align: left;
+  }
+
+  .activity-card-content {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .internship-group {
+    width: calc(100% - 0.75rem);
+    max-width: none;
+    margin-left: 0.75rem;
+    padding-left: 0.85rem;
+  }
+
+  .internship-item {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    column-gap: 0.65rem;
+  }
 }
