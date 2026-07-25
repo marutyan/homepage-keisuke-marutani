@@ -1,0 +1,68 @@
+{
+  "locales": {
+    "en": {
+      "pageTitle": "Timeline — Marutyan's Portfolio",
+      "description": "Keisuke Marutani — Education and career timeline.",
+      "ogDescription": "Keisuke Marutani — Education and career timeline",
+      "biography": [
+        {
+          "date": "2023.4<br>~<br>Present",
+          "title": "Kindai University",
+          "description": "Computer Science B4 student - Computer Vision Lab"
+        },
+        {
+          "date": "2023.3",
+          "title": "Kindai University Hiroshima High School, Fukuyama — Graduated"
+        }
+      ],
+      "others": [
+        {
+          "date": "2023.4<br>~<br>2026.3",
+          "title": "KINDAI Info-Tech HUB",
+          "description": "FY25 Student Leader"
+        },
+        {
+          "date": "2023.6<br>~<br>2026.3",
+          "title": "Specified Nonprofit Corporation NxTEND",
+          "description": "Region Director"
+        }
+      ],
+      "internships": [
+        "<strong>CA Tech Dojo - Android</strong> — CyberAgent, Inc. (2025.2)",
+        "<strong>Android Internship</strong> — Fenrir Inc. (2024.9)"
+      ]
+    },
+    "ja": {
+      "pageTitle": "Timeline — Marutyan's Portfolio",
+      "description": "keisuke marutani portfolio",
+      "ogDescription": "Keisuke Marutani — Portfolio Timeline",
+      "biography": [
+        {
+          "date": "2023.4<br>~<br>現在",
+          "title": "近畿大学 — 在学中",
+          "description": "情報学部情報学科知能システムコース B4 コンピュータビジョン研究室"
+        },
+        {
+          "date": "2023.3",
+          "title": "近畿大学附属広島高等学校福山校 — 卒業"
+        }
+      ],
+      "others": [
+        {
+          "date": "2023.4<br>~<br>2026.3",
+          "title": "KINDAI Info-Tech HUB",
+          "description": "FY25 学生キャプテン"
+        },
+        {
+          "date": "2023.6<br>~<br>2026.3",
+          "title": "特定非営利活動法人NxTEND",
+          "description": "イベント事業本部 中四国事業部長"
+        }
+      ],
+      "internships": [
+        "<strong>CA Tech Dojo - Android</strong> — 株式会社サイバーエージェント（2025.2）",
+        "<strong>Android Internship</strong> — Fenrir Inc.（2024.9）"
+      ]
+    }
+  }
+}
