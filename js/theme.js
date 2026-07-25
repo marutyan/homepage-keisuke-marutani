@@ -22,6 +22,10 @@ export function applyTheme(theme) {
   if (darkIcon) {
     darkIcon.style.display = theme === 'dark' ? 'inline-block' : 'none';
   }
+
+  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(theme === 'dark'));
+  });
 }
 
 export function bindThemeToggles() {

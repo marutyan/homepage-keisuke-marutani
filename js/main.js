@@ -6,18 +6,19 @@
   'use strict';
 
   async function loadModules() {
-    const [theme, reveal, navigation, transitions] = await Promise.all([
+    const [theme, reveal, navigation, transitions, accessibility] = await Promise.all([
       import('./theme.js'),
       import('./reveal.js'),
       import('./navigation.js'),
       import('./transitions.js'),
+      import('./accessibility.js'),
     ]);
 
-    return { theme, reveal, navigation, transitions };
+    return { theme, reveal, navigation, transitions, accessibility };
   }
 
   async function start() {
-    const { theme, reveal, navigation, transitions } = await loadModules();
+    const { theme, reveal, navigation, transitions, accessibility } = await loadModules();
 
     const initializePage = () => {
       theme.applyTheme(theme.getPreferredTheme());
@@ -25,6 +26,7 @@
       reveal.initAnimations();
       navigation.updateLanguageLinks();
       navigation.updateTimelineState();
+      accessibility.bindSkipLinks();
     };
 
     initializePage();
