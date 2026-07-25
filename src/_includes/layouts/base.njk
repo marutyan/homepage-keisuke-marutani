@@ -1,9 +1,23 @@
 {% set profile = site.profiles[locale] %}
+{% if locale == "en" %}
+  {% set alternateProfile = site.profiles.ja %}
+{% else %}
+  {% set alternateProfile = site.profiles.en %}
+{% endif %}
 {% if pageType == "timeline" %}
   {% set metadata = timeline.locales[locale] %}
+  {% set currentPath = profile.timelineUrl %}
+  {% set alternatePath = profile.alternateTimelineUrl %}
+  {% set englishPath = site.profiles.en.timelineUrl %}
 {% else %}
   {% set metadata = home.locales[locale] %}
+  {% set currentPath = profile.homeUrl %}
+  {% set alternatePath = profile.alternateHomeUrl %}
+  {% set englishPath = site.profiles.en.homeUrl %}
 {% endif %}
+{% set canonicalUrl = site.baseUrl ~ currentPath %}
+{% set alternateUrl = site.baseUrl ~ alternatePath %}
+{% set xDefaultUrl = site.baseUrl ~ englishPath %}
 <!DOCTYPE html>
 <html lang="{{ profile.htmlLang }}">
 <head>
@@ -11,6 +25,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ metadata.pageTitle }}</title>
   <meta name="description" content="{{ metadata.description }}" />
+  <meta name="author" content="{{ site.person.name }}" />
+
+  <!-- Canonical and localized alternatives -->
+  <link rel="canonical" href="{{ canonicalUrl }}" />
+  <link rel="alternate" hreflang="{{ profile.hreflang }}" href="{{ canonicalUrl }}" />
+  <link rel="alternate" hreflang="{{ alternateProfile.hreflang }}" href="{{ alternateUrl }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ xDefaultUrl }}" />
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_images/favicon-32x32.png" />
@@ -23,13 +44,70 @@
   <meta name="theme-color" content="#2d2d30" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <!-- OGP -->
+  <!-- Open Graph -->
   <meta property="og:title" content="{{ metadata.pageTitle }}" />
   <meta property="og:description" content="{{ metadata.ogDescription }}" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="{{ canonicalUrl }}" />
+  <meta property="og:site_name" content="{{ site.siteName }}" />
+  <meta property="og:locale" content="{{ profile.ogLocale }}" />
+  <meta property="og:locale:alternate" content="{{ alternateProfile.ogLocale }}" />
+  <meta property="og:image" content="{{ site.ogImageUrl }}" />
+  <meta property="og:image:alt" content="{{ profile.imageAlt }}" />
+  <meta property="profile:first_name" content="Keisuke" />
+  <meta property="profile:last_name" content="Marutani" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ metadata.pageTitle }}" />
+  <meta name="twitter:description" content="{{ metadata.ogDescription }}" />
+  <meta name="twitter:image" content="{{ site.ogImageUrl }}" />
+  <meta name="twitter:image:alt" content="{{ profile.imageAlt }}" />
+
+  <!-- ProfilePage / Person structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "{{ canonicalUrl }}#profile-page",
+    "url": "{{ canonicalUrl }}",
+    "name": "{{ metadata.pageTitle }}",
+    "description": "{{ metadata.description }}",
+    "inLanguage": "{{ profile.htmlLang }}",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "{{ site.baseUrl }}#website",
+      "url": "{{ site.baseUrl }}",
+      "name": "{{ site.siteName }}"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "{{ site.baseUrl }}#keisuke-marutani",
+      "name": "{{ site.person.name }}",
+      "alternateName": ["{{ site.person.alternateName }}", "丸谷 啓輔"],
+      "url": "{{ site.baseUrl }}",
+      "image": "{{ site.ogImageUrl }}",
+      "email": "{{ site.person.email }}",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "{{ site.person.affiliation }}",
+        "alternateName": "{{ site.person.affiliationJa }}",
+        "url": "{{ site.universityUrl }}"
+      },
+      "sameAs": [
+        {% for url in site.person.sameAs %}"{{ url }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ],
+      "knowsAbout": [
+        {% for topic in site.person.knowsAbout %}"{{ topic }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  }
+  </script>
 
   <!-- CSS Reset (ress) -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,10 +115,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Iconify -->
-  <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+  <script defer src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
 
   <!-- Swup -->
-  <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+  <script defer src="https://unpkg.com/swup@4.8.2/dist/Swup.umd.js"></script>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />

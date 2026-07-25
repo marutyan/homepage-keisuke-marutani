@@ -1,9 +1,9 @@
 {
   "locales": {
     "en": {
-      "pageTitle": "Timeline — Marutyan's Portfolio",
-      "description": "Keisuke Marutani — Education and career timeline.",
-      "ogDescription": "Keisuke Marutani — Education and career timeline",
+      "pageTitle": "Timeline | Keisuke Marutani",
+      "description": "Education, leadership, and internship timeline of Keisuke Marutani, a computer vision researcher at Kindai University.",
+      "ogDescription": "Education, leadership, and internship history of Keisuke Marutani.",
       "biography": [
         {
           "date": "2023.4<br>~<br>Present",
@@ -33,9 +33,9 @@
       ]
     },
     "ja": {
-      "pageTitle": "Timeline — Marutyan's Portfolio",
-      "description": "keisuke marutani portfolio",
-      "ogDescription": "Keisuke Marutani — Portfolio Timeline",
+      "pageTitle": "経歴 | 丸谷啓輔",
+      "description": "近畿大学でコンピュータビジョンを研究する丸谷啓輔の学歴、学生活動、インターンシップ経験をまとめた経歴ページです。",
+      "ogDescription": "丸谷啓輔の学歴、学生活動、インターンシップ経験。",
       "biography": [
         {
           "date": "2023.4<br>~<br>現在",

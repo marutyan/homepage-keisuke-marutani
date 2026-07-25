@@ -4,7 +4,7 @@
     <div class="logo_bg-container affiliate-container-item">
       <div class="logo_bg">
         <a href="{{ profile.homeUrl }}">
-          <img class="logo" src="images/mainicon.webp" width="150" height="150" alt="Keisuke Marutani" />
+          <img class="logo" src="images/mainicon.webp" width="150" height="150" alt="{{ profile.imageAlt }}" loading="eager" decoding="async" fetchpriority="high" />
         </a>
       </div>
     </div>
@@ -47,7 +47,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ site.laboratoryUrl }}" target="_blank" rel="noopener noreferrer">
-            <img class="nav-lab-icon" src="images/lab.svg" width="22" height="22" alt="" aria-hidden="true" />
+            <img class="nav-lab-icon" src="images/lab.svg" width="22" height="22" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             <span>CVLab.</span>
           </a>
         </li>

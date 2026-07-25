@@ -1,11 +1,35 @@
 {
   "brand": "Marutyan's Portfolio",
+  "siteName": "Keisuke Marutani Portfolio",
+  "baseUrl": "https://marutyan.github.io/homepage-keisuke-marutani/",
+  "ogImageUrl": "https://marutyan.github.io/homepage-keisuke-marutani/images/mainicon.webp",
   "footer": "© 2026 Keisuke Marutani. All Rights Reserved.",
   "repositoryUrl": "https://github.com/marutyan/homepage-keisuke-marutani",
   "laboratoryUrl": "https://www.kindai.ac.jp/informatics/education/laboratory/habe/",
+  "universityUrl": "https://www.kindai.ac.jp/informatics/",
+  "person": {
+    "name": "Keisuke Marutani",
+    "alternateName": "Marutyan",
+    "email": "keisuke.marutani@kindai.ac.jp",
+    "affiliation": "Kindai University",
+    "affiliationJa": "近畿大学",
+    "sameAs": [
+      "https://github.com/marutyan",
+      "https://www.linkedin.com/in/keisuke-marutani/",
+      "https://x.com/marutyan_D_road"
+    ],
+    "knowsAbout": [
+      "Computer Vision",
+      "Deep Learning",
+      "Object Detection",
+      "Multi-Object Tracking"
+    ]
+  },
   "profiles": {
     "en": {
       "htmlLang": "en",
+      "hreflang": "en",
+      "ogLocale": "en_US",
       "name": "Keisuke Marutani",
       "field": "Computer Vision & Deep Learning",
       "homeUrl": "index.html",
@@ -15,10 +39,13 @@
       "alternateLabel": "JA",
       "themeLabel": "Toggle theme",
       "navigationLabel": "Primary navigation",
-      "skipLabel": "Skip to main content"
+      "skipLabel": "Skip to main content",
+      "imageAlt": "Portrait of Keisuke Marutani"
     },
     "ja": {
       "htmlLang": "ja",
+      "hreflang": "ja",
+      "ogLocale": "ja_JP",
       "name": "丸谷 啓輔",
       "field": "Computer Vision & Deep Learning",
       "homeUrl": "index.ja.html",
@@ -28,7 +55,8 @@
       "alternateLabel": "EN",
       "themeLabel": "テーマ切替",
       "navigationLabel": "主要ナビゲーション",
-      "skipLabel": "メインコンテンツへ移動"
+      "skipLabel": "メインコンテンツへ移動",
+      "imageAlt": "丸谷啓輔のプロフィール写真"
     }
   },
   "socialLinks": [
