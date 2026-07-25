@@ -3,8 +3,36 @@
     "year": 2026,
     "title": "混雑環境下の人物検出に向けた遮蔽を考慮したクエリ選択",
     "authors": {
-      "en": "Keisuke Marutani (Kindai Univ.), Shintaro Takenaga (Sansan), Hitoshi Habe (Kindai Univ.)",
-      "ja": "丸谷啓輔（近畿大）, 竹長慎太朗（Sansan）, 波部斉（近畿大）"
+      "en": [
+        {
+          "name": "Keisuke Marutani",
+          "affiliation": "Kindai Univ.",
+          "self": true
+        },
+        {
+          "name": "Shintaro Takenaga",
+          "affiliation": "Sansan"
+        },
+        {
+          "name": "Hitoshi Habe",
+          "affiliation": "Kindai Univ."
+        }
+      ],
+      "ja": [
+        {
+          "name": "丸谷啓輔",
+          "affiliation": "近畿大",
+          "self": true
+        },
+        {
+          "name": "竹長慎太朗",
+          "affiliation": "Sansan"
+        },
+        {
+          "name": "波部斉",
+          "affiliation": "近畿大"
+        }
+      ]
     },
     "venue": {
       "en": "The 29th Meeting on Image Recognition and Understanding (MIRU2026), IS3-119",
