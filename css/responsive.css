@@ -1,6 +1,6 @@
 @media (max-width: 600px) {
   html {
-    zoom: 1;
+    font-size: 100%;
   }
 
   #home {
