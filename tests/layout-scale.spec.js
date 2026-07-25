@@ -4,6 +4,10 @@ const pages = ['/index.html', '/index.ja.html', '/archive.html', '/archive.ja.ht
 const representativeWidths = [768, 1024, 1280, 1440, 1600, 1920];
 const desktopWidths = representativeWidths.filter((width) => width > 900);
 
+function numericPixelValue(value) {
+  return Number.parseFloat(value.replace('px', ''));
+}
+
 test('desktop layout uses explicit root sizing without CSS zoom', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'desktop-chromium');
 
@@ -37,13 +41,49 @@ test('desktop layout uses explicit root sizing without CSS zoom', async ({ page 
   expect(cssWithZoom).toEqual([]);
 });
 
-test('mobile layout restores the original root size', async ({ page }, testInfo) => {
+test('desktop main content uses a smaller independent type scale', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'desktop-chromium');
+
+  await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+
+  const fontSizes = await page.evaluate(() => {
+    const readSize = (selector) => getComputedStyle(document.querySelector(selector)).fontSize;
+    return {
+      main: readSize('#swup-content'),
+      sidebarName: readSize('.bio-myname'),
+      heading: readSize('.subtitle'),
+      profileValue: readSize('.about-profile-value'),
+      interest: readSize('.interests li'),
+      publicationTitle: readSize('.publication-title'),
+      publicationAuthors: readSize('.publication-authors'),
+      skillChip: readSize('.skill-chip'),
+    };
+  });
+
+  expect(fontSizes.main).toBe('18px');
+  expect(fontSizes.sidebarName).toBe('36px');
+  expect(numericPixelValue(fontSizes.heading)).toBeCloseTo(32.4, 1);
+  expect(fontSizes.profileValue).toBe('18px');
+  expect(fontSizes.interest).toBe('18px');
+  expect(numericPixelValue(fontSizes.publicationTitle)).toBeCloseTo(18.9, 1);
+  expect(numericPixelValue(fontSizes.publicationAuthors)).toBeCloseTo(15.3, 1);
+  expect(numericPixelValue(fontSizes.skillChip)).toBeCloseTo(15.3, 1);
+});
+
+test('mobile layout restores the original root and main content sizes', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'mobile-chromium');
 
   await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
-  await expect.poll(() => page.locator('html').evaluate((element) => getComputedStyle(element).fontSize)).toBe(
-    '16px',
-  );
+
+  const sizes = await page.evaluate(() => ({
+    root: getComputedStyle(document.documentElement).fontSize,
+    main: getComputedStyle(document.querySelector('#swup-content')).fontSize,
+    heading: getComputedStyle(document.querySelector('.subtitle')).fontSize,
+  }));
+
+  expect(sizes.root).toBe('16px');
+  expect(sizes.main).toBe('16px');
+  expect(sizes.heading).toBe('22px');
 });
 
 test('desktop content expands with the available main column', async ({ browser }, testInfo) => {
