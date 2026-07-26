@@ -22,7 +22,7 @@ const ENGLISH_FACTS = [
   },
   {
     label: 'Lab',
-    value: 'Hitoshi Habe Lab',
+    value: 'Computer Vision Lab. (Habe Lab.)',
   },
   {
     label: 'Research',
