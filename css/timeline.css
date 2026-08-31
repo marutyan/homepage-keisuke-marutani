@@ -120,11 +120,9 @@
 }
 
 .internship-group {
-  width: calc(100% - 2em);
-  max-width: calc(var(--content-max-width) - 2em);
-  margin: 1.4em 0 0 2em;
-  padding: 0.25em 0 0 1.2em;
-  border-left: 1px solid var(--divider);
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-top: 2.5em;
 }
 
 .internship-list {
@@ -184,13 +182,6 @@
 
   .activity-card-content {
     padding: 0.85rem 0.9rem;
-  }
-
-  .internship-group {
-    width: calc(100% - 0.75rem);
-    max-width: none;
-    margin-left: 0.75rem;
-    padding-left: 0.85rem;
   }
 
   .internship-item {

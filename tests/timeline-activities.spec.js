@@ -33,21 +33,23 @@ for (const [locale, expected] of Object.entries(EXPECTED)) {
   });
 }
 
-test('internships stay nested under activities with the same entry size', async ({ page }) => {
+test('internships line up with activities at the same position and entry size', async ({ page }) => {
   await page.goto('/archive.html', { waitUntil: 'domcontentloaded' });
 
   const activityCard = page.locator('.activity-card').first();
   const activityTitle = activityCard.locator('h3');
-  const internshipGroup = page.locator('.internship-group');
+  const internshipItem = page.locator('.internship-item').first();
   const internshipTitle = page.locator('.internship-title').first();
 
+  // 字下げをやめ、Activities と同じ左端、同じ幅で並べる
   const activityBox = await activityCard.boundingBox();
-  const internshipBox = await internshipGroup.boundingBox();
+  const internshipBox = await internshipItem.boundingBox();
   expect(activityBox).not.toBeNull();
   expect(internshipBox).not.toBeNull();
-  expect(internshipBox.x).toBeGreaterThan(activityBox.x);
+  expect(internshipBox.x).toBeCloseTo(activityBox.x, 1);
+  expect(internshipBox.width).toBeCloseTo(activityBox.width, 1);
 
-  // 字下げで従属を示す一方、項目の文字はBiographyと同じ大きさへ揃えた
+  // 項目の文字は Biography と同じ大きさへ揃える
   const activityFontSize = await activityTitle.evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
   const internshipFontSize = await internshipTitle.evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
   const biographyFontSize = await page
@@ -56,6 +58,22 @@ test('internships stay nested under activities with the same entry size', async 
     .evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
   expect(internshipFontSize).toBe(activityFontSize);
   expect(activityFontSize).toBe(biographyFontSize);
+});
+
+test('activities and internships fill the main column on mobile', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'mobile-chromium');
+
+  await page.goto('/archive.html', { waitUntil: 'domcontentloaded' });
+
+  // Research Interests と同じ幅の扱いになっているかを比べる
+  const widths = await page.evaluate(() => ({
+    biography: document.querySelector('.short-cv.timeline').getBoundingClientRect().width,
+    activities: document.querySelector('.activity-card-list').getBoundingClientRect().width,
+    internships: document.querySelector('.internship-group').getBoundingClientRect().width,
+  }));
+
+  expect(widths.activities).toBeCloseTo(widths.biography, 1);
+  expect(widths.internships).toBeCloseTo(widths.biography, 1);
 });
 
 test('activity cards adapt from two columns to one column', async ({ page }, testInfo) => {

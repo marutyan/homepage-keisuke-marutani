@@ -31,12 +31,13 @@
 
 .about-comment {
   width: 100%;
-  max-width: var(--prose-max-width);
+  max-width: var(--content-max-width);
   margin: 2.75em 0 0;
   padding: 0;
   border: 0;
   color: var(--text);
-  font-weight: 400;
+  font-size: 1.1em;
+  font-weight: 600;
   line-height: 1.8;
 }
 
@@ -247,7 +248,9 @@
   .about-comment,
   .research-focus-list,
   .publication-groups,
-  .grant-list {
+  .grant-list,
+  .activity-card-list,
+  .internship-group {
     max-width: 100%;
   }
 
