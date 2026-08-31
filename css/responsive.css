@@ -175,21 +175,12 @@
     padding-left: 12px;
   }
 
-  .sub-subtitle-container {
-    margin-bottom: 2%;
-  }
-
-  .sub-subtitle {
-    font-size: 18px;
-    padding-left: 12px;
-  }
-
   .content-list li {
     font-size: 14px;
   }
 
   .subtitle-container {
-    margin-bottom: 2%;
+    margin-bottom: 1em;
   }
 
   .subtitle-container .subtitle-en {

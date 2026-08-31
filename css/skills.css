@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   max-width: var(--content-max-width);
   gap: 0.625em;
-  margin-top: 0.625em;
 }
 
 .skill-chip {

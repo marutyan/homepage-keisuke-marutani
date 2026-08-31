@@ -33,7 +33,7 @@ for (const [locale, expected] of Object.entries(EXPECTED)) {
   });
 }
 
-test('internships are visually subordinate to activity cards', async ({ page }) => {
+test('internships stay nested under activities with the same entry size', async ({ page }) => {
   await page.goto('/archive.html', { waitUntil: 'domcontentloaded' });
 
   const activityCard = page.locator('.activity-card').first();
@@ -47,9 +47,15 @@ test('internships are visually subordinate to activity cards', async ({ page }) 
   expect(internshipBox).not.toBeNull();
   expect(internshipBox.x).toBeGreaterThan(activityBox.x);
 
+  // 字下げで従属を示す一方、項目の文字はBiographyと同じ大きさへ揃えた
   const activityFontSize = await activityTitle.evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
   const internshipFontSize = await internshipTitle.evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
-  expect(internshipFontSize).toBeLessThan(activityFontSize);
+  const biographyFontSize = await page
+    .locator('.timeline-content h3')
+    .first()
+    .evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
+  expect(internshipFontSize).toBe(activityFontSize);
+  expect(activityFontSize).toBe(biographyFontSize);
 });
 
 test('activity cards adapt from two columns to one column', async ({ page }, testInfo) => {

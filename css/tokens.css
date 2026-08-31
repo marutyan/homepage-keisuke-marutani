@@ -14,8 +14,6 @@
   --timeline-border: #eef0f3;
   --footer-bg: #3a8fb7;
   --footer-text: #fff;
-  --sub-subtitle-line: #7ec8e3;
-  --sub-subtitle-text: #3a8fb7;
   --button-bg: #ccc;
   --button-hover: #999;
   --content-max-width: min(72vw, 80rem);
@@ -41,8 +39,6 @@
   --timeline-border: #25253e;
   --footer-bg: #1a3a5c;
   --footer-text: #a0dff5;
-  --sub-subtitle-line: #4a90a8;
-  --sub-subtitle-text: #6bc4e8;
   --button-bg: #2a2a40;
   --button-hover: #3a3a55;
 }

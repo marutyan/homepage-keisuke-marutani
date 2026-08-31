@@ -41,7 +41,7 @@ img {
 .subtitle-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 0.5%;
+  margin-bottom: 1.1em;
 }
 
 .subtitle-line {
@@ -65,26 +65,6 @@ img {
 .content-list .other-list-item {
   text-indent: -1em;
   padding-left: 1em;
-}
-
-.sub-subtitle-container {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0.5%;
-}
-
-.sub-subtitle-line {
-  height: 1.75em;
-  width: 0;
-  border-left: 0.22em solid var(--sub-subtitle-line);
-  align-self: center;
-}
-
-.sub-subtitle {
-  color: var(--sub-subtitle-text);
-  font-size: 1.25em;
-  padding-left: 0.7em;
-  align-self: center;
 }
 
 @media (max-width: 900px) {

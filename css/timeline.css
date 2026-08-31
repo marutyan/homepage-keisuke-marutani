@@ -66,13 +66,9 @@
   margin-top: 3.25em;
 }
 
-.activities-heading-container {
-  margin-bottom: 1em;
-}
-
 .activity-card-list {
   display: grid;
-  gap: 0.85em;
+  gap: 1.1em;
   width: 100%;
   max-width: var(--content-max-width);
 }
@@ -91,7 +87,7 @@
   padding: 1em 0.8em;
   border-right: 1px solid var(--divider);
   color: var(--accent-title);
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 700;
   line-height: 1.3;
   text-align: center;
@@ -111,7 +107,7 @@
 
 .activity-card-content h3 {
   margin: 0 0 0.2em;
-  font-size: 1.05em;
+  font-size: 1.25em;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -119,7 +115,7 @@
 .activity-card-content p {
   margin: 0;
   color: var(--text-light);
-  font-size: 0.85em;
+  font-size: 0.875em;
   line-height: 1.5;
 }
 
@@ -131,30 +127,9 @@
   border-left: 1px solid var(--divider);
 }
 
-.internship-heading-row {
-  display: flex;
-  align-items: center;
-  gap: 0.65em;
-  margin-bottom: 0.25em;
-}
-
-.internship-heading-line {
-  width: 1.5em;
-  height: 1px;
-  background: var(--accent-line);
-}
-
-.internship-heading {
-  margin: 0;
-  color: var(--accent-title);
-  font-size: 0.82em;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
 .internship-list {
   display: grid;
-  gap: 0.6em;
+  gap: 1.1em;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -165,12 +140,12 @@
   grid-template-columns: 4.5em minmax(0, 1fr);
   column-gap: 0.9em;
   align-items: center;
-  padding: 0.7em 1em;
+  padding: 1em 1.1em;
 }
 
 .internship-date {
   color: var(--text-light);
-  font-size: 0.72em;
+  font-size: 1em;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
@@ -185,13 +160,13 @@
 
 .internship-title {
   color: var(--text);
-  font-size: 0.85em;
-  font-weight: 600;
+  font-size: 1.25em;
+  font-weight: 700;
 }
 
 .internship-organization {
   color: var(--text-light);
-  font-size: 0.78em;
+  font-size: 0.875em;
 }
 
 @media (max-width: 600px) {
