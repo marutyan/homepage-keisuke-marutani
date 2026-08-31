@@ -63,7 +63,7 @@ test('English About profile mirrors the structured facts', async ({ page }) => {
   await expect(page.locator('.about-comment')).toHaveText(ENGLISH_COMMENT);
 });
 
-test('personal comment reads as normal copy with increased separation', async ({ page }) => {
+test('personal comment is emphasized and separated from the profile', async ({ page }) => {
   await page.goto('/index.ja.html', { waitUntil: 'domcontentloaded' });
 
   const profile = page.locator('.about-profile');
@@ -73,7 +73,7 @@ test('personal comment reads as normal copy with increased separation', async ({
   await expect(profile).toBeVisible();
   await expect(comment).toBeVisible();
   await expect(comment).toHaveCSS('border-left-style', 'none');
-  await expect(comment).toHaveCSS('font-weight', '400');
+  await expect(comment).toHaveCSS('font-weight', '600');
 
   const valueColor = await value.evaluate((element) => getComputedStyle(element).color);
   const commentColor = await comment.evaluate((element) => getComputedStyle(element).color);
