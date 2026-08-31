@@ -20,12 +20,14 @@
         {
           "date": "2023.4<br>~<br>2026.3",
           "title": "KINDAI Info-Tech HUB",
-          "description": "FY25 Student Leader"
+          "description": "FY25 Student Leader",
+          "icon": "mdi:school-outline"
         },
         {
           "date": "2023.6<br>~<br>2026.3",
           "title": "Specified Nonprofit Corporation NxTEND",
-          "description": "Region Director"
+          "description": "Region Director",
+          "icon": "mdi:account-group-outline"
         }
       ],
       "internshipsHeading": "Internships",
@@ -33,12 +35,14 @@
         {
           "date": "2025.2",
           "title": "CA Tech Dojo - Android",
-          "organization": "CyberAgent, Inc."
+          "organization": "CyberAgent, Inc.",
+          "icon": "mdi:android"
         },
         {
           "date": "2024.9",
           "title": "Android Internship",
-          "organization": "Fenrir Inc."
+          "organization": "Fenrir Inc.",
+          "icon": "mdi:android"
         }
       ]
     },
@@ -62,12 +66,14 @@
         {
           "date": "2023.4<br>~<br>2026.3",
           "title": "KINDAI Info-Tech HUB",
-          "description": "FY25 学生キャプテン"
+          "description": "FY25 学生キャプテン",
+          "icon": "mdi:school-outline"
         },
         {
           "date": "2023.6<br>~<br>2026.3",
           "title": "特定非営利活動法人NxTEND",
-          "description": "イベント事業本部 中四国事業部長"
+          "description": "イベント事業本部 中四国事業部長",
+          "icon": "mdi:account-group-outline"
         }
       ],
       "internshipsHeading": "Internships",
@@ -75,12 +81,14 @@
         {
           "date": "2025.2",
           "title": "CA Tech Dojo - Android",
-          "organization": "株式会社サイバーエージェント"
+          "organization": "株式会社サイバーエージェント",
+          "icon": "mdi:android"
         },
         {
           "date": "2024.9",
           "title": "Android Internship",
-          "organization": "Fenrir Inc."
+          "organization": "Fenrir Inc.",
+          "icon": "mdi:android"
         }
       ]
     }

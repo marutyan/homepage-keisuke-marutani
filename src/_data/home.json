@@ -21,9 +21,18 @@
       ],
       "aboutComment": "I'm always open to discussions about my research field and collaboration opportunities. Please feel free to reach out!",
       "interests": [
-        "Autonomous Driving",
-        "World Models",
-        "Physical AI"
+        {
+          "icon": "mdi:car-outline",
+          "name": "Autonomous Driving"
+        },
+        {
+          "icon": "mdi:earth",
+          "name": "World Models"
+        },
+        {
+          "icon": "mdi:robot-outline",
+          "name": "Physical AI"
+        }
       ]
     },
     "ja": {
@@ -47,9 +56,18 @@
       ],
       "aboutComment": "研究分野に関する議論や、コラボレーションの機会待ってます！！！ぜひお気軽にご連絡ください！！！",
       "interests": [
-        "自動運転",
-        "ワールドモデル",
-        "フィジカルAI"
+        {
+          "icon": "mdi:car-outline",
+          "name": "自動運転"
+        },
+        {
+          "icon": "mdi:earth",
+          "name": "ワールドモデル"
+        },
+        {
+          "icon": "mdi:robot-outline",
+          "name": "フィジカルAI"
+        }
       ]
     }
   }

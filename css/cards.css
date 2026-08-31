@@ -1,0 +1,35 @@
+/* Research Interests、Activities、Internships で共通の項目カード。
+   3セクションが同じ見た目になるよう、面の表現とアイコンをここへ集約する。
+   列構成などセクション固有の並びは content.css と timeline.css が持つ。 */
+.research-focus-item,
+.activity-card,
+.internship-item {
+  border: 0;
+  border-radius: 0.75em;
+  background: var(--surface);
+  box-shadow: 0.125em 0.125em 0.3125em var(--shadow-dark),
+    -0.125em -0.125em 0.3125em var(--shadow-light);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.research-focus-item:hover,
+.activity-card:hover,
+.internship-item:hover {
+  transform: translateY(-0.0625em);
+  box-shadow: 0.25em 0.25em 0.5em var(--shadow-dark),
+    -0.25em -0.25em 0.5em var(--shadow-light);
+}
+
+[data-theme="dark"] .research-focus-item,
+[data-theme="dark"] .activity-card,
+[data-theme="dark"] .internship-item {
+  background: var(--nav-bg);
+}
+
+/* 各項目の先頭に置くアイコン。本文と区別するためアクセント色で統一する。 */
+.entry-icon {
+  flex-shrink: 0;
+  color: var(--accent-ui);
+  font-size: 1.15em;
+}
+

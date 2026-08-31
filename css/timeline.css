@@ -81,10 +81,6 @@
   display: grid;
   grid-template-columns: 7.5em minmax(0, 1fr);
   overflow: hidden;
-  border: 1px solid var(--divider);
-  border-left: 0.22em solid var(--accent-line);
-  border-radius: 0.65em;
-  background: linear-gradient(100deg, var(--accent-bg) 0%, transparent 38%);
 }
 
 .activity-card-date {
@@ -102,8 +98,15 @@
 }
 
 .activity-card-content {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
   min-width: 0;
   padding: 1em 1.1em;
+}
+
+.activity-card-text {
+  min-width: 0;
 }
 
 .activity-card-content h3 {
@@ -150,6 +153,8 @@
 }
 
 .internship-list {
+  display: grid;
+  gap: 0.6em;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -159,13 +164,8 @@
   display: grid;
   grid-template-columns: 4.5em minmax(0, 1fr);
   column-gap: 0.9em;
-  align-items: baseline;
-  padding: 0.65em 0;
-  border-bottom: 1px solid var(--divider);
-}
-
-.internship-item:last-child {
-  border-bottom: 0;
+  align-items: center;
+  padding: 0.7em 1em;
 }
 
 .internship-date {
@@ -178,6 +178,7 @@
 .internship-content {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.25em 0.55em;
   min-width: 0;
 }

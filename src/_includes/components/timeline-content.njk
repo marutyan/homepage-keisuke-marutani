@@ -30,8 +30,11 @@
       <article class="activity-card scroll-reveal">
         <p class="activity-card-date">{{ item.date | safe }}</p>
         <div class="activity-card-content">
-          <h3>{{ item.title }}</h3>
-          {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+          <iconify-icon class="entry-icon" icon="{{ item.icon }}" aria-hidden="true"></iconify-icon>
+          <div class="activity-card-text">
+            <h3>{{ item.title }}</h3>
+            {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+          </div>
         </div>
       </article>
     {% endfor %}
@@ -47,6 +50,7 @@
         <li class="internship-item scroll-reveal">
           <time class="internship-date" datetime="{{ internship.date }}">{{ internship.date }}</time>
           <div class="internship-content">
+            <iconify-icon class="entry-icon" icon="{{ internship.icon }}" aria-hidden="true"></iconify-icon>
             <strong class="internship-title">{{ internship.title }}</strong>
             <span class="internship-organization">{{ internship.organization }}</span>
           </div>

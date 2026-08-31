@@ -25,8 +25,8 @@
   <ul class="research-focus-list">
     {% for interest in contentData.interests %}
       <li class="research-focus-item">
-        <span class="research-focus-index" aria-hidden="true">0{{ loop.index }}</span>
-        <strong class="research-focus-name">{{ interest }}</strong>
+        <iconify-icon class="entry-icon" icon="{{ interest.icon }}" aria-hidden="true"></iconify-icon>
+        <strong class="research-focus-name">{{ interest.name }}</strong>
       </li>
     {% endfor %}
   </ul>
