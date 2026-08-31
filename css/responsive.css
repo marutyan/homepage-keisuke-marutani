@@ -152,11 +152,15 @@
     padding: 0 0 0 30px;
   }
 
-  .timeline-content h3 {
+  .timeline-content h3,
+  .activity-card-content h3,
+  .internship-title {
     font-size: 18px;
   }
 
-  .timeline-content p {
+  .timeline-content p,
+  .activity-card-content p,
+  .internship-organization {
     font-size: 12px;
     line-height: 1.5;
   }
