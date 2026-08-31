@@ -250,7 +250,8 @@
   .publication-groups,
   .grant-list,
   .activity-card-list,
-  .internship-group {
+  .internship-group,
+  .skill-chips {
     max-width: 100%;
   }
 

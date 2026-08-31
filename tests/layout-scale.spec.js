@@ -86,6 +86,30 @@ test('mobile layout restores the original root and main content sizes', async ({
   expect(sizes.heading).toBe('22px');
 });
 
+test('main content blocks span the same width on mobile', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'mobile-chromium');
+
+  await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+
+  // 狭い画面で一部だけ本文欄より細くなる崩れを防ぐ
+  const widths = await page.evaluate(() => {
+    const widthOf = (selector) => document.querySelector(selector).getBoundingClientRect().width;
+    return {
+      profile: widthOf('.about-profile'),
+      comment: widthOf('.about-comment'),
+      interests: widthOf('.research-focus-list'),
+      publications: widthOf('.publication-groups'),
+      grants: widthOf('.grant-list'),
+      skills: widthOf('.skill-chips'),
+    };
+  });
+
+  const [reference, ...others] = Object.values(widths);
+  for (const width of others) {
+    expect(width).toBeCloseTo(reference, 1);
+  }
+});
+
 test('desktop content expands with the available main column', async ({ browser }, testInfo) => {
   test.skip(testInfo.project.name !== 'desktop-chromium');
 
