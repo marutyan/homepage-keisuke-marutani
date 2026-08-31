@@ -14,6 +14,19 @@
     margin-left: 0;
   }
 
+  /* 狭い画面では本文の各要素を欄いっぱいに広げる。
+     全CSSの後に読まれるこの位置でまとめて指定する。 */
+  .about-profile,
+  .about-comment,
+  .research-focus-list,
+  .publication-groups,
+  .grant-list,
+  .activity-card-list,
+  .internship-group,
+  .skill-chips {
+    max-width: 100%;
+  }
+
   .nav-column {
     display: flex;
     flex-direction: column;

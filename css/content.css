@@ -244,17 +244,6 @@
 }
 
 @media (max-width: 900px) {
-  .about-profile,
-  .about-comment,
-  .research-focus-list,
-  .publication-groups,
-  .grant-list,
-  .activity-card-list,
-  .internship-group,
-  .skill-chips {
-    max-width: 100%;
-  }
-
   .about-comment {
     margin-top: 2.5rem;
   }
