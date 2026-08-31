@@ -75,8 +75,27 @@
   </div>
 </section>
 
+<!-- Grants -->
+<section class="wrapper animate-in delay-4" aria-labelledby="grants-heading">
+  <div class="subtitle-container">
+    <div class="subtitle-line" aria-hidden="true"></div>
+    <h2 id="grants-heading" class="subtitle">Grants</h2>
+  </div>
+  <ul class="grant-list">
+    {% for grant in grants | sortByYearDesc %}
+      <li class="grant-item">
+        <article class="grant-entry">
+          <h3 class="grant-title">{{ grant.name[locale] }}</h3>
+          <p class="grant-role">{{ grant.role[locale] }}</p>
+          <p class="grant-period"><time datetime="{{ grant.year }}">{{ grant.period[locale] }}</time></p>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
 <!-- Skills -->
-<section class="wrapper skills-section animate-in delay-4" aria-labelledby="skills-heading">
+<section class="wrapper skills-section animate-in delay-5" aria-labelledby="skills-heading">
   <div class="subtitle-container">
     <div class="subtitle-line" aria-hidden="true"></div>
     <h2 id="skills-heading" class="subtitle">Skills</h2>
