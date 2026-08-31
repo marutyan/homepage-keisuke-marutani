@@ -112,3 +112,28 @@ test('publication list renders year framing, author emphasis, and venue prefix',
     contentType: 'image/png',
   });
 });
+
+test('publication entry shows a thumbnail and paper and poster buttons', async ({ page }) => {
+  await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+
+  const firstItem = page.locator('.publication-item').first();
+  const thumbnail = firstItem.locator('.publication-thumbnail');
+
+  // 寸法を属性で持たせて、読み込み時に本文がずれないようにしている
+  await expect(thumbnail).toHaveAttribute('src', 'images/miru2026-marutani.jpg');
+  await expect(thumbnail).toHaveAttribute('width', '640');
+  await expect(thumbnail).toHaveAttribute('height', '426');
+  await expect(thumbnail).toHaveAttribute('loading', 'lazy');
+  await expect(thumbnail).toHaveAttribute('decoding', 'async');
+  await expect(thumbnail).toHaveAttribute('alt', TITLE);
+  await expect(thumbnail).toBeVisible();
+  expect(await thumbnail.evaluate((element) => element.naturalWidth)).toBeGreaterThan(0);
+
+  const links = firstItem.locator('.publication-link');
+  await expect(links).toHaveText(['Paper', 'Poster']);
+  for (const link of await links.all()) {
+    await expect(link).toHaveAttribute('target', '_blank');
+    await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(await link.getAttribute('href')).toMatch(/^https:\/\/drive\.google\.com\/file\/d\//);
+  }
+});

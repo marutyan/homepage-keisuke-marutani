@@ -145,6 +145,22 @@
 }
 
 .publication-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1em;
+  min-width: 0;
+}
+
+/* 論文のサムネイル。読み込み時のずれを防ぐため寸法を属性で持たせている。 */
+.publication-thumbnail {
+  flex: 0 0 12em;
+  width: 12em;
+  height: auto;
+  border-radius: 0.5em;
+  object-fit: cover;
+}
+
+.publication-body {
   min-width: 0;
 }
 
@@ -191,12 +207,19 @@
 }
 
 .publication-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em 0.85em;
+  border: 1px solid var(--accent-line);
+  border-radius: 999px;
   color: var(--accent-title);
   font-size: 0.85em;
   font-weight: 600;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .publication-link:hover {
+  border-color: var(--accent-hover);
   color: var(--accent-hover);
 }
 
@@ -250,6 +273,15 @@
 }
 
 @media (max-width: 600px) {
+  .publication-entry {
+    flex-direction: column;
+  }
+
+  .publication-thumbnail {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .about-profile-row {
     grid-template-columns: 1fr;
     row-gap: 0.15rem;

@@ -38,6 +38,22 @@
       "en": "The 29th Meeting on Image Recognition and Understanding (MIRU2026), IS3-119",
       "ja": "第29回 画像の認識・理解シンポジウム（MIRU2026）, IS3-119"
     },
-    "links": []
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://drive.google.com/file/d/1Ptm3sMclI-0E-y8pa0xfWpykWwOsWNrB/view?usp=sharing",
+        "external": true
+      },
+      {
+        "label": "Poster",
+        "url": "https://drive.google.com/file/d/1CekWknQ_BO94J-fPEPWWmDebA-hBswLX/view?usp=sharing",
+        "external": true
+      }
+    ],
+    "thumbnail": {
+      "src": "images/miru2026-marutani.jpg",
+      "width": 640,
+      "height": 426
+    }
   }
 ]
