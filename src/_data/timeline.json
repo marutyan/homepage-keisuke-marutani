@@ -8,11 +8,13 @@
         {
           "date": "2023.4<br>~<br>Present",
           "title": "Kindai University",
-          "description": "Computer Science B4 student - Computer Vision Lab"
+          "description": "Computer Science B4 student - Computer Vision Lab",
+          "url": "https://www.kindai.ac.jp/informatics/"
         },
         {
           "date": "2023.3",
-          "title": "Kindai University Hiroshima High School, Fukuyama — Graduated"
+          "title": "Kindai University Hiroshima High School, Fukuyama — Graduated",
+          "url": "https://www.fukuyama.kindai.ac.jp/"
         }
       ],
       "activitiesHeading": "Activities",
@@ -21,13 +23,15 @@
           "date": "2023.4<br>~<br>2026.3",
           "title": "KINDAI Info-Tech HUB",
           "description": "FY25 Student Leader",
-          "icon": "mdi:school-outline"
+          "icon": "mdi:school-outline",
+          "url": "https://kithub.jp/"
         },
         {
           "date": "2023.6<br>~<br>2026.3",
           "title": "Specified Nonprofit Corporation NxTEND",
           "description": "Region Director",
-          "icon": "mdi:account-group-outline"
+          "icon": "mdi:account-group-outline",
+          "url": "https://www.nxtend.or.jp/"
         }
       ],
       "internshipsHeading": "Internships",
@@ -36,13 +40,15 @@
           "date": "2025.2",
           "title": "CA Tech Dojo - Android",
           "organization": "CyberAgent, Inc.",
-          "icon": "mdi:android"
+          "icon": "mdi:android",
+          "url": "https://www.cyberagent.co.jp/"
         },
         {
           "date": "2024.9",
           "title": "Android Internship",
           "organization": "Fenrir Inc.",
-          "icon": "mdi:android"
+          "icon": "mdi:android",
+          "url": "https://www.fenrir-inc.com/jp/"
         }
       ]
     },
@@ -54,11 +60,13 @@
         {
           "date": "2023.4<br>~<br>現在",
           "title": "近畿大学 — 在学中",
-          "description": "情報学部情報学科知能システムコース B4 コンピュータビジョン研究室"
+          "description": "情報学部情報学科知能システムコース B4 コンピュータビジョン研究室",
+          "url": "https://www.kindai.ac.jp/informatics/"
         },
         {
           "date": "2023.3",
-          "title": "近畿大学附属広島高等学校福山校 — 卒業"
+          "title": "近畿大学附属広島高等学校福山校 — 卒業",
+          "url": "https://www.fukuyama.kindai.ac.jp/"
         }
       ],
       "activitiesHeading": "Activities",
@@ -67,13 +75,15 @@
           "date": "2023.4<br>~<br>2026.3",
           "title": "KINDAI Info-Tech HUB",
           "description": "FY25 学生キャプテン",
-          "icon": "mdi:school-outline"
+          "icon": "mdi:school-outline",
+          "url": "https://kithub.jp/"
         },
         {
           "date": "2023.6<br>~<br>2026.3",
           "title": "特定非営利活動法人NxTEND",
           "description": "イベント事業本部 中四国事業部長",
-          "icon": "mdi:account-group-outline"
+          "icon": "mdi:account-group-outline",
+          "url": "https://www.nxtend.or.jp/"
         }
       ],
       "internshipsHeading": "Internships",
@@ -82,13 +92,15 @@
           "date": "2025.2",
           "title": "CA Tech Dojo - Android",
           "organization": "株式会社サイバーエージェント",
-          "icon": "mdi:android"
+          "icon": "mdi:android",
+          "url": "https://www.cyberagent.co.jp/"
         },
         {
           "date": "2024.9",
           "title": "Android Internship",
           "organization": "Fenrir Inc.",
-          "icon": "mdi:android"
+          "icon": "mdi:android",
+          "url": "https://www.fenrir-inc.com/jp/"
         }
       ]
     }

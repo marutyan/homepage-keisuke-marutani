@@ -2,6 +2,7 @@ const { test, expect } = require('@playwright/test');
 const configureEleventy = require('../.eleventy.js');
 
 const TITLE = '混雑環境下の人物検出に向けた遮蔽を考慮したクエリ選択';
+const PAPER_URL = 'https://drive.google.com/file/d/1Ptm3sMclI-0E-y8pa0xfWpykWwOsWNrB/view?usp=sharing';
 
 function getPublicationFilters() {
   const filters = {};
@@ -136,4 +137,22 @@ test('publication entry shows a thumbnail and paper and poster buttons', async (
     await expect(link).toHaveAttribute('rel', 'noopener noreferrer');
     expect(await link.getAttribute('href')).toMatch(/^https:\/\/drive\.google\.com\/file\/d\//);
   }
+});
+
+test('thumbnail and title link to the paper URL', async ({ page }) => {
+  await page.goto('/index.html', { waitUntil: 'domcontentloaded' });
+
+  const firstItem = page.locator('.publication-item').first();
+
+  const thumbnailLink = firstItem.locator('a.publication-thumbnail-link');
+  await expect(thumbnailLink).toHaveAttribute('href', PAPER_URL);
+  await expect(thumbnailLink).toHaveAttribute('target', '_blank');
+  await expect(thumbnailLink).toHaveAttribute('rel', 'noopener noreferrer');
+  await expect(thumbnailLink.locator('.publication-thumbnail')).toHaveCount(1);
+
+  const titleLink = firstItem.locator('.publication-title a.entry-link');
+  await expect(titleLink).toHaveAttribute('href', PAPER_URL);
+  await expect(titleLink).toHaveAttribute('target', '_blank');
+  await expect(titleLink).toHaveAttribute('rel', 'noopener noreferrer');
+  await expect(titleLink).toHaveText(TITLE);
 });

@@ -13,6 +13,20 @@ const EXPECTED = {
   },
 };
 
+// biography はロケールで表示テキストが異なるため、URL だけを見出しの順番に対応付ける
+const BIOGRAPHY_URLS = [
+  'https://www.kindai.ac.jp/informatics/',
+  'https://www.fukuyama.kindai.ac.jp/',
+];
+const ACTIVITY_URLS = [
+  'https://kithub.jp/',
+  'https://www.nxtend.or.jp/',
+];
+const INTERNSHIP_URLS = [
+  'https://www.cyberagent.co.jp/',
+  'https://www.fenrir-inc.com/jp/',
+];
+
 for (const [locale, expected] of Object.entries(EXPECTED)) {
   test(`${locale} timeline combines activities and internships`, async ({ page }) => {
     await page.goto(expected.path, { waitUntil: 'domcontentloaded' });
@@ -30,6 +44,35 @@ for (const [locale, expected] of Object.entries(EXPECTED)) {
     expect(internshipTitles.map((item) => item.trim())).toEqual(expected.internships);
     await expect(page.locator('.activities-section .internship-group')).toHaveCount(1);
     await expect(page.locator('.activities-section .timeline')).toHaveCount(0);
+
+    // 項目名は entry-link のリンクになり、外部リンクとして安全な属性が付く
+    const biographyLinks = page.locator('.timeline-content h3 a.entry-link');
+    await expect(biographyLinks).toHaveCount(BIOGRAPHY_URLS.length);
+    expect(await biographyLinks.evaluateAll((links) => links.map((link) => link.getAttribute('href')))).toEqual(
+      BIOGRAPHY_URLS,
+    );
+
+    const activityLinks = page.locator('.activity-card-content h3 a.entry-link');
+    await expect(activityLinks).toHaveCount(ACTIVITY_URLS.length);
+    expect(await activityLinks.evaluateAll((links) => links.map((link) => link.getAttribute('href')))).toEqual(
+      ACTIVITY_URLS,
+    );
+
+    const internshipLinks = page.locator('.internship-title a.entry-link');
+    await expect(internshipLinks).toHaveCount(INTERNSHIP_URLS.length);
+    expect(await internshipLinks.evaluateAll((links) => links.map((link) => link.getAttribute('href')))).toEqual(
+      INTERNSHIP_URLS,
+    );
+
+    for (const links of [biographyLinks, activityLinks, internshipLinks]) {
+      const attrs = await links.evaluateAll((elements) =>
+        elements.map((el) => ({ target: el.getAttribute('target'), rel: el.getAttribute('rel') })),
+      );
+      for (const attr of attrs) {
+        expect(attr.target).toBe('_blank');
+        expect(attr.rel).toBe('noopener noreferrer');
+      }
+    }
   });
 }
 

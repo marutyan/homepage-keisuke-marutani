@@ -152,11 +152,24 @@
 }
 
 /* 論文のサムネイル。読み込み時のずれを防ぐため寸法を属性で持たせている。 */
-.publication-thumbnail {
+.publication-thumbnail-link {
+  display: block;
   flex: 0 0 12em;
-  width: 12em;
-  height: auto;
   border-radius: 0.5em;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.publication-thumbnail-link:hover {
+  transform: translateY(-0.2em);
+  opacity: 0.9;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.22);
+}
+
+.publication-thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -277,7 +290,7 @@
     flex-direction: column;
   }
 
-  .publication-thumbnail {
+  .publication-thumbnail-link {
     flex: 0 0 auto;
     width: 100%;
   }

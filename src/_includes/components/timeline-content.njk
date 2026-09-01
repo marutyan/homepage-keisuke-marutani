@@ -10,7 +10,13 @@
         <p class="timeline-date">{{ item.date | safe }}</p>
         <div class="timeline-content-wrapper">
           <div class="timeline-content end">
-            <h3>{{ item.title }}</h3>
+            <h3>
+              {% if item.url %}
+                <a class="entry-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              {% else %}
+                {{ item.title }}
+              {% endif %}
+            </h3>
             {% if item.description %}<p>{{ item.description }}</p>{% endif %}
           </div>
         </div>
@@ -32,7 +38,13 @@
         <div class="activity-card-content">
           <iconify-icon class="entry-icon" icon="{{ item.icon }}" aria-hidden="true"></iconify-icon>
           <div class="activity-card-text">
-            <h3>{{ item.title }}</h3>
+            <h3>
+              {% if item.url %}
+                <a class="entry-link" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              {% else %}
+                {{ item.title }}
+              {% endif %}
+            </h3>
             {% if item.description %}<p>{{ item.description }}</p>{% endif %}
           </div>
         </div>
@@ -51,7 +63,13 @@
           <time class="internship-date" datetime="{{ internship.date }}">{{ internship.date }}</time>
           <div class="internship-content">
             <iconify-icon class="entry-icon" icon="{{ internship.icon }}" aria-hidden="true"></iconify-icon>
-            <strong class="internship-title">{{ internship.title }}</strong>
+            <strong class="internship-title">
+              {% if internship.url %}
+                <a class="entry-link" href="{{ internship.url }}" target="_blank" rel="noopener noreferrer">{{ internship.title }}</a>
+              {% else %}
+                {{ internship.title }}
+              {% endif %}
+            </strong>
             <span class="internship-organization">{{ internship.organization }}</span>
           </div>
         </li>

@@ -86,6 +86,32 @@ test('personal comment is emphasized and separated from the profile', async ({ p
   expect(commentBox.y - (profileBox.y + profileBox.height)).toBeGreaterThanOrEqual(38.5);
 });
 
+const ABOUT_LINK_URLS = {
+  affiliation: 'https://www.kindai.ac.jp/informatics/',
+  lab: 'https://www.kindai.ac.jp/informatics/education/laboratory/habe/',
+};
+
+for (const path of ['/index.html', '/index.ja.html']) {
+  test(`About affiliation and lab are external links on ${path}`, async ({ page }) => {
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+
+    const rows = page.locator('.about-profile-row');
+    const affiliationLink = rows.nth(0).locator('a.entry-link');
+    const labLink = rows.nth(1).locator('a.entry-link');
+    const researchLink = rows.nth(2).locator('a.entry-link');
+
+    await expect(affiliationLink).toHaveAttribute('href', ABOUT_LINK_URLS.affiliation);
+    await expect(affiliationLink).toHaveAttribute('target', '_blank');
+    await expect(affiliationLink).toHaveAttribute('rel', 'noopener noreferrer');
+
+    await expect(labLink).toHaveAttribute('href', ABOUT_LINK_URLS.lab);
+    await expect(labLink).toHaveAttribute('target', '_blank');
+    await expect(labLink).toHaveAttribute('rel', 'noopener noreferrer');
+
+    await expect(researchLink).toHaveCount(0);
+  });
+}
+
 for (const [locale, expectedInterests] of Object.entries(RESEARCH_FOCUS)) {
   test(`${locale} Research Interests contain only the approved focus`, async ({ page }) => {
     await page.goto(locale === 'ja' ? '/index.ja.html' : '/index.html', {

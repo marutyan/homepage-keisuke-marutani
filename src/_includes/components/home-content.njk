@@ -9,7 +9,13 @@
     {% for fact in contentData.aboutFacts %}
       <div class="about-profile-row">
         <dt class="about-profile-label">{{ fact.label }}</dt>
-        <dd class="about-profile-value">{{ fact.value }}</dd>
+        <dd class="about-profile-value">
+          {% if fact.url %}
+            <a class="entry-link" href="{{ fact.url }}" target="_blank" rel="noopener noreferrer">{{ fact.value }}</a>
+          {% else %}
+            {{ fact.value }}
+          {% endif %}
+        </dd>
       </div>
     {% endfor %}
   </dl>
@@ -49,21 +55,35 @@
         </div>
         <ul class="publication-list">
           {% for publication in group.publications %}
+            {% set paperLink = publication.links | selectattr("label", "equalto", "Paper") | first %}
             <li class="publication-item">
               <article class="publication-entry">
                 {% if publication.thumbnail %}
-                  <img
-                    class="publication-thumbnail"
-                    src="{{ publication.thumbnail.src }}"
-                    alt="{{ publication.title }}"
-                    width="{{ publication.thumbnail.width }}"
-                    height="{{ publication.thumbnail.height }}"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  {% set thumbnailImage %}
+                    <img
+                      class="publication-thumbnail"
+                      src="{{ publication.thumbnail.src }}"
+                      alt="{{ publication.title }}"
+                      width="{{ publication.thumbnail.width }}"
+                      height="{{ publication.thumbnail.height }}"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  {% endset %}
+                  {% if paperLink %}
+                    <a class="publication-thumbnail-link" href="{{ paperLink.url }}" target="_blank" rel="noopener noreferrer">{{ thumbnailImage | safe }}</a>
+                  {% else %}
+                    {{ thumbnailImage | safe }}
+                  {% endif %}
                 {% endif %}
                 <div class="publication-body">
-                  <h4 class="publication-title">{{ publication.title }}</h4>
+                  <h4 class="publication-title">
+                    {% if paperLink %}
+                      <a class="entry-link" href="{{ paperLink.url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>
+                    {% else %}
+                      {{ publication.title }}
+                    {% endif %}
+                  </h4>
                   <p class="publication-authors">
                     {% for author in publication.authors[locale] %}
                       <span class="publication-author{% if author.self %} publication-author--self{% endif %}">{{ author.name }}</span>
@@ -98,7 +118,13 @@
     {% for grant in grants | sortByYearDesc %}
       <li class="grant-item">
         <article class="grant-entry">
-          <h3 class="grant-title">{{ grant.name[locale] }}</h3>
+          <h3 class="grant-title">
+            {% if grant.url %}
+              <a class="entry-link" href="{{ grant.url }}" target="_blank" rel="noopener noreferrer">{{ grant.name[locale] }}</a>
+            {% else %}
+              {{ grant.name[locale] }}
+            {% endif %}
+          </h3>
           <p class="grant-role">{{ grant.role[locale] }}</p>
           <p class="grant-period"><time datetime="{{ grant.year }}">{{ grant.period[locale] }}</time></p>
         </article>

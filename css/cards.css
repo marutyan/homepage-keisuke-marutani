@@ -26,6 +26,22 @@
   background: var(--nav-bg);
 }
 
+/* 本文中のリンク。見出しや項目名をリンクにしても地の文の見た目を保ち、
+   hoverでふわっと色が変わりながら下線が現れる。 */
+.entry-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.entry-link:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+
 /* 各項目の先頭に置くアイコン。本文と区別するためアクセント色で統一する。 */
 .entry-icon {
   flex-shrink: 0;

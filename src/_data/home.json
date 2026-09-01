@@ -8,11 +8,13 @@
       "aboutFacts": [
         {
           "label": "Affiliation",
-          "value": "Computer Science @ Kindai University — Fourth-year undergraduate student"
+          "value": "Computer Science @ Kindai University — Fourth-year undergraduate student",
+          "url": "https://www.kindai.ac.jp/informatics/"
         },
         {
           "label": "Lab",
-          "value": "Computer Vision Lab. (Habe Lab.)"
+          "value": "Computer Vision Lab. (Habe Lab.)",
+          "url": "https://www.kindai.ac.jp/informatics/education/laboratory/habe/"
         },
         {
           "label": "Research",
@@ -43,11 +45,13 @@
       "aboutFacts": [
         {
           "label": "所属",
-          "value": "近畿大学 情報学部 情報学科（学部4年生）"
+          "value": "近畿大学 情報学部 情報学科（学部4年生）",
+          "url": "https://www.kindai.ac.jp/informatics/"
         },
         {
           "label": "研究室",
-          "value": "波部研究室"
+          "value": "波部研究室",
+          "url": "https://www.kindai.ac.jp/informatics/education/laboratory/habe/"
         },
         {
           "label": "研究内容",

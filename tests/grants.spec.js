@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
+const GRANT_FOUNDATION_URL = 'https://g-7foundation.or.jp/about.html';
+
 // 各言語ページで表示されるべき助成の記載内容。データと表示のずれを検出する。
 const EXPECTED_GRANT_BY_PATH = {
   '/index.html': {
@@ -26,6 +28,11 @@ for (const [path, expected] of Object.entries(EXPECTED_GRANT_BY_PATH)) {
     await expect(firstItem.locator('.grant-role')).toHaveText(expected.role);
     await expect(firstItem.locator('.grant-period')).toHaveText(expected.period);
     await expect(firstItem.locator('.grant-period time')).toHaveAttribute('datetime', '2026');
+
+    const titleLink = firstItem.locator('.grant-title a.entry-link');
+    await expect(titleLink).toHaveAttribute('href', GRANT_FOUNDATION_URL);
+    await expect(titleLink).toHaveAttribute('target', '_blank');
+    await expect(titleLink).toHaveAttribute('rel', 'noopener noreferrer');
   });
 }
 
